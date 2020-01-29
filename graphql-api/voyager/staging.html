@@ -13,7 +13,7 @@
       function introspectionProvider(introspectionQuery) {
         // This example expects a GraphQL server at the path /graphql.
         // Change this to point wherever you host your GraphQL server.
-        return fetch('https://api.staging.groovehq.com/graphql', {
+        return fetch('https://api.staging.groovehq.com/v2/graphql', {
           method: 'post',
           headers: {
             'Accept': 'application/json',
