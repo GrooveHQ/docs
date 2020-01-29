@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Message GraphQL documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Message</title>
+    <link rel="stylesheet" href="/graphql-api/reference/dist/assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
+    <script>
+
+    // Add anchors on DOMContentLoaded
+    document.addEventListener("DOMContentLoaded", function(event) {
+      anchors.options = {
+        placement: 'left',
+        visible: 'hover',
+        icon: '¶'
+      };
+      anchors.add('h2, h3, h4, h5, h6, .anchored');
+    });
+
+    </script>
+  </head>
+  <body>
+
+    <div id="wrap">
+      <div id="header">
+      </div>
+      <div id="sidebar">
+        <ul class="categories">
+  <li>
+    <ul class="menu-root">
+      <li>
+        <a href="/graphql-api/reference/dist">GraphQL Reference</a>
+    </ul>
+  </li>
+
+  <li>
+    <p>Queries</p>
+    <ul class="menu-root">
+      <li>
+        <a href="/graphql-api/reference/dist/operation/query/" class="sidebar-link">
+          Query
+        </a>
+      </li>
+      <li>
+        <a href="/graphql-api/reference/dist/operation/mutation/" class="sidebar-link">
+          Mutation
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/graphql-api/reference/dist/object">Objects</a></p>
+    <ul class="menu-root">
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/account/" class="sidebar-link">
+          Account
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/accountpreferences/" class="sidebar-link">
+          AccountPreferences
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/accountupdatepayload/" class="sidebar-link">
+          AccountUpdatePayload
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/address/" class="sidebar-link">
+          Address
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/agent/" class="sidebar-link">
+          Agent
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/agentchange/" class="sidebar-link">
+          AgentChange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/agentconnection/" class="sidebar-link">
+          AgentConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/agentedge/" class="sidebar-link">
+          AgentEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/article/" class="sidebar-link">
+          Article
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/articleattachment/" class="sidebar-link">
+          ArticleAttachment
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/articleconnection/" class="sidebar-link">
+          ArticleConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/articleedge/" class="sidebar-link">
+          ArticleEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/articlerating/" class="sidebar-link">
+          ArticleRating
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/assignedagentchanged/" class="sidebar-link">
+          AssignedAgentChanged
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/assignedteamchanged/" class="sidebar-link">
+          AssignedTeamChanged
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/billingpreferences/" class="sidebar-link">
+          BillingPreferences
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/changeset/" class="sidebar-link">
+          Changeset
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/changesetconnection/" class="sidebar-link">
+          ChangesetConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/changesetedge/" class="sidebar-link">
+          ChangesetEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/changesetgroupconnection/" class="sidebar-link">
+          ChangesetGroupConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/changesetgroupedge/" class="sidebar-link">
+          ChangesetGroupEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/changesetlink/" class="sidebar-link">
+          ChangesetLink
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/company/" class="sidebar-link">
+          Company
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/companyconnection/" class="sidebar-link">
+          CompanyConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/companyedge/" class="sidebar-link">
+          CompanyEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/condensedchangeset/" class="sidebar-link">
+          CondensedChangeset
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/contact/" class="sidebar-link">
+          Contact
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/contactconnection/" class="sidebar-link">
+          ContactConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/contactedge/" class="sidebar-link">
+          ContactEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/conversation/" class="sidebar-link">
+          Conversation
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/conversationconnection/" class="sidebar-link">
+          ConversationConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/conversationedge/" class="sidebar-link">
+          ConversationEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/conversationforwarded/" class="sidebar-link">
+          ConversationForwarded
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/customdomain/" class="sidebar-link">
+          CustomDomain
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/customfield/" class="sidebar-link">
+          CustomField
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/customerchange/" class="sidebar-link">
+          CustomerChange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/customerread/" class="sidebar-link">
+          CustomerRead
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/delete/" class="sidebar-link">
+          Delete
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/draft/" class="sidebar-link">
+          Draft
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/draftconnection/" class="sidebar-link">
+          DraftConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/draftedge/" class="sidebar-link">
+          DraftEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/eventconnection/" class="sidebar-link">
+          EventConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/eventedge/" class="sidebar-link">
+          EventEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/export/" class="sidebar-link">
+          Export
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/exportconnection/" class="sidebar-link">
+          ExportConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/exportedge/" class="sidebar-link">
+          ExportEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/folder/" class="sidebar-link">
+          Folder
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/folderconnection/" class="sidebar-link">
+          FolderConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/folderedge/" class="sidebar-link">
+          FolderEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/githubassigneesevents/" class="sidebar-link">
+          GithubAssigneesEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/githubentities/" class="sidebar-link">
+          GithubEntities
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/githubevents/" class="sidebar-link">
+          GithubEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/githubissueevents/" class="sidebar-link">
+          GithubIssueEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/githublabelsevents/" class="sidebar-link">
+          GithubLabelsEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/githubsettings/" class="sidebar-link">
+          GithubSettings
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/inboxpreferences/" class="sidebar-link">
+          InboxPreferences
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/integrationchange/" class="sidebar-link">
+          IntegrationChange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/integrationexternalchange/" class="sidebar-link">
+          IntegrationExternalChange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/integrationsettings/" class="sidebar-link">
+          IntegrationSettings
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/kbcategory/" class="sidebar-link">
+          KbCategory
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/knowledgebase/" class="sidebar-link">
+          KnowledgeBase
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/knowledgebaseconnection/" class="sidebar-link">
+          KnowledgeBaseConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/knowledgebaseedge/" class="sidebar-link">
+          KnowledgeBaseEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/mailbox/" class="sidebar-link">
+          Mailbox
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/mailboxconnection/" class="sidebar-link">
+          MailboxConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/mailboxedge/" class="sidebar-link">
+          MailboxEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/merge/" class="sidebar-link">
+          Merge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/message/" class="sidebar-link">
+          Message
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/onboarding/" class="sidebar-link">
+          Onboarding
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/opengraph/" class="sidebar-link">
+          OpenGraph
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/pageinfo/" class="sidebar-link">
+          PageInfo
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/rating/" class="sidebar-link">
+          Rating
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/reportingpreferences/" class="sidebar-link">
+          ReportingPreferences
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/separator/" class="sidebar-link">
+          Separator
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/snooze/" class="sidebar-link">
+          Snooze
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/star/" class="sidebar-link">
+          Star
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/statechange/" class="sidebar-link">
+          StateChange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/tag/" class="sidebar-link">
+          Tag
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/tagconnection/" class="sidebar-link">
+          TagConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/tagedge/" class="sidebar-link">
+          TagEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/team/" class="sidebar-link">
+          Team
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/teamchange/" class="sidebar-link">
+          TeamChange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/teamconnection/" class="sidebar-link">
+          TeamConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/teamedge/" class="sidebar-link">
+          TeamEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/theme/" class="sidebar-link">
+          Theme
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/titlechange/" class="sidebar-link">
+          TitleChange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trelloboardevents/" class="sidebar-link">
+          TrelloBoardEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trellocardevents/" class="sidebar-link">
+          TrelloCardEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trellocommentevents/" class="sidebar-link">
+          TrelloCommentEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trellodescriptionevents/" class="sidebar-link">
+          TrelloDescriptionEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trelloduedateevents/" class="sidebar-link">
+          TrelloDueDateEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trelloentities/" class="sidebar-link">
+          TrelloEntities
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trelloevents/" class="sidebar-link">
+          TrelloEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trellolabelsevents/" class="sidebar-link">
+          TrelloLabelsEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trellolistevents/" class="sidebar-link">
+          TrelloListEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trellomembersevents/" class="sidebar-link">
+          TrelloMembersEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trellosettings/" class="sidebar-link">
+          TrelloSettings
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/trellotitleevents/" class="sidebar-link">
+          TrelloTitleEvents
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/undelete/" class="sidebar-link">
+          Undelete
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/unsnooze/" class="sidebar-link">
+          Unsnooze
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/unstar/" class="sidebar-link">
+          Unstar
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/usererror/" class="sidebar-link">
+          UserError
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/__directive/" class="sidebar-link">
+          __Directive
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/__enumvalue/" class="sidebar-link">
+          __EnumValue
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/__field/" class="sidebar-link">
+          __Field
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/__inputvalue/" class="sidebar-link">
+          __InputValue
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/__schema/" class="sidebar-link">
+          __Schema
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/graphql-api/reference/dist/object/__type/" class="sidebar-link">
+          __Type
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/graphql-api/reference/dist/operation/mutation">Mutations</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/mutation/accountupdate/" class="sidebar-link">
+          accountUpdate
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/graphql-api/reference/dist/interface">Interfaces</a></p>
+    <ul class="menu-root">
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/actionable/" class="sidebar-link">
+            Actionable
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/companysocial/" class="sidebar-link">
+            CompanySocial
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/contactinfo/" class="sidebar-link">
+            ContactInfo
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/eventable/" class="sidebar-link">
+            Eventable
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/finance/" class="sidebar-link">
+            Finance
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/kbmeta/" class="sidebar-link">
+            KbMeta
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/kbpublishable/" class="sidebar-link">
+            KbPublishable
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/node/" class="sidebar-link">
+            Node
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/previewable/" class="sidebar-link">
+            Previewable
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/social/" class="sidebar-link">
+            Social
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/graphql-api/reference/dist/interface/timestamped/" class="sidebar-link">
+            Timestamped
+          </a>
+        </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/graphql-api/reference/dist/enum">Enums</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/agentrole/" class="sidebar-link">
+          AgentRole
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/agentstate/" class="sidebar-link">
+          AgentState
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/articleratingtypes/" class="sidebar-link">
+          ArticleRatingTypes
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/changetypes/" class="sidebar-link">
+          ChangeTypes
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/channel/" class="sidebar-link">
+          Channel
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/conversationpriority/" class="sidebar-link">
+          ConversationPriority
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/conversationstate/" class="sidebar-link">
+          ConversationState
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/customfieldcategory/" class="sidebar-link">
+          CustomFieldCategory
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/customfieldtypes/" class="sidebar-link">
+          CustomFieldTypes
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/exportstate/" class="sidebar-link">
+          ExportState
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/foldermatchtypes/" class="sidebar-link">
+          FolderMatchTypes
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/integrationprovider/" class="sidebar-link">
+          IntegrationProvider
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/mailboxchannel/" class="sidebar-link">
+          MailboxChannel
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/mailboxstate/" class="sidebar-link">
+          MailboxState
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/messagetypes/" class="sidebar-link">
+          MessageTypes
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/publishstate/" class="sidebar-link">
+          PublishState
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/timezone/" class="sidebar-link">
+          TimeZone
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/__directivelocation/" class="sidebar-link">
+          __DirectiveLocation
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/enum/__typekind/" class="sidebar-link">
+          __TypeKind
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/graphql-api/reference/dist/union">Unions</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/union/action/" class="sidebar-link">
+          Action
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/union/author/" class="sidebar-link">
+          Author
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/union/changesetgroup/" class="sidebar-link">
+          ChangesetGroup
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/union/event/" class="sidebar-link">
+          Event
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/union/eventsubject/" class="sidebar-link">
+          EventSubject
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/graphql-api/reference/dist/input_object">Input Objects</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/input_object/accountupdateinput/" class="sidebar-link">
+          AccountUpdateInput
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/graphql-api/reference/dist/scalar">Scalars</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/boolean/" class="sidebar-link">
+          Boolean
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/datetime/" class="sidebar-link">
+          DateTime
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/email/" class="sidebar-link">
+          Email
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/float/" class="sidebar-link">
+          Float
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/id/" class="sidebar-link">
+          ID
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/iso8601date/" class="sidebar-link">
+          ISO8601Date
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/int/" class="sidebar-link">
+          Int
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/json/" class="sidebar-link">
+          JSON
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/string/" class="sidebar-link">
+          String
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/scalar/url/" class="sidebar-link">
+          Url
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/graphql-api/reference/dist/directive">Directives</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/directive/deprecated/" class="sidebar-link">
+          deprecated
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/directive/include/" class="sidebar-link">
+          include
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/graphql-api/reference/dist/directive/skip/" class="sidebar-link">
+          skip
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+      </div>
+      <div id="content">
+
+        <h1>
+<a id="message" class="anchor" href="#message" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Message</h1>
+<p>An individual Message. e.g. email, chat message, agent note.</p>
+<h2>
+<a id="implements" class="anchor" href="#implements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implements</h2>
+<ul>
+   <li><code><a href="/graphql-api/reference/dist/interface/actionable">Actionable</a></code></li>
+   <li><code><a href="/graphql-api/reference/dist/interface/previewable">Previewable</a></code></li>
+   <li><code><a href="/graphql-api/reference/dist/interface/timestamped">Timestamped</a></code></li>
+</ul>
+<h2>
+<a id="fields" class="anchor" href="#fields" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fields</h2>
+<div class="field-entry ">
+  <span id="actor" class="field-name anchored">actor (<code><a href="/graphql-api/reference/dist/union/author">Author!</a></code>)</span>
+  <div class="description-wrapper">
+   <p>The actor who authored the body</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="author" class="field-name anchored">author (<code><a href="/graphql-api/reference/dist/union/author">Author!</a></code>)</span>
+  <div class="description-wrapper">
+   <p>The actor who authored the body</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="body" class="field-name anchored">body (<code><a href="/graphql-api/reference/dist/scalar/string">String!</a></code>)</span>
+  <div class="description-wrapper">
+   <p>HTML body of the message</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/graphql-api/reference/dist/scalar/datetime">DateTime!</a></code>)</span>
+  <div class="description-wrapper">
+   <p>When it was created</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="id" class="field-name anchored">id (<code><a href="/graphql-api/reference/dist/scalar/id">ID!</a></code>)</span>
+  <div class="description-wrapper">
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="messagetype" class="field-name anchored">messageType (<code><a href="/graphql-api/reference/dist/enum/messagetypes">MessageTypes!</a></code>)</span>
+  <div class="description-wrapper">
+   <p>The type of Message</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="plaintextbody" class="field-name anchored">plainTextBody (<code><a href="/graphql-api/reference/dist/scalar/string">String!</a></code>)</span>
+  <div class="description-wrapper">
+   <p>Body of the message in plain text</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="preview" class="field-name anchored">preview (<code><a href="/graphql-api/reference/dist/scalar/int">[Int!]</a></code>)</span>
+  <div class="description-wrapper">
+   <p>A list of integers representing the number of lines, and their respective
+lengths. Used to build a visual approximation of the content of the Change
+while the full Change is being fetched. Only applies to certain Changes - e.g.
+Messages, Merges, Ratings</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/graphql-api/reference/dist/scalar/datetime">DateTime!</a></code>)</span>
+  <div class="description-wrapper">
+   <p>When it was last updated</p>
+  </div>
+</div>
+
+      </div>
+
+      <!-- mobile only -->
+      <div id="mobile-header">
+        <a class="menu-button"></a>
+        <a class="logo" href="/graphql-api/reference/dist">
+
+        </a>
+      </div>
+      <div id="mobile-shade"></div>
+
+    </div>
+
+  </body>
+</html>

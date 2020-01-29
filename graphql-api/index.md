@@ -14,4 +14,4 @@ The GraphQL API is version 2 of Groove's API. It is a GraphQL-based alternative 
 the REST-based API provided in version 1.
 
 The GraphQL API makes the functionality of Groove available at a single GraphQL
-endpoint. The full set of supported types can be found in the [GraphQL API reference]({{ site.baseurl }}{% link graphql-api/reference.md %})
+endpoint. The full set of supported types can be found in the [GraphQL API reference]({{ site.baseurl }}{% link graphql-api/reference/index.md%})
