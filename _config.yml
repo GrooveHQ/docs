@@ -25,14 +25,12 @@ twitter_username: groovehq
 github_username:  groovehq
 
 # Just The Docs config
+remote_theme: pmarsceill/just-the-docs
 logo: "https://www.groovehq.com/images/navbarLogo.svg"
 search_enabled: true
 
 # Build settings
 markdown: kramdown
-remote_theme: pmarsceill/just-the-docs
-plugins:
-  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
