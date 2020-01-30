@@ -1,6 +1,7 @@
 ---
 title: Voyager
 parent: GraphQL API
+has_children: true
 nav_order: 2
 ---
 
@@ -8,8 +9,8 @@ nav_order: 2
 
 ## Staging
 
-[Click here]({{ site.baseurl }}{% link graphql-api/voyager/staging.html%}){:target="\_blank"} for Staging GQL
+[Voyager on our Staging Instance]({{ site.baseurl }}{% link graphql-api/voyager/staging/index.md%})
 
 ## Development
 
-[Click here]({{ site.baseurl }}{% link graphql-api/voyager/dev.html%}){:target="\_blank"} for development/localhost GQL
+[Voyager on our Development Instance]({{ site.baseurl }}{% link graphql-api/voyager/dev/index.md%})
