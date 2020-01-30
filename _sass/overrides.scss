@@ -11,4 +11,8 @@
     max-width: 100%; // Voyager visualization needs as much space as you have.
     height: 100%;
   }
+
+  #voyager .loading-box {
+    top: 60px;
+  }
 }
