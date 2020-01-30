@@ -1,6 +1,7 @@
 ---
 title: Development
 parent: Voyager
+style: full-page-content
 nav_order: 2
 custom-javascript-list:
   - "https://code.jquery.com/jquery-3.2.1.min.js"
