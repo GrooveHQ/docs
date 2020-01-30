@@ -9,8 +9,8 @@ nav_order: 2
 
 ## Staging
 
-[Voyager on our Staging Instance]({{ site.baseurl }}{% link graphql-api/voyager/staging/index.md%})
+[Voyager that points to our Staging API Server]({{ site.baseurl }}{% link graphql-api/voyager/staging/index.md%})
 
 ## Development
 
-[Voyager on our Development Instance]({{ site.baseurl }}{% link graphql-api/voyager/dev/index.md%})
+[Voyager that points to your local Development API server]({{ site.baseurl }}{% link graphql-api/voyager/dev/index.md%})
