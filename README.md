@@ -10,7 +10,15 @@ Temporary messy hack. Throw it in a dist folder.
 
 In APP docker
 
+## FOR DEVELOPMENT DOCS
+
     bundle exec rails runner "GraphQLDocs.build(schema: GrooveSchema.to_definition, output_dir: 'docs/', base_url: '/graphql-api/reference/dist')"
+
+## FOR PRODUCTION DOCS
+
+This will go away once we stop hosting on GH Pages without a custom domain. The problem is the root dir of the GH pages site is /docs/ ...
+
+    bundle exec rails runner "GraphQLDocs.build(schema: GrooveSchema.to_definition, output_dir: 'docs/', base_url: '/docs/graphql-api/reference/dist')"
 
 In your local docs/ repo
 
