@@ -2,14 +2,17 @@
 title: Voyager
 parent: GraphQL API
 nav_order: 2
+style: full-page-content voyager
 ---
 
 # GraphQL Voyager
 
-## Staging
+Explore Groove's API using GraphQL Voyager.
 
-[Voyager that points to our Staging API Server]({{ site.baseurl }}{% link graphql-api/voyager/staging/index.md%})
+Click on a Type to zoom in on it in the main view. Click on a field type for more information about it.
 
-## Development
+Uncheck the 'Skip Relay' checkboxes to show all connection types (these are hidden by default).
 
-[Voyager that points to your local Development API server]({{ site.baseurl }}{% link graphql-api/voyager/dev/index.md%})
+Launch the Voyager in [it's own window](./voyager.html){:target="\_blank"}
+
+<iframe width="100%" height="100%" src="./voyager.html" frameborder="0" allowfullscreen></iframe>
