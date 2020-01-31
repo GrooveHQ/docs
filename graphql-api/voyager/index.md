@@ -13,6 +13,8 @@ Click on a Type to zoom in on it in the main view. Click on a field type for mor
 
 Uncheck the 'Skip Relay' checkboxes to show all connection types (these are hidden by default).
 
+<!-- the following link wont work on dev - but it works on GH pages... -->
+
 Launch the Voyager in [it's own window](docs/graphql-api/voyager/voyager.html){:target="\_blank"}
 
 <iframe width="100%" height="100%" src="./voyager.html" frameborder="0" allowfullscreen></iframe>
