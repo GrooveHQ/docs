@@ -14,7 +14,16 @@
     height: 100%;
   }
 
-  #voyager .loading-box {
-    top: 60px;
+  &.voyager {
+    .main-content,
+    #main-content,
+    .page {
+      max-width: 100%; // Voyager visualization needs as much space as you have.
+      height: calc(100% - 30px);
+    }
+
+    #voyager .loading-box {
+      top: 60px;
+    }
   }
 }

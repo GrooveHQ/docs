@@ -1,7 +1,6 @@
 ---
 title: Voyager
 parent: GraphQL API
-has_children: true
 nav_order: 2
 ---
 
