@@ -7,7 +7,9 @@
 }
 
 .full-page-content {
-  .main-content {
+  .main-content,
+  #main-content,
+  .page {
     max-width: 100%; // Voyager visualization needs as much space as you have.
     height: 100%;
   }
