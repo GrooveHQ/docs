@@ -14,17 +14,23 @@ In APP docker
 
 ## FOR DEVELOPMENT DOCS
 
-    bundle exec rails runner "GraphQLDocs.build(schema: GrooveSchema.to_definition, output_dir: 'docs/', base_url: '/graphql-api/reference/dist')"
+    bundle exec rails runner "GraphQLDocs.build(schema: GrooveSchema.to_definition, output_dir: 'tmp/docs/', base_url: '/graphql-api/reference/dist')"
+
+Copy them to your local docs/ repo
+
+    cd stack/docs/
+    rm -rf graphql-api/reference/dist/ ; mkdir graphql-api/reference/dist/; cp -R ../app/tmp/docs/* graphql-api/reference/dist/
 
 ## FOR PRODUCTION DOCS
 
 This will go away once we stop hosting on GH Pages without a custom domain. The problem is the root dir of the GH pages site is /docs/ ...
 
-    bundle exec rails runner "GraphQLDocs.build(schema: GrooveSchema.to_definition, output_dir: 'docs/', base_url: '/docs/graphql-api/reference/dist')"
+    bundle exec rails runner "GraphQLDocs.build(schema: GrooveSchema.to_definition, output_dir: 'tmp/docs/', base_url: '/docs/graphql-api/reference/dist')"
 
 In your local docs/ repo
 
-    rm -rf graphql-api/reference/dist/ ; mkdir graphql-api/reference/dist/; cp -R ../app/docs/\* graphql-api/reference/dist/
+    cd stack/docs/
+    rm -rf graphql-api/reference/dist/ ; mkdir graphql-api/reference/dist/; cp -R ../app/tmp/docs/* graphql-api/reference/dist/
 
 TODO: Install locally in whatever local ruby (or new docker container). Then hit the GQL API (e.g. on localhost) in the GraphQLDocs.build expression.
 
@@ -40,16 +46,20 @@ To regenerate the Voyager page - with the latest introspection query result
 
 This will write a file under the app dir.
 
-2.  Copy the Voyager HTML file into this repo
+2.  Change dir into this repo.
 
-    cd ../app; mv doc/APIv2/voyager.html ../docs/graphql-api/voyager/voyager.html; cd ../docs;
+    cd ../docs
 
-3.  Commit the new voyager file to this repo
+3.  Copy the Voyager HTML file into this repo
+
+    cp ../app/tmp/voyager-static.html ./graphql-api/voyager/voyager.html
+
+4.  Commit the new voyager file to this repo
 
     git add graphql-api/voyager/voyager.html;
     git commit;
 
-4.  Profit
+5.  Profit
 
 ## Deployment
 
