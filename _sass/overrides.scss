@@ -7,19 +7,30 @@
 }
 
 .full-page-content {
+  .main-content-wrap {
+    overflow-x: scroll !important; // Debugging
+  }
+
+  .main-content {
+    max-width: calc(100% - 264px);
+  }
+
   .main-content,
-  #main-content,
-  .page {
-    max-width: 100%; // Voyager visualization needs as much space as you have.
-    height: 100%;
+  .page,
+  #main-content {
+    height: calc(100% - 32px);
   }
 
   &.voyager {
     .main-content,
     #main-content,
     .page {
-      max-width: 100%; // Voyager visualization needs as much space as you have.
-      height: calc(100% - 30px);
+      // hack to stop vertical scrollbar on container of iframe
+      height: calc(100% - 32px);
+    }
+
+    #main-content {
+      overflow: hidden;
     }
 
     #voyager .loading-box {
