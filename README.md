@@ -4,19 +4,41 @@ A static site based on Jekyll
 
 ## Generating GQL documentation sub-site
 
-To regenerate the GraphQL reference docs using graphql-doc - on the schema stored in the main `app` repo
+### Reference Docs
 
-Temporary messy hack. Throw it in a dist folder.
+The docs are generated on the app container and mounted into the api-docs
+container.
 
-In APP docker
+To regenerate the docs:
 
-    bundle exec rails runner "GraphQLDocs.build(schema: GrooveSchema.to_definition, output_dir: 'docs/', base_url: '/graphql-api/reference/dist')"
+```
+docker-compose run --rm app make gql_docs
+```
 
-In your local docs/ repo
+To view the docs:
 
-    rm -rf graphql-api/reference/dist/ ; mkdir graphql-api/reference/dist/; cp -R ../app/docs/\* graphql-api/reference/dist/
+```
+docker-compose up api-docs
+```
 
-TODO: Install locally in whatever local ruby (or new docker container). Then hit the GQL API (e.g. on localhost) in the GraphQLDocs.build expression.
+[https://api-docs.groovehq.docker/docs/graphql-api/reference](https://api-docs.groovehq.docker/docs/graphql-api/reference)
+
+### Voyager
+
+To regenerate the Voyager page - with the latest introspection query result
+
+1.  Regenerate the introspection query json into the template
+
+    docker-compose app make voyager_docs
+
+This will write a file under the app dir.
+
+2.  Commit the new voyager file to this repo
+
+    git add graphql-api/voyager/voyager.html;
+    git commit;
+
+3.  Profit
 
 ## Deployment
 

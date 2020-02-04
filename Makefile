@@ -6,3 +6,4 @@ search-data:
 
 serve:
 	bundle exec jekyll serve
+

@@ -1,0 +1,29 @@
+.side-bar {
+  width: 264px;
+}
+.main-content {
+  width: 100%;
+  margin-left: 264px;
+}
+
+.full-page-content {
+  .main-content,
+  #main-content,
+  .page {
+    max-width: 100%; // Voyager visualization needs as much space as you have.
+    height: 100%;
+  }
+
+  &.voyager {
+    .main-content,
+    #main-content,
+    .page {
+      max-width: 100%; // Voyager visualization needs as much space as you have.
+      height: calc(100% - 30px);
+    }
+
+    #voyager .loading-box {
+      top: 60px;
+    }
+  }
+}
