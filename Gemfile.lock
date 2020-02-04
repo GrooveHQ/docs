@@ -249,7 +249,12 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll (~> 3.8.5)
+  jekyll-github-metadata
+  jekyll-mentions
+  jekyll-redirect-from
   jekyll-remote-theme
+  jekyll-sitemap
+  jemoji
   just-the-docs
   minima (~> 2.0)
   tzinfo-data
