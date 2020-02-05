@@ -18,6 +18,13 @@ gem 'just-the-docs'
 # You may change this to anything you like.
 gem 'minima', '~> 2.0'
 
+# This group defines all the gems needed by our Generator script to generate the
+# reference/voyager files (by interrogating our GraphQL API)
+group :generator do
+  gem 'erubis'
+  gem 'graphql-docs'
+end
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem 'github-pages'

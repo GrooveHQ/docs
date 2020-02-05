@@ -25,6 +25,7 @@
     .main-content,
     #main-content,
     .page {
+      // hack to stop vertical scrollbar on container of iframe
       height: calc(100% - 32px);
     }
 
