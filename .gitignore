@@ -78,3 +78,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
+
+schema.graphql
+
