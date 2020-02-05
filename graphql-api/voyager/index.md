@@ -10,10 +10,20 @@ style: full-page-content voyager
 
 Explore Groove's API in a visual and interactive manner using [GraphQL Voyager](https://github.com/APIs-guru/graphql-voyager)
 
-We provide several different (partial) views on our GraphQL schema, allowing you to focus on a particular Groove app/area. Keep in mind these graphs are incomplete - and only show are particular part of our schema:
+Our full schema is shown below or you can launch it in [it's own window](/docs/graphql-api/voyager/voyager.html){:target="\_blank"}.
+
+We also provide several smaller, partial views on our GraphQL schema. This allows you to focus in on the particular Groove app you are working with:
 
 * [Inbox]({{ site.baseurl }}{% link graphql-api/voyager/inbox/index.md%}) - only the Inbox-related API.
 * [Knowledge Base]({{ site.baseurl }}{% link graphql-api/voyager/kb/index.md%}) - only the parts of our GraphQL schema that relate to our Knowledge Base.
 * [CRM]({{ site.baseurl }}{% link graphql-api/voyager/crm/index.md%}) -the CRM part of our GraphQL schema
 
-To see how it all ties together, you can view our [entire schema]({{ site.baseurl }}{% link graphql-api/voyager/all/index.md%}).
+NOTE: Please do keep in mind the above graphs are incomplete and some important fields might be omitted. Its better
+
+When using Voyager, simply click on a Type to zoom in on it in the main view. Click on a field type for more information about it.
+
+ProTip: Uncheck the 'Skip Relay' checkboxes to show all connection types (these are hidden by default)!
+
+<!-- the following link wont work on dev - but it works on GH pages... -->
+
+<iframe width="100%" height="100%" src="./voyager.html" frameborder="0" allowfullscreen></iframe>
