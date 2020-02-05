@@ -10,13 +10,12 @@ source 'https://rubygems.org'
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
+#
+gem 'irb'
 gem 'jekyll', '~> 3.8.5'
-
 gem 'just-the-docs'
-
-# This is the default theme for new Jekyll sites.
-# You may change this to anything you like.
-gem 'minima', '~> 2.0'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby] # Windows does not include zoneinfo files
+gem 'wdm', '~> 0.1.0' if Gem.win_platform?  # Performance-booster for watching directories on Windows
 
 # This group defines all the gems needed by our Generator script to generate the
 # reference/voyager files (by interrogating our GraphQL API)
@@ -35,9 +34,3 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jemoji'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-# Performance-booster for watching directories on Windows
-gem 'wdm', '~> 0.1.0' if Gem.win_platform?
