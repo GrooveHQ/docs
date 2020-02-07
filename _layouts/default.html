@@ -53,7 +53,11 @@ layout: table_wrappers
             {% if page.parent %}
               <nav class="breadcrumb-nav">
                 <ol class="breadcrumb-nav-list">
-                  {% if page.grand_parent %}
+                  {% if page.great_grand_parent %}
+                    <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.great_grand_parent }}</a></li>
+                    <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.grand_parent }}</a></li>
+                    <li class="breadcrumb-nav-list-item"><a href="{{ third_level_url }}">{{ page.parent }}</a></li>
+                  {% elsif page.grand_parent %}
                     <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
                     <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
                   {% else %}
@@ -74,10 +78,9 @@ layout: table_wrappers
           {% if page.has_children == true and page.has_toc != false %}
             <hr>
             <h2 class="text-delta">Table of contents</h2>
-            {% assign children_list = site.pages | sort:"nav_order" %}
             <ul>
-              {% for child in children_list %}
-                {% if child.parent == page.title and child.title != page.title %}
+              {% for child in pages_list %}
+                {% if child.parent == page.title and child.title != page.title and child.grand_parent == page.parent and child.great_grand_parent == page.grand_parent %}
                 <li>
                   <a href="{{ child.url | absolute_url }}">{{ child.title }}</a>{% if child.summary %} - {{ child.summary }}{% endif %}
                 </li>

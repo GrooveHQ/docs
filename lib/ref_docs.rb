@@ -26,6 +26,7 @@ class RefDocs
 
   def generate_docs(sub_schema = :all)
     outdir = "#{config.output_dir}/#{sub_schema}/#{config.sub_dir}"
+    outdir2 = "#{config.output_dir}/#{sub_schema}/#{config.sub_dir}2"
     print "Fetching #{sub_schema} IDL and writing reference docs to dir #{outdir}..."
 
     schema = GrooveGraphql.fetch_idl(sub_schema, config)
@@ -35,28 +36,31 @@ class RefDocs
       file.write schema
     end
 
-    #GraphQLDocs.build(
-    #  #filename: tmpfile,
-    #  schema: schema,
-    #  output_dir: outdir,
-    #  base_url: config.base_url
-    #)
-    options = {}
-    options[:filename] = "#{File.dirname(__FILE__)}/../#{tmpfile}"
-    #options[:renderer] = MySuperCoolRenderer
+    GraphQLDocs.build(
+      schema: schema,
+      output_dir: outdir2,
+      base_url: config.base_url
+    )
 
-    options = GraphQLDocs::Configuration::GRAPHQLDOCS_DEFAULTS.merge(options)
+    puts 'Done via string'
+    #puts 'Generating via file'
 
-    pp options
+    #options = {}
+    #options[:filename] = "#{File.dirname(__FILE__)}/../#{tmpfile}"
+    ##options[:renderer] = MySuperCoolRenderer
 
-    response = File.read(options[:filename])
+    #options = GraphQLDocs::Configuration::GRAPHQLDOCS_DEFAULTS.merge(options)
 
-    parser = GraphQLDocs::Parser.new(response, options)
-    parsed_schema = parser.parse
+    #pp options
 
-    generator = GraphQLDocs::Generator.new(parsed_schema, options)
+    #response = File.read(options[:filename])
 
-    generator.generate
+    #parser = GraphQLDocs::Parser.new(response, options)
+    #parsed_schema = parser.parse
+
+    #generator = GraphQLDocs::Generator.new(parsed_schema, options)
+
+    #generator.generate
 
     puts " Done."
   end

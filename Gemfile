@@ -21,7 +21,9 @@ gem 'wdm', '~> 0.1.0' if Gem.win_platform?  # Performance-booster for watching d
 # reference/voyager files (by interrogating our GraphQL API)
 group :generator do
   gem 'erubis'
-  gem 'graphql-docs'
+  # Moved back to API because conflict with commonmark - because GH-Pages
+  # gem 'graphql', '=1.9.1' # need to lock to 1.9 because gql docs
+  # gem 'graphql-docs'
 end
 
 # If you have any plugins, put them here!
