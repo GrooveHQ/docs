@@ -1,11 +1,16 @@
-.PHONY: gen ref voyager search-data serve
+.PHONY: gen copy-ref ref voyager search-data serve
 
 # Generates latest API docs by introspecting our GraphQL API
-gen: ref voyager
+#gen: ref voyager
+gen: copy-ref voyager
+
+# Generates the reference docs copying pre-generated files from API dir.
+copy-ref:
+	echo 'TODO'
 
 # Generates the reference docs by introspecting our GraphQL API
-ref:
-	ruby generate_reference_docs.rb
+#ref:
+#	ruby generate_reference_docs.rb
 
 # Generates the voyager docs by introspecting our GraphQL API
 voyager:
