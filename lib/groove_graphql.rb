@@ -32,7 +32,8 @@ class GrooveGraphql
     }.compact
     req.set_form_data(params)
 
-    self.fetch uri, req
+    json = self.fetch uri, req
+    JSON.parse(json)['data']
   end
 
   def self.fetch(uri, req)
