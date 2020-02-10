@@ -1,7 +1,8 @@
 ---
-title: QueryRoot
-parent: Queries
+title: Query
+parent: Operation
 grand_parent: Reference
+nav_order: 1
 ---
 
 # QueryRoot
