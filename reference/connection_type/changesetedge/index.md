@@ -1,6 +1,6 @@
 ---
 title: ChangesetEdge
-parent: Connection and Edge Types
+parent: Connections and Edges
 grand_parent: Reference
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Connection and Edge Types
+title: Connections and Edges
 parent: Reference
 has_children: true
 nav_order: 6
