@@ -1,6 +1,6 @@
 ---
 title: CompanyUpdatePayload
-parent: Objects
+parent: Return Types
 grand_parent: Reference
 ---
 

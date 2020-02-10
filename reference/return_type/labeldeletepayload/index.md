@@ -1,6 +1,6 @@
 ---
 title: LabelDeletePayload
-parent: Objects
+parent: Return Types
 grand_parent: Reference
 ---
 

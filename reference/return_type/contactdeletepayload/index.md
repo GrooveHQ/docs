@@ -1,6 +1,6 @@
 ---
 title: ContactDeletePayload
-parent: Objects
+parent: Return Types
 grand_parent: Reference
 ---
 

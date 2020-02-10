@@ -1,6 +1,6 @@
 ---
 title: LabelUpdatePayload
-parent: Objects
+parent: Return Types
 grand_parent: Reference
 ---
 
