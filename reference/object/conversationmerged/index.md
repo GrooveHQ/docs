@@ -10,9 +10,9 @@ An event where a Conversation (child) was merged into another one (parent)
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/eventable">Eventable</a></code></li>
+- <code><a href="/docs/reference/interface/eventable">Eventable</a></code>
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code></li>
+- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 
 ## Fields
 

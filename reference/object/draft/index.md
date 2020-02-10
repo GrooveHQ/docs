@@ -15,7 +15,7 @@ Your Drafts are only visible to you.
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Fields
 

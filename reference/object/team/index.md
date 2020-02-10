@@ -10,7 +10,7 @@ A Team, containing zero or more Agents
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Connections
 

@@ -10,9 +10,9 @@ An event where the assigned Team changed on a Conversation.
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/eventable">Eventable</a></code></li>
+- <code><a href="/docs/reference/interface/eventable">Eventable</a></code>
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code></li>
+- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 
 ## Fields
 

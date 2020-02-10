@@ -10,11 +10,11 @@ A Groove Knowledge Base Article
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
-- <code><a href="/docs/reference/interface/publishable">Publishable</a></code></li>
+- <code><a href="/docs/reference/interface/publishable">Publishable</a></code>
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code></li>
+- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 
 ## Fields
 

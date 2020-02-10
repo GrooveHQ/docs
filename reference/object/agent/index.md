@@ -10,7 +10,7 @@ An Agent, with a login, belonging to one Account, belonging zero or more Teams
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Connections
 

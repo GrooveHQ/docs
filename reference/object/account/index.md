@@ -10,7 +10,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code></li>
+- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 
 ## Connections
 

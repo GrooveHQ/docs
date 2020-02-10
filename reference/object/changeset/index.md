@@ -12,7 +12,7 @@ For example, 'Reply and close' are two common actions that are grouped together 
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Fields
 

@@ -10,7 +10,7 @@ A support widget you can embed on your site to offer support via Email, KB and C
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code></li>
+- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 
 ## Fields
 

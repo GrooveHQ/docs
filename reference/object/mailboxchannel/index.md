@@ -10,9 +10,9 @@ A Groove Mailbox. Contains Conversations, Folders and Rules
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/channelable">Channelable</a></code></li>
+- <code><a href="/docs/reference/interface/channelable">Channelable</a></code>
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Connections
 

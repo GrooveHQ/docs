@@ -16,11 +16,11 @@ CHANGELOG
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/actionable">Actionable</a></code></li>
+- <code><a href="/docs/reference/interface/actionable">Actionable</a></code>
 
-- <code><a href="/docs/reference/interface/previewable">Previewable</a></code></li>
+- <code><a href="/docs/reference/interface/previewable">Previewable</a></code>
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code></li>
+- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 
 ## Fields
 

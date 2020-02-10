@@ -10,7 +10,7 @@ A Groove Export. Currently only one type: Conversations
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Fields
 

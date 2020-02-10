@@ -20,7 +20,7 @@ Channels/Agents/Teams.
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Connections
 

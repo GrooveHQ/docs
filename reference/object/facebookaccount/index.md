@@ -10,7 +10,7 @@ A Facebook account connected with Groove
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code></li>
+- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 
 ## Fields
 

@@ -10,11 +10,11 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/meta">Meta</a></code></li>
+- <code><a href="/docs/reference/interface/meta">Meta</a></code>
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code></li>
+- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 
 ## Connections
 

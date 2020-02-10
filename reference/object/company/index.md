@@ -10,7 +10,7 @@ A Company represents an organization containing one or more Contacts
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Connections
 

@@ -10,7 +10,7 @@ Company and contact fields are grouped by these custom field groups
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code></li>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Fields
 
