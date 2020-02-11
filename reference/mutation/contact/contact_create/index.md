@@ -12,7 +12,7 @@ Create a contact
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/contact_create_input">ContactCreateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/contact/contact_create_input">ContactCreateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

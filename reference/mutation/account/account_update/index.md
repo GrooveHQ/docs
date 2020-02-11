@@ -12,7 +12,7 @@ Update the basic company settings
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/account_update_input">AccountUpdateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/account/account_update_input">AccountUpdateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

@@ -1,7 +1,8 @@
 ---
 title: LabelInput
-parent: Input Objects
-grand_parent: Reference
+parent: 
+grand_parent: Input Objects
+great_grand_parent: Reference
 ---
 
 <h1>LabelInput</h1>

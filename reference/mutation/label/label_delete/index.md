@@ -13,7 +13,7 @@ existing contacts
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/label_delete_input">LabelDeleteInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/label/label_delete_input">LabelDeleteInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

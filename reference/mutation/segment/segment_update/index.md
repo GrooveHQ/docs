@@ -12,7 +12,7 @@ Update a Segment
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/segment_update_input">SegmentUpdateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/segment/segment_update_input">SegmentUpdateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

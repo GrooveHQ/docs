@@ -12,7 +12,7 @@ Create a Segment
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/segment_create_input">SegmentCreateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/segment/segment_create_input">SegmentCreateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

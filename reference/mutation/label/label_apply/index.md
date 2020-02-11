@@ -12,7 +12,7 @@ Apply a label to a Contact or Company
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/label_apply_input">LabelApplyInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/label/label_apply_input">LabelApplyInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

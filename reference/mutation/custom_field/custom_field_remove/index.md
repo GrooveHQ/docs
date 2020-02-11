@@ -10,7 +10,7 @@ great_grand_parent: Reference
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/custom_field_remove_input">CustomFieldRemoveInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/custom_field/custom_field_remove_input">CustomFieldRemoveInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

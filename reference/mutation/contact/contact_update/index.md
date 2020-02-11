@@ -12,7 +12,7 @@ Update a Contact
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/contact_update_input">ContactUpdateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/contact/contact_update_input">ContactUpdateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

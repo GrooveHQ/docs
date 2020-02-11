@@ -12,7 +12,7 @@ Update a CRM label
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/label_update_input">LabelUpdateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/label/label_update_input">LabelUpdateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

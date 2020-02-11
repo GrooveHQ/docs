@@ -12,7 +12,7 @@ Create a CRM label
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/label_create_input">LabelCreateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/label/label_create_input">LabelCreateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

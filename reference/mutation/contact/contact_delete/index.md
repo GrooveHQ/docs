@@ -12,7 +12,7 @@ Delete a Contact
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/contact_delete_input">ContactDeleteInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/contact/contact_delete_input">ContactDeleteInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

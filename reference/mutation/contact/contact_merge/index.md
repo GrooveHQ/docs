@@ -12,7 +12,7 @@ Merge 2 contacts
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/contact_merge_input">ContactMergeInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/contact/contact_merge_input">ContactMergeInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

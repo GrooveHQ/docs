@@ -12,7 +12,7 @@ Delete a Segment
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/segment_delete_input">SegmentDeleteInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/segment/segment_delete_input">SegmentDeleteInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

@@ -12,7 +12,7 @@ Delete a Company
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/company_delete_input">CompanyDeleteInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/company/company_delete_input">CompanyDeleteInput!</a></code>)</span>
 
   <div class="description-wrapper">
 

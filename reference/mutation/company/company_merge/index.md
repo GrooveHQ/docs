@@ -12,7 +12,7 @@ Merge 2 companies
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/company_merge_input">CompanyMergeInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/company/company_merge_input">CompanyMergeInput!</a></code>)</span>
 
   <div class="description-wrapper">
 
