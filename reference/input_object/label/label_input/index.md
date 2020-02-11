@@ -1,6 +1,6 @@
 ---
 title: LabelInput
-parent: 
+parent: Label
 grand_parent: Input Objects
 great_grand_parent: Reference
 ---
