@@ -1,9 +1,4 @@
 ---
-title: Queries
-parent: <%= root_jekyll_template %>
-has_children: true
-nav_order: 1
-------
 title: QueryRoot
 parent: Queries
 grand_parent: Reference KB
@@ -250,4 +245,3 @@ Every GraphQL schema has a root type for both queries and mutations. The [query 
 
   </div>
 </div>
-
