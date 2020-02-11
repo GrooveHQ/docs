@@ -12,7 +12,7 @@ The connection type for CustomFieldGroup.
 ## Fields
 
 <div class="field-entry ">
-  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/custom_field_group_edge">[CustomFieldGroupEdge]</a></code>)</span>
+  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/custom_field_group/custom_field_group_edge">[CustomFieldGroupEdge]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of edges.</p>

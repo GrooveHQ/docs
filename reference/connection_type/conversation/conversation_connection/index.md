@@ -12,7 +12,7 @@ The connection type for Conversation.
 ## Fields
 
 <div class="field-entry ">
-  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/conversation_edge">[ConversationEdge]</a></code>)</span>
+  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/conversation/conversation_edge">[ConversationEdge]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of edges.</p>

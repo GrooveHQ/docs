@@ -25,7 +25,7 @@ CHANGELOG
 ## Connections
 
 <div class="field-entry ">
-  <span id="articles" class="field-name connection-name anchored">articles (<code><a href="/docs/reference/connection_type/article_connection">ArticleConnection!</a></code>)</span>
+  <span id="articles" class="field-name connection-name anchored">articles (<code><a href="/docs/reference/connection_type/article/article_connection">ArticleConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The author of the Category</p>

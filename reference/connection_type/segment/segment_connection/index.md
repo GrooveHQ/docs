@@ -12,7 +12,7 @@ The connection type for Segment.
 ## Fields
 
 <div class="field-entry ">
-  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/segment_edge">[SegmentEdge]</a></code>)</span>
+  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/segment/segment_edge">[SegmentEdge]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of edges.</p>

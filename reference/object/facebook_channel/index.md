@@ -22,7 +22,7 @@ A Channel for conversations initiated on a particular Facebook Page.
 ## Connections
 
 <div class="field-entry ">
-  <span id="conversations" class="field-name connection-name anchored">conversations (<code><a href="/docs/reference/connection_type/conversation_connection">ConversationConnection</a></code>)</span>
+  <span id="conversations" class="field-name connection-name anchored">conversations (<code><a href="/docs/reference/connection_type/conversation/conversation_connection">ConversationConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All conversations in this channel</p>
@@ -83,7 +83,7 @@ A Channel for conversations initiated on a particular Facebook Page.
 </div>
 
 <div class="field-entry ">
-  <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/connection_type/folder_connection">FolderConnection</a></code>)</span>
+  <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/connection_type/folder/folder_connection">FolderConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All folders visible by this agent, in this Channel</p>

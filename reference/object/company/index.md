@@ -15,7 +15,7 @@ A Company represents an organization containing one or more Contacts
 ## Connections
 
 <div class="field-entry ">
-  <span id="contacts" class="field-name connection-name anchored">contacts (<code><a href="/docs/reference/connection_type/contact_connection">ContactConnection</a></code>)</span>
+  <span id="contacts" class="field-name connection-name anchored">contacts (<code><a href="/docs/reference/connection_type/contact/contact_connection">ContactConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All contacts in this organization</p>
