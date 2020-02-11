@@ -1,6 +1,6 @@
 ---
 title: customFieldDelete
-parent: Customfield
+parent: CustomField
 grand_parent: Mutations
 great_grand_parent: Reference
 ---

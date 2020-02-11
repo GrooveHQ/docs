@@ -1,6 +1,6 @@
 ---
 title: CustomFieldGroupEdge
-parent: Customfieldgroup
+parent: CustomFieldGroup
 grand_parent: Connections
 great_grand_parent: Reference
 ---

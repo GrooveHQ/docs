@@ -1,18 +1,18 @@
 ---
-title: CustomFieldGroupConnection
-parent: Customfieldgroup
+title: ChangesetGroupConnection
+parent: ChangesetGroup
 grand_parent: Connections
 great_grand_parent: Reference
 ---
 
-# CustomFieldGroupConnection
+# ChangesetGroupConnection
 
-The connection type for CustomFieldGroup.
+The connection type for ChangesetGroup.
 
 ## Fields
 
 <div class="field-entry ">
-  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/customfieldgroupedge">[CustomFieldGroupEdge]</a></code>)</span>
+  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/changesetgroupedge">[ChangesetGroupEdge]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of edges.</p>
@@ -21,7 +21,7 @@ The connection type for CustomFieldGroup.
 </div>
 
 <div class="field-entry ">
-  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/object/customfieldgroup">[CustomFieldGroup]</a></code>)</span>
+  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/union/changesetgroup">[ChangesetGroup]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of nodes.</p>

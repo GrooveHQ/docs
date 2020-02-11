@@ -1,6 +1,6 @@
 ---
 title: ChangesetGroupEdge
-parent: Changesetgroup
+parent: ChangesetGroup
 grand_parent: Connections
 great_grand_parent: Reference
 ---

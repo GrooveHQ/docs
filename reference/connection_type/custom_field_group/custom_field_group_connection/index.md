@@ -1,18 +1,18 @@
 ---
-title: KnowledgeBaseConnection
-parent: Knowledgebase
+title: CustomFieldGroupConnection
+parent: CustomFieldGroup
 grand_parent: Connections
 great_grand_parent: Reference
 ---
 
-# KnowledgeBaseConnection
+# CustomFieldGroupConnection
 
-The connection type for KnowledgeBase.
+The connection type for CustomFieldGroup.
 
 ## Fields
 
 <div class="field-entry ">
-  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/knowledgebaseedge">[KnowledgeBaseEdge]</a></code>)</span>
+  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/customfieldgroupedge">[CustomFieldGroupEdge]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of edges.</p>
@@ -21,7 +21,7 @@ The connection type for KnowledgeBase.
 </div>
 
 <div class="field-entry ">
-  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/object/knowledgebase">[KnowledgeBase]</a></code>)</span>
+  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/object/customfieldgroup">[CustomFieldGroup]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of nodes.</p>

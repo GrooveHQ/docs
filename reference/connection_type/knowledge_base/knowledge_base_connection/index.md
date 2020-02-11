@@ -1,18 +1,18 @@
 ---
-title: ChangesetGroupConnection
-parent: Changesetgroup
+title: KnowledgeBaseConnection
+parent: KnowledgeBase
 grand_parent: Connections
 great_grand_parent: Reference
 ---
 
-# ChangesetGroupConnection
+# KnowledgeBaseConnection
 
-The connection type for ChangesetGroup.
+The connection type for KnowledgeBase.
 
 ## Fields
 
 <div class="field-entry ">
-  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/changesetgroupedge">[ChangesetGroupEdge]</a></code>)</span>
+  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/knowledgebaseedge">[KnowledgeBaseEdge]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of edges.</p>
@@ -21,7 +21,7 @@ The connection type for ChangesetGroup.
 </div>
 
 <div class="field-entry ">
-  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/union/changesetgroup">[ChangesetGroup]</a></code>)</span>
+  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/object/knowledgebase">[KnowledgeBase]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of nodes.</p>

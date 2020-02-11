@@ -1,6 +1,6 @@
 ---
 title: KnowledgeBaseEdge
-parent: Knowledgebase
+parent: KnowledgeBase
 grand_parent: Connections
 great_grand_parent: Reference
 ---

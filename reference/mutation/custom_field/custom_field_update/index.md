@@ -1,18 +1,18 @@
 ---
-title: customFieldCreate
-parent: Customfield
+title: customFieldUpdate
+parent: CustomField
 grand_parent: Mutations
 great_grand_parent: Reference
 ---
 
-# customFieldCreate
+# customFieldUpdate
 
-Create a new custom field
+Update a custom field
 
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/customfieldcreateinput">CustomFieldCreateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/customfieldupdateinput">CustomFieldUpdateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 
