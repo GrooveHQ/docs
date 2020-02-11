@@ -1,9 +1,9 @@
 ---
-title: Authentication
-parent: Getting Started
+title: Introduction to GraphQL
+parent: Guides
 nav_order: 2
 ---
 
-# Authentication
+# Introduction to GraphQL
 
-I am a child page.
+
