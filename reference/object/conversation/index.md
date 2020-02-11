@@ -29,7 +29,7 @@ CHANGELOG
 ## Connections
 
 <div class="field-entry ">
-  <span id="changesets" class="field-name connection-name anchored">changesets (<code><a href="/docs/reference/object/changesetconnection">ChangesetConnection!</a></code>)</span>
+  <span id="changesets" class="field-name connection-name anchored">changesets (<code><a href="/docs/reference/connection_type/changesetconnection">ChangesetConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Changesets in this conversation. To avoid performance problems, query for specific IDs via <code>groups</code> first.</p>
@@ -100,7 +100,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="drafts" class="field-name connection-name anchored">drafts (<code><a href="/docs/reference/object/draftconnection">DraftConnection</a></code>)</span>
+  <span id="drafts" class="field-name connection-name anchored">drafts (<code><a href="/docs/reference/connection_type/draftconnection">DraftConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Draft Agent messages on this conversation</p>
@@ -161,7 +161,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="followers" class="field-name connection-name anchored">followers (<code><a href="/docs/reference/object/agentconnection">AgentConnection</a></code>)</span>
+  <span id="followers" class="field-name connection-name anchored">followers (<code><a href="/docs/reference/connection_type/agentconnection">AgentConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Agents who are following this conversation</p>
@@ -222,7 +222,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="groups" class="field-name connection-name anchored">groups (<code><a href="/docs/reference/object/changesetgroupconnection">ChangesetGroupConnection!</a></code>)</span>
+  <span id="groups" class="field-name connection-name anchored">groups (<code><a href="/docs/reference/connection_type/changesetgroupconnection">ChangesetGroupConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All changes that have occurred in this conversation (grouped for performance).</p>
@@ -293,7 +293,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="tags" class="field-name connection-name anchored">tags (<code><a href="/docs/reference/object/tagconnection">TagConnection</a></code>)</span>
+  <span id="tags" class="field-name connection-name anchored">tags (<code><a href="/docs/reference/connection_type/tagconnection">TagConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The tags applied to this conversation</p>

@@ -15,7 +15,7 @@ A Team, containing zero or more Agents
 ## Connections
 
 <div class="field-entry ">
-  <span id="agents" class="field-name connection-name anchored">agents (<code><a href="/docs/reference/object/agentconnection">AgentConnection!</a></code>)</span>
+  <span id="agents" class="field-name connection-name anchored">agents (<code><a href="/docs/reference/connection_type/agentconnection">AgentConnection!</a></code>)</span>
 
   <div class="description-wrapper">
      <table class="arguments">

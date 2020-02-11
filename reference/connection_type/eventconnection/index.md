@@ -11,7 +11,7 @@ The connection type for Event.
 ## Fields
 
 <div class="field-entry ">
-  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/object/eventedge">[EventEdge]</a></code>)</span>
+  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/eventedge">[EventEdge]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of edges.</p>

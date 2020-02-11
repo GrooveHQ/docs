@@ -1,11 +1,11 @@
 ---
-title: company
+title: Company
 parent: Mutations
 grand_parent: Reference
 has_children: true
 ---
 
-# company
+# Company
 
-All mutations relating to company Objects.
+All mutations relating to Company Objects.
 

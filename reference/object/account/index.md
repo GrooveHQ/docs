@@ -15,7 +15,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 ## Connections
 
 <div class="field-entry ">
-  <span id="agents" class="field-name connection-name anchored">agents (<code><a href="/docs/reference/object/agentconnection">AgentConnection!</a></code>)</span>
+  <span id="agents" class="field-name connection-name anchored">agents (<code><a href="/docs/reference/connection_type/agentconnection">AgentConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agents in this organization</p>
@@ -76,7 +76,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 </div>
 
 <div class="field-entry ">
-  <span id="channels" class="field-name connection-name anchored">channels (<code><a href="/docs/reference/object/channelconnection">ChannelConnection!</a></code>)</span>
+  <span id="channels" class="field-name connection-name anchored">channels (<code><a href="/docs/reference/connection_type/channelconnection">ChannelConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Channels in this organization</p>
@@ -159,7 +159,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 </div>
 
 <div class="field-entry ">
-  <span id="companies" class="field-name connection-name anchored">companies (<code><a href="/docs/reference/object/companyconnection">CompanyConnection</a></code>)</span>
+  <span id="companies" class="field-name connection-name anchored">companies (<code><a href="/docs/reference/connection_type/companyconnection">CompanyConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All companies in this account</p>
@@ -220,7 +220,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 </div>
 
 <div class="field-entry ">
-  <span id="contacts" class="field-name connection-name anchored">contacts (<code><a href="/docs/reference/object/contactconnection">ContactConnection</a></code>)</span>
+  <span id="contacts" class="field-name connection-name anchored">contacts (<code><a href="/docs/reference/connection_type/contactconnection">ContactConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All contacts in this account</p>
@@ -281,7 +281,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 </div>
 
 <div class="field-entry ">
-  <span id="events" class="field-name connection-name anchored">events (<code><a href="/docs/reference/object/eventconnection">EventConnection</a></code>)</span>
+  <span id="events" class="field-name connection-name anchored">events (<code><a href="/docs/reference/connection_type/eventconnection">EventConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All Events in this account</p>
@@ -342,7 +342,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 </div>
 
 <div class="field-entry ">
-  <span id="exports" class="field-name connection-name anchored">exports (<code><a href="/docs/reference/object/exportconnection">ExportConnection</a></code>)</span>
+  <span id="exports" class="field-name connection-name anchored">exports (<code><a href="/docs/reference/connection_type/exportconnection">ExportConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All requested data exports</p>
@@ -403,7 +403,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 </div>
 
 <div class="field-entry ">
-  <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/object/folderconnection">FolderConnection</a></code>)</span>
+  <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/connection_type/folderconnection">FolderConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All folders - each associated with one or more mailboxes</p>
@@ -464,7 +464,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 </div>
 
 <div class="field-entry ">
-  <span id="knowledgebases" class="field-name connection-name anchored">knowledgeBases (<code><a href="/docs/reference/object/knowledgebaseconnection">KnowledgeBaseConnection</a></code>)</span>
+  <span id="knowledgebases" class="field-name connection-name anchored">knowledgeBases (<code><a href="/docs/reference/connection_type/knowledgebaseconnection">KnowledgeBaseConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All KBs in the Account</p>
@@ -525,7 +525,7 @@ A Groove Account with an owner, that has agents, teams and mailboxes.
 </div>
 
 <div class="field-entry ">
-  <span id="teams" class="field-name connection-name anchored">teams (<code><a href="/docs/reference/object/teamconnection">TeamConnection</a></code>)</span>
+  <span id="teams" class="field-name connection-name anchored">teams (<code><a href="/docs/reference/connection_type/teamconnection">TeamConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All teams in the account</p>

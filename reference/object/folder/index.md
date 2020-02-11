@@ -25,7 +25,7 @@ Channels/Agents/Teams.
 ## Connections
 
 <div class="field-entry ">
-  <span id="channels" class="field-name connection-name anchored">channels (<code><a href="/docs/reference/object/channelconnection">ChannelConnection</a></code>)</span>
+  <span id="channels" class="field-name connection-name anchored">channels (<code><a href="/docs/reference/connection_type/channelconnection">ChannelConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Channels this Folder is visible in</p>

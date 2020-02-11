@@ -1,11 +1,11 @@
 ---
-title: segment
+title: Segment
 parent: Mutations
 grand_parent: Reference
 has_children: true
 ---
 
-# segment
+# Segment
 
-All mutations relating to segment Objects.
+All mutations relating to Segment Objects.
 

@@ -1,11 +1,11 @@
 ---
-title: account
+title: Account
 parent: Mutations
 grand_parent: Reference
 has_children: true
 ---
 
-# account
+# Account
 
-All mutations relating to account Objects.
+All mutations relating to Account Objects.
 

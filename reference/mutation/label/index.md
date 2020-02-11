@@ -1,11 +1,11 @@
 ---
-title: label
+title: Label
 parent: Mutations
 grand_parent: Reference
 has_children: true
 ---
 
-# label
+# Label
 
-All mutations relating to label Objects.
+All mutations relating to Label Objects.
 

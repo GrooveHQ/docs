@@ -15,7 +15,7 @@ An Agent, with a login, belonging to one Account, belonging zero or more Teams
 ## Connections
 
 <div class="field-entry ">
-  <span id="teams" class="field-name connection-name anchored">teams (<code><a href="/docs/reference/object/teamconnection">TeamConnection!</a></code>)</span>
+  <span id="teams" class="field-name connection-name anchored">teams (<code><a href="/docs/reference/connection_type/teamconnection">TeamConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The teams that the agent belongs to</p>

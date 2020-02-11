@@ -1,11 +1,11 @@
 ---
-title: custom
+title: Custom
 parent: Mutations
 grand_parent: Reference
 has_children: true
 ---
 
-# custom
+# Custom
 
-All mutations relating to custom Objects.
+All mutations relating to Custom Objects.
 

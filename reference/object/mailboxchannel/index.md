@@ -17,7 +17,7 @@ A Groove Mailbox. Contains Conversations, Folders and Rules
 ## Connections
 
 <div class="field-entry ">
-  <span id="conversations" class="field-name connection-name anchored">conversations (<code><a href="/docs/reference/object/conversationconnection">ConversationConnection</a></code>)</span>
+  <span id="conversations" class="field-name connection-name anchored">conversations (<code><a href="/docs/reference/connection_type/conversationconnection">ConversationConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All conversations in this channel</p>
@@ -78,7 +78,7 @@ A Groove Mailbox. Contains Conversations, Folders and Rules
 </div>
 
 <div class="field-entry ">
-  <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/object/folderconnection">FolderConnection</a></code>)</span>
+  <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/connection_type/folderconnection">FolderConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All folders visible by this agent, in this Channel</p>

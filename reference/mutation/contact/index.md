@@ -1,11 +1,11 @@
 ---
-title: contact
+title: Contact
 parent: Mutations
 grand_parent: Reference
 has_children: true
 ---
 
-# contact
+# Contact
 
-All mutations relating to contact Objects.
+All mutations relating to Contact Objects.
 
