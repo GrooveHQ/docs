@@ -26,7 +26,7 @@ An action that changed the Conversation's state
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -43,7 +43,7 @@ An action that changed the Conversation's state
 </div>
 
 <div class="field-entry ">
-  <span id="to" class="field-name anchored">to (<code><a href="/docs/reference/enum/conversationstate">ConversationState</a></code>)</span>
+  <span id="to" class="field-name anchored">to (<code><a href="/docs/reference/enum/conversation_state">ConversationState</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The new state</p>
@@ -52,7 +52,7 @@ An action that changed the Conversation's state
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

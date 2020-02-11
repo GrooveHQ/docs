@@ -15,7 +15,7 @@ Company and contact fields are grouped by these custom field groups
 ## Fields
 
 <div class="field-entry ">
-  <span id="category" class="field-name anchored">category (<code><a href="/docs/reference/enum/customfieldgroupcategory">CustomFieldGroupCategory!</a></code>)</span>
+  <span id="category" class="field-name anchored">category (<code><a href="/docs/reference/enum/custom_field_group_category">CustomFieldGroupCategory!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Whether this group appears on contacts or companies</p>
@@ -24,7 +24,7 @@ Company and contact fields are grouped by these custom field groups
 </div>
 
 <div class="field-entry ">
-  <span id="customfields" class="field-name anchored">customFields (<code><a href="/docs/reference/object/customfield">[CustomField!]!</a></code>)</span>
+  <span id="custom_fields" class="field-name anchored">customFields (<code><a href="/docs/reference/object/custom_field">[CustomField!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All the custom fields belonging to this group</p>

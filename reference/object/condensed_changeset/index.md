@@ -23,7 +23,7 @@ CHANGELOG
 ## Fields
 
 <div class="field-entry ">
-  <span id="changesets" class="field-name anchored">changesets (<code><a href="/docs/reference/object/changesetlink">[ChangesetLink!]!</a></code>)</span>
+  <span id="changesets" class="field-name anchored">changesets (<code><a href="/docs/reference/object/changeset_link">[ChangesetLink!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Related (partial) Changesets in this group</p>
@@ -32,7 +32,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="hasattachments" class="field-name anchored">hasAttachments (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="has_attachments" class="field-name anchored">hasAttachments (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Do any of the related Changesets have an attachment</p>
@@ -41,7 +41,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="isagentresponse" class="field-name anchored">isAgentResponse (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="is_agent_response" class="field-name anchored">isAgentResponse (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Are any of the related Changesets a reply from an agent?</p>
@@ -50,7 +50,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="ismerge" class="field-name anchored">isMerge (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="is_merge" class="field-name anchored">isMerge (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Are any of the related Changesets a Merge?</p>
@@ -59,7 +59,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="isnote" class="field-name anchored">isNote (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="is_note" class="field-name anchored">isNote (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Are any of the related Changesets a Note?</p>

@@ -12,7 +12,7 @@ The connection type for ChangesetGroup.
 ## Fields
 
 <div class="field-entry ">
-  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/changesetgroupedge">[ChangesetGroupEdge]</a></code>)</span>
+  <span id="edges" class="field-name anchored">edges (<code><a href="/docs/reference/connection_type/changeset_group_edge">[ChangesetGroupEdge]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of edges.</p>
@@ -21,7 +21,7 @@ The connection type for ChangesetGroup.
 </div>
 
 <div class="field-entry ">
-  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/union/changesetgroup">[ChangesetGroup]</a></code>)</span>
+  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/union/changeset_group">[ChangesetGroup]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of nodes.</p>
@@ -30,7 +30,7 @@ The connection type for ChangesetGroup.
 </div>
 
 <div class="field-entry ">
-  <span id="pageinfo" class="field-name anchored">pageInfo (<code><a href="/docs/reference/object/pageinfo">PageInfo!</a></code>)</span>
+  <span id="page_info" class="field-name anchored">pageInfo (<code><a href="/docs/reference/object/page_info">PageInfo!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Information to aid in pagination.</p>

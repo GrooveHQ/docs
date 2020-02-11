@@ -15,7 +15,7 @@ A built-in Groove KB Theme.
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -41,7 +41,7 @@ A built-in Groove KB Theme.
 </div>
 
 <div class="field-entry ">
-  <span id="screenshoturl" class="field-name anchored">screenshotUrl (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="screenshot_url" class="field-name anchored">screenshotUrl (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>URL of a sample screenshot image</p>
@@ -50,7 +50,7 @@ A built-in Groove KB Theme.
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

@@ -20,7 +20,7 @@ CHANGELOG
 ## Fields
 
 <div class="field-entry ">
-  <span id="customprofileappinstalled" class="field-name anchored">customProfileAppInstalled (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="custom_profile_app_installed" class="field-name anchored">customProfileAppInstalled (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Has the customer enabled Custom Profile on their account</p>
@@ -29,7 +29,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="customprofileunsafe" class="field-name anchored">customProfileUnsafe (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="custom_profile_unsafe" class="field-name anchored">customProfileUnsafe (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Has the customer enabled Unsafe rendering of Custom Profiles</p>
@@ -38,7 +38,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="customerratingsinstalled" class="field-name anchored">customerRatingsInstalled (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="customer_ratings_installed" class="field-name anchored">customerRatingsInstalled (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Has the customer enabled ratings on their account</p>
@@ -47,7 +47,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="experimentallabelui" class="field-name anchored">experimentalLabelUi (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="experimental_label_ui" class="field-name anchored">experimentalLabelUi (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Experimental feature flag for label ui</p>
@@ -56,7 +56,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="experimentalrealtimewarnings" class="field-name anchored">experimentalRealtimeWarnings (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="experimental_realtime_warnings" class="field-name anchored">experimentalRealtimeWarnings (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Experimental feature flag</p>
@@ -65,7 +65,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="mentionanyagent" class="field-name anchored">mentionAnyAgent (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="mention_any_agent" class="field-name anchored">mentionAnyAgent (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Allow agents to @mention non-mailbox agents</p>
@@ -74,7 +74,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="scopedcontactssearch" class="field-name anchored">scopedContactsSearch (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="scoped_contacts_search" class="field-name anchored">scopedContactsSearch (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Should contacts search be scoped by draft's mailbox</p>

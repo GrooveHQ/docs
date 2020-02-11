@@ -11,15 +11,15 @@ associated with a change on a Conversation
 
 ## Implemented by
 
-- <code><a href="/docs/reference/object/agentchange">AgentChange</a></code></li>
+- <code><a href="/docs/reference/object/agent_change">AgentChange</a></code></li>
 
-- <code><a href="/docs/reference/object/customerchange">CustomerChange</a></code></li>
+- <code><a href="/docs/reference/object/customer_change">CustomerChange</a></code></li>
 
-- <code><a href="/docs/reference/object/customerread">CustomerRead</a></code></li>
+- <code><a href="/docs/reference/object/customer_read">CustomerRead</a></code></li>
 
 - <code><a href="/docs/reference/object/delete">Delete</a></code></li>
 
-- <code><a href="/docs/reference/object/integrationchange">IntegrationChange</a></code></li>
+- <code><a href="/docs/reference/object/integration_change">IntegrationChange</a></code></li>
 
 - <code><a href="/docs/reference/object/merge">Merge</a></code></li>
 
@@ -33,11 +33,11 @@ associated with a change on a Conversation
 
 - <code><a href="/docs/reference/object/star">Star</a></code></li>
 
-- <code><a href="/docs/reference/object/statechange">StateChange</a></code></li>
+- <code><a href="/docs/reference/object/state_change">StateChange</a></code></li>
 
-- <code><a href="/docs/reference/object/teamchange">TeamChange</a></code></li>
+- <code><a href="/docs/reference/object/team_change">TeamChange</a></code></li>
 
-- <code><a href="/docs/reference/object/titlechange">TitleChange</a></code></li>
+- <code><a href="/docs/reference/object/title_change">TitleChange</a></code></li>
 
 - <code><a href="/docs/reference/object/undelete">Undelete</a></code></li>
 

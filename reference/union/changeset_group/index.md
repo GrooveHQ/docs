@@ -46,7 +46,7 @@ example when a user clicks on the Group to expand it.
 
   <li><a href="/docs/reference/object/changeset">Changeset</a></li>
 
-  <li><a href="/docs/reference/object/condensedchangeset">CondensedChangeset</a></li>
+  <li><a href="/docs/reference/object/condensed_changeset">CondensedChangeset</a></li>
 
 </ul>
 

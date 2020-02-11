@@ -44,7 +44,7 @@ An event where a Conversation (child) was merged into another one (parent)
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -70,7 +70,7 @@ An event where a Conversation (child) was merged into another one (parent)
 </div>
 
 <div class="field-entry ">
-  <span id="secondarysubject" class="field-name anchored">secondarySubject (<code><a href="/docs/reference/union/eventsubject">EventSubject!</a></code>)</span>
+  <span id="secondary_subject" class="field-name anchored">secondarySubject (<code><a href="/docs/reference/union/event_subject">EventSubject!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The secondary subject of the event</p>
@@ -79,7 +79,7 @@ An event where a Conversation (child) was merged into another one (parent)
 </div>
 
 <div class="field-entry ">
-  <span id="subject" class="field-name anchored">subject (<code><a href="/docs/reference/union/eventsubject">EventSubject!</a></code>)</span>
+  <span id="subject" class="field-name anchored">subject (<code><a href="/docs/reference/union/event_subject">EventSubject!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The subject of the event</p>
@@ -88,7 +88,7 @@ An event where a Conversation (child) was merged into another one (parent)
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

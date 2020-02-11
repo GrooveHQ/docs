@@ -12,7 +12,7 @@ Update a custom field
 ## Input fields
 
 <div class="field-entry ">
-  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/customfieldupdateinput">CustomFieldUpdateInput!</a></code>)</span>
+  <span id="input" class="field-name anchored">input (<code><a href="/docs/reference/input_object/custom_field_update_input">CustomFieldUpdateInput!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -22,7 +22,7 @@ Update a custom field
 ## Return fields
 
 <div class="field-entry ">
-  <span id="clientmutationid" class="field-name anchored">clientMutationId (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="client_mutation_id" class="field-name anchored">clientMutationId (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A unique identifier for the client performing the mutation.</p>
@@ -31,7 +31,7 @@ Update a custom field
 </div>
 
 <div class="field-entry ">
-  <span id="customfield" class="field-name anchored">customField (<code><a href="/docs/reference/object/customfield">CustomField!</a></code>)</span>
+  <span id="custom_field" class="field-name anchored">customField (<code><a href="/docs/reference/object/custom_field">CustomField!</a></code>)</span>
 
   <div class="description-wrapper">
 

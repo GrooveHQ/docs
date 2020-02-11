@@ -12,7 +12,7 @@ Changeset.
 ## Fields
 
 <div class="field-entry ">
-  <span id="actiontype" class="field-name anchored">actionType (<code><a href="/docs/reference/enum/changetypes">ChangeTypes!</a></code>)</span>
+  <span id="action_type" class="field-name anchored">actionType (<code><a href="/docs/reference/enum/change_types">ChangeTypes!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The primary type of the Change</p>

@@ -15,7 +15,7 @@ A Team, containing zero or more Agents
 ## Connections
 
 <div class="field-entry ">
-  <span id="agents" class="field-name connection-name anchored">agents (<code><a href="/docs/reference/connection_type/agentconnection">AgentConnection!</a></code>)</span>
+  <span id="agents" class="field-name connection-name anchored">agents (<code><a href="/docs/reference/connection_type/agent_connection">AgentConnection!</a></code>)</span>
 
   <div class="description-wrapper">
      <table class="arguments">
@@ -77,7 +77,7 @@ A Team, containing zero or more Agents
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -101,7 +101,7 @@ A Team, containing zero or more Agents
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 

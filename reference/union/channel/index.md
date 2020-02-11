@@ -15,13 +15,13 @@ For example, a MailboxChannel is a Channel where messages are sent email.
 
 <ul>
 
-  <li><a href="/docs/reference/object/chatchannel">ChatChannel</a></li>
+  <li><a href="/docs/reference/object/chat_channel">ChatChannel</a></li>
 
-  <li><a href="/docs/reference/object/facebookchannel">FacebookChannel</a></li>
+  <li><a href="/docs/reference/object/facebook_channel">FacebookChannel</a></li>
 
-  <li><a href="/docs/reference/object/mailboxchannel">MailboxChannel</a></li>
+  <li><a href="/docs/reference/object/mailbox_channel">MailboxChannel</a></li>
 
-  <li><a href="/docs/reference/object/twitterchannel">TwitterChannel</a></li>
+  <li><a href="/docs/reference/object/twitter_channel">TwitterChannel</a></li>
 
 </ul>
 

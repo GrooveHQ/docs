@@ -28,17 +28,17 @@ CHANGELOG
 
 <ul>
 
-  <li><a href="/docs/reference/object/agentchange">AgentChange</a></li>
+  <li><a href="/docs/reference/object/agent_change">AgentChange</a></li>
 
-  <li><a href="/docs/reference/object/customerchange">CustomerChange</a></li>
+  <li><a href="/docs/reference/object/customer_change">CustomerChange</a></li>
 
-  <li><a href="/docs/reference/object/customerread">CustomerRead</a></li>
+  <li><a href="/docs/reference/object/customer_read">CustomerRead</a></li>
 
   <li><a href="/docs/reference/object/delete">Delete</a></li>
 
-  <li><a href="/docs/reference/object/integrationchange">IntegrationChange</a></li>
+  <li><a href="/docs/reference/object/integration_change">IntegrationChange</a></li>
 
-  <li><a href="/docs/reference/object/integrationexternalchange">IntegrationExternalChange</a></li>
+  <li><a href="/docs/reference/object/integration_external_change">IntegrationExternalChange</a></li>
 
   <li><a href="/docs/reference/object/merge">Merge</a></li>
 
@@ -52,11 +52,11 @@ CHANGELOG
 
   <li><a href="/docs/reference/object/star">Star</a></li>
 
-  <li><a href="/docs/reference/object/statechange">StateChange</a></li>
+  <li><a href="/docs/reference/object/state_change">StateChange</a></li>
 
-  <li><a href="/docs/reference/object/teamchange">TeamChange</a></li>
+  <li><a href="/docs/reference/object/team_change">TeamChange</a></li>
 
-  <li><a href="/docs/reference/object/titlechange">TitleChange</a></li>
+  <li><a href="/docs/reference/object/title_change">TitleChange</a></li>
 
   <li><a href="/docs/reference/object/undelete">Undelete</a></li>
 

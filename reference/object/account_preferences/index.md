@@ -11,7 +11,7 @@ All Account-wide preferences
 ## Fields
 
 <div class="field-entry ">
-  <span id="billing" class="field-name anchored">billing (<code><a href="/docs/reference/object/billingpreferences">BillingPreferences!</a></code>)</span>
+  <span id="billing" class="field-name anchored">billing (<code><a href="/docs/reference/object/billing_preferences">BillingPreferences!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Billing preferences</p>
@@ -20,7 +20,7 @@ All Account-wide preferences
 </div>
 
 <div class="field-entry ">
-  <span id="inbox" class="field-name anchored">inbox (<code><a href="/docs/reference/object/inboxpreferences">InboxPreferences!</a></code>)</span>
+  <span id="inbox" class="field-name anchored">inbox (<code><a href="/docs/reference/object/inbox_preferences">InboxPreferences!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Inbox app preferences</p>
@@ -29,7 +29,7 @@ All Account-wide preferences
 </div>
 
 <div class="field-entry ">
-  <span id="reporting" class="field-name anchored">reporting (<code><a href="/docs/reference/object/reportingpreferences">ReportingPreferences!</a></code>)</span>
+  <span id="reporting" class="field-name anchored">reporting (<code><a href="/docs/reference/object/reporting_preferences">ReportingPreferences!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Reporting app preferences</p>

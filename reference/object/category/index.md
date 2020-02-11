@@ -25,7 +25,7 @@ CHANGELOG
 ## Connections
 
 <div class="field-entry ">
-  <span id="articles" class="field-name connection-name anchored">articles (<code><a href="/docs/reference/connection_type/articleconnection">ArticleConnection!</a></code>)</span>
+  <span id="articles" class="field-name connection-name anchored">articles (<code><a href="/docs/reference/connection_type/article_connection">ArticleConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The author of the Category</p>
@@ -97,7 +97,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="coverimageurl" class="field-name anchored">coverImageUrl (<code><a href="/docs/reference/scalar/url">Url</a></code>)</span>
+  <span id="cover_image_url" class="field-name anchored">coverImageUrl (<code><a href="/docs/reference/scalar/url">Url</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The URL of the cover image</p>
@@ -106,7 +106,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -141,7 +141,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="knowledgebase" class="field-name anchored">knowledgeBase (<code><a href="/docs/reference/object/knowledgebase">KnowledgeBase!</a></code>)</span>
+  <span id="knowledge_base" class="field-name anchored">knowledgeBase (<code><a href="/docs/reference/object/knowledge_base">KnowledgeBase!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The KB the entity belongs to</p>
@@ -150,7 +150,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="metadescription" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="meta_description" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta description</p>
@@ -159,7 +159,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="metarobots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="meta_robots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta robots</p>
@@ -168,7 +168,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="opengraph" class="field-name anchored">openGraph (<code><a href="/docs/reference/object/opengraph">OpenGraph</a></code>)</span>
+  <span id="open_graph" class="field-name anchored">openGraph (<code><a href="/docs/reference/object/open_graph">OpenGraph</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The OpenGraph information</p>
@@ -177,7 +177,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="pagetitle" class="field-name anchored">pageTitle (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="page_title" class="field-name anchored">pageTitle (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>HTML page title</p>
@@ -195,7 +195,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="publishedat" class="field-name anchored">publishedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="published_at" class="field-name anchored">publishedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last published</p>
@@ -213,7 +213,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/publishstate">PublishState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/publish_state">PublishState!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Current status</p>
@@ -231,7 +231,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

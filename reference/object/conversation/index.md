@@ -29,7 +29,7 @@ CHANGELOG
 ## Connections
 
 <div class="field-entry ">
-  <span id="changesets" class="field-name connection-name anchored">changesets (<code><a href="/docs/reference/connection_type/changesetconnection">ChangesetConnection!</a></code>)</span>
+  <span id="changesets" class="field-name connection-name anchored">changesets (<code><a href="/docs/reference/connection_type/changeset_connection">ChangesetConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Changesets in this conversation. To avoid performance problems, query for specific IDs via <code>groups</code> first.</p>
@@ -100,7 +100,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="drafts" class="field-name connection-name anchored">drafts (<code><a href="/docs/reference/connection_type/draftconnection">DraftConnection</a></code>)</span>
+  <span id="drafts" class="field-name connection-name anchored">drafts (<code><a href="/docs/reference/connection_type/draft_connection">DraftConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Draft Agent messages on this conversation</p>
@@ -161,7 +161,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="followers" class="field-name connection-name anchored">followers (<code><a href="/docs/reference/connection_type/agentconnection">AgentConnection</a></code>)</span>
+  <span id="followers" class="field-name connection-name anchored">followers (<code><a href="/docs/reference/connection_type/agent_connection">AgentConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Agents who are following this conversation</p>
@@ -222,7 +222,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="groups" class="field-name connection-name anchored">groups (<code><a href="/docs/reference/connection_type/changesetgroupconnection">ChangesetGroupConnection!</a></code>)</span>
+  <span id="groups" class="field-name connection-name anchored">groups (<code><a href="/docs/reference/connection_type/changeset_group_connection">ChangesetGroupConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All changes that have occurred in this conversation (grouped for performance).</p>
@@ -293,7 +293,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="tags" class="field-name connection-name anchored">tags (<code><a href="/docs/reference/connection_type/tagconnection">TagConnection</a></code>)</span>
+  <span id="tags" class="field-name connection-name anchored">tags (<code><a href="/docs/reference/connection_type/tag_connection">TagConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The tags applied to this conversation</p>
@@ -356,7 +356,7 @@ CHANGELOG
 ## Fields
 
 <div class="field-entry ">
-  <span id="assignedat" class="field-name anchored">assignedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="assigned_at" class="field-name anchored">assignedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the conversation was last assigned</p>
@@ -365,7 +365,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="assignedteam" class="field-name anchored">assignedTeam (<code><a href="/docs/reference/object/team">Team</a></code>)</span>
+  <span id="assigned_team" class="field-name anchored">assignedTeam (<code><a href="/docs/reference/object/team">Team</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Team that the conversation is assigned to</p>
@@ -383,7 +383,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="attachmentcount" class="field-name anchored">attachmentCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
+  <span id="attachment_count" class="field-name anchored">attachmentCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The number of files attached to all messages in this conversation</p>
@@ -401,7 +401,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -418,7 +418,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="deletedat" class="field-name anchored">deletedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="deleted_at" class="field-name anchored">deletedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the conversation was moved to the trash</p>
@@ -435,7 +435,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="interactioncount" class="field-name anchored">interactionCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
+  <span id="interaction_count" class="field-name anchored">interactionCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The number of messages + state changes</p>
@@ -444,7 +444,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="messagecount" class="field-name anchored">messageCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
+  <span id="message_count" class="field-name anchored">messageCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The number of messages in this conversation thread</p>
@@ -462,7 +462,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="priority" class="field-name anchored">priority (<code><a href="/docs/reference/enum/conversationpriority">ConversationPriority</a></code>)</span>
+  <span id="priority" class="field-name anchored">priority (<code><a href="/docs/reference/enum/conversation_priority">ConversationPriority</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The optional urgency of the conversation</p>
@@ -471,7 +471,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="snoozedby" class="field-name anchored">snoozedBy (<code><a href="/docs/reference/object/agent">Agent</a></code>)</span>
+  <span id="snoozed_by" class="field-name anchored">snoozedBy (<code><a href="/docs/reference/object/agent">Agent</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Agent who snoozed this conversation</p>
@@ -480,7 +480,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="snoozeduntil" class="field-name anchored">snoozedUntil (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="snoozed_until" class="field-name anchored">snoozedUntil (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the conversation will be unsnoozed</p>
@@ -489,7 +489,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/conversationstate">ConversationState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/conversation_state">ConversationState!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The state of the conversation</p>
@@ -498,7 +498,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="stateupdatedat" class="field-name anchored">stateUpdatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="state_updated_at" class="field-name anchored">stateUpdatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the state was last updated</p>
@@ -507,7 +507,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="summarymessage" class="field-name anchored">summaryMessage (<code><a href="/docs/reference/object/message">Message</a></code>)</span>
+  <span id="summary_message" class="field-name anchored">summaryMessage (<code><a href="/docs/reference/object/message">Message</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The conversation summary - usually the first Message in this conversation.</p>
@@ -517,7 +517,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="systemupdatedat" class="field-name anchored">systemUpdatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="system_updated_at" class="field-name anchored">systemUpdatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the conversation was last updated by the system</p>
@@ -535,7 +535,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the conversation was last updated by a user</p>

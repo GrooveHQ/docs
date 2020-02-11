@@ -20,7 +20,7 @@ Account onboarding state
 </div>
 
 <div class="field-entry ">
-  <span id="createdafterinapponboarding" class="field-name anchored">createdAfterInappOnboarding (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="created_after_inapp_onboarding" class="field-name anchored">createdAfterInappOnboarding (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>If the account was created after in-app onboarding launched</p>

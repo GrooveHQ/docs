@@ -35,7 +35,7 @@ Arguments provided to Fields or Directives and the input fields of an InputObjec
 </div>
 
 <div class="field-entry ">
-  <span id="defaultvalue" class="field-name anchored">defaultValue (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="default_value" class="field-name anchored">defaultValue (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A GraphQL-formatted string representing the default value for this input value.</p>

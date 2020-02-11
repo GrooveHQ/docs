@@ -10,12 +10,12 @@ Standard meta fields
 
 ## Implemented by
 
-- <code><a href="/docs/reference/object/knowledgebase">KnowledgeBase</a></code></li>
+- <code><a href="/docs/reference/object/knowledge_base">KnowledgeBase</a></code></li>
 
 ## Fields
 
 <div class="field-entry ">
-  <span id="metadescription" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="meta_description" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta description</p>
@@ -24,7 +24,7 @@ Standard meta fields
 </div>
 
 <div class="field-entry ">
-  <span id="metarobots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="meta_robots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta robots</p>

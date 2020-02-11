@@ -11,7 +11,7 @@ A Knowledge Base Article Attachment
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -37,7 +37,7 @@ A Knowledge Base Article Attachment
 </div>
 
 <div class="field-entry ">
-  <span id="mimetype" class="field-name anchored">mimeType (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="mime_type" class="field-name anchored">mimeType (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The MIME type of the file</p>
@@ -64,7 +64,7 @@ A Knowledge Base Article Attachment
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

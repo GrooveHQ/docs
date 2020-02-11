@@ -27,7 +27,7 @@ Object and Interface types are described by a list of Fields, each of which has 
 </div>
 
 <div class="field-entry ">
-  <span id="args" class="field-name anchored">args (<code><a href="/docs/reference/object/__inputvalue">[__InputValue!]!</a></code>)</span>
+  <span id="args" class="field-name anchored">args (<code><a href="/docs/reference/object/__input_value">[__InputValue!]!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -43,7 +43,7 @@ Object and Interface types are described by a list of Fields, each of which has 
 </div>
 
 <div class="field-entry ">
-  <span id="isdeprecated" class="field-name anchored">isDeprecated (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="is_deprecated" class="field-name anchored">isDeprecated (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -51,7 +51,7 @@ Object and Interface types are described by a list of Fields, each of which has 
 </div>
 
 <div class="field-entry ">
-  <span id="deprecationreason" class="field-name anchored">deprecationReason (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="deprecation_reason" class="field-name anchored">deprecationReason (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
 

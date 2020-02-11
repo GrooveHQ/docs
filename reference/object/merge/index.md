@@ -28,7 +28,7 @@ A merging of two Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="conversationnumber" class="field-name anchored">conversationNumber (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="conversation_number" class="field-name anchored">conversationNumber (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The number of the Conversation that this one was merge into</p>
@@ -37,7 +37,7 @@ A merging of two Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -54,7 +54,7 @@ A merging of two Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

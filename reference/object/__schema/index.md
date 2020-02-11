@@ -20,7 +20,7 @@ A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all av
 </div>
 
 <div class="field-entry ">
-  <span id="querytype" class="field-name anchored">queryType (<code><a href="/docs/reference/object/__type">__Type!</a></code>)</span>
+  <span id="query_type" class="field-name anchored">queryType (<code><a href="/docs/reference/object/__type">__Type!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The type that query operations will be rooted at.</p>
@@ -29,7 +29,7 @@ A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all av
 </div>
 
 <div class="field-entry ">
-  <span id="mutationtype" class="field-name anchored">mutationType (<code><a href="/docs/reference/object/__type">__Type</a></code>)</span>
+  <span id="mutation_type" class="field-name anchored">mutationType (<code><a href="/docs/reference/object/__type">__Type</a></code>)</span>
 
   <div class="description-wrapper">
    <p>If this server supports mutation, the type that mutation operations will be rooted at.</p>
@@ -38,7 +38,7 @@ A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all av
 </div>
 
 <div class="field-entry ">
-  <span id="subscriptiontype" class="field-name anchored">subscriptionType (<code><a href="/docs/reference/object/__type">__Type</a></code>)</span>
+  <span id="subscription_type" class="field-name anchored">subscriptionType (<code><a href="/docs/reference/object/__type">__Type</a></code>)</span>
 
   <div class="description-wrapper">
    <p>If this server support subscription, the type that subscription operations will be rooted at.</p>

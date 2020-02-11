@@ -44,7 +44,7 @@ Standard fields around publishable types e.g. articles/categories
 </div>
 
 <div class="field-entry ">
-  <span id="metadescription" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="meta_description" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta description</p>
@@ -53,7 +53,7 @@ Standard fields around publishable types e.g. articles/categories
 </div>
 
 <div class="field-entry ">
-  <span id="metarobots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="meta_robots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta robots</p>
@@ -62,7 +62,7 @@ Standard fields around publishable types e.g. articles/categories
 </div>
 
 <div class="field-entry ">
-  <span id="opengraph" class="field-name anchored">openGraph (<code><a href="/docs/reference/object/opengraph">OpenGraph</a></code>)</span>
+  <span id="open_graph" class="field-name anchored">openGraph (<code><a href="/docs/reference/object/open_graph">OpenGraph</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The OpenGraph information</p>
@@ -71,7 +71,7 @@ Standard fields around publishable types e.g. articles/categories
 </div>
 
 <div class="field-entry ">
-  <span id="pagetitle" class="field-name anchored">pageTitle (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="page_title" class="field-name anchored">pageTitle (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>HTML page title</p>
@@ -89,7 +89,7 @@ Standard fields around publishable types e.g. articles/categories
 </div>
 
 <div class="field-entry ">
-  <span id="publishedat" class="field-name anchored">publishedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="published_at" class="field-name anchored">publishedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last published</p>
@@ -107,7 +107,7 @@ Standard fields around publishable types e.g. articles/categories
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/publishstate">PublishState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/publish_state">PublishState!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Current status</p>

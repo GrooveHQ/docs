@@ -20,7 +20,7 @@ Labels that can be applied to contacts
 </div>
 
 <div class="field-entry ">
-  <span id="contactscount" class="field-name anchored">contactsCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
+  <span id="contacts_count" class="field-name anchored">contactsCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Count of contacts the label is applied to</p>
@@ -29,7 +29,7 @@ Labels that can be applied to contacts
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Label creation timestamp</p>
@@ -38,7 +38,7 @@ Labels that can be applied to contacts
 </div>
 
 <div class="field-entry ">
-  <span id="createdby" class="field-name anchored">createdBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="created_by" class="field-name anchored">createdBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Who created the label</p>
@@ -64,7 +64,7 @@ Labels that can be applied to contacts
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Label updated at timestamp</p>
@@ -73,7 +73,7 @@ Labels that can be applied to contacts
 </div>
 
 <div class="field-entry ">
-  <span id="updatedby" class="field-name anchored">updatedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="updated_by" class="field-name anchored">updatedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Who last updated the label</p>
@@ -82,7 +82,7 @@ Labels that can be applied to contacts
 </div>
 
 <div class="field-entry ">
-  <span id="visibility" class="field-name anchored">visibility (<code><a href="/docs/reference/enum/permissiontype">PermissionType!</a></code>)</span>
+  <span id="visibility" class="field-name anchored">visibility (<code><a href="/docs/reference/enum/permission_type">PermissionType!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Who can see this label</p>

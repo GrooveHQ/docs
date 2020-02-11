@@ -15,7 +15,7 @@ A support widget you can embed on your site to offer support via Email, KB and C
 ## Fields
 
 <div class="field-entry ">
-  <span id="chatchannel" class="field-name anchored">chatChannel (<code><a href="/docs/reference/object/chatchannel">ChatChannel</a></code>)</span>
+  <span id="chat_channel" class="field-name anchored">chatChannel (<code><a href="/docs/reference/object/chat_channel">ChatChannel</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Which Channel to use to send/receive chat messages</p>
@@ -24,7 +24,7 @@ A support widget you can embed on your site to offer support via Email, KB and C
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -33,7 +33,7 @@ A support widget you can embed on your site to offer support via Email, KB and C
 </div>
 
 <div class="field-entry ">
-  <span id="emailchannel" class="field-name anchored">emailChannel (<code><a href="/docs/reference/object/mailboxchannel">MailboxChannel</a></code>)</span>
+  <span id="email_channel" class="field-name anchored">emailChannel (<code><a href="/docs/reference/object/mailbox_channel">MailboxChannel</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Which Channel to send email conversations to</p>
@@ -59,7 +59,7 @@ A support widget you can embed on your site to offer support via Email, KB and C
 </div>
 
 <div class="field-entry ">
-  <span id="publishedsettings" class="field-name anchored">publishedSettings (<code><a href="/docs/reference/scalar/json">JSON!</a></code>)</span>
+  <span id="published_settings" class="field-name anchored">publishedSettings (<code><a href="/docs/reference/scalar/json">JSON!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The live configuration of tabs, colors, KB and chat.</p>
@@ -77,7 +77,7 @@ A support widget you can embed on your site to offer support via Email, KB and C
 </div>
 
 <div class="field-entry ">
-  <span id="showonkb" class="field-name anchored">showOnKb (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="show_on_kb" class="field-name anchored">showOnKb (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Is this widget visible on your KnowledgeBase too</p>
@@ -86,7 +86,7 @@ A support widget you can embed on your site to offer support via Email, KB and C
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

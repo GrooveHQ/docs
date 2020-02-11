@@ -19,7 +19,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 ## Connections
 
 <div class="field-entry ">
-  <span id="articles" class="field-name connection-name anchored">articles (<code><a href="/docs/reference/connection_type/articleconnection">ArticleConnection!</a></code>)</span>
+  <span id="articles" class="field-name connection-name anchored">articles (<code><a href="/docs/reference/connection_type/article_connection">ArticleConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The articles in this knowledge base</p>
@@ -82,7 +82,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -91,7 +91,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="customdomain" class="field-name anchored">customDomain (<code><a href="/docs/reference/object/customdomain">CustomDomain!</a></code>)</span>
+  <span id="custom_domain" class="field-name anchored">customDomain (<code><a href="/docs/reference/object/custom_domain">CustomDomain!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The custom domain settings of the knowledge base</p>
@@ -100,7 +100,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="customscriptsenabled" class="field-name anchored">customScriptsEnabled (<code><a href="/docs/reference/scalar/boolean">Boolean</a></code>)</span>
+  <span id="custom_scripts_enabled" class="field-name anchored">customScriptsEnabled (<code><a href="/docs/reference/scalar/boolean">Boolean</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Whether the knowledge base custom scripts are allowed.</p>
@@ -118,7 +118,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="gaanonymized" class="field-name anchored">gaAnonymized (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="ga_anonymized" class="field-name anchored">gaAnonymized (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Whether Google analytics is anonymized</p>
@@ -127,7 +127,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="gacode" class="field-name anchored">gaCode (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="ga_code" class="field-name anchored">gaCode (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Google analytics code</p>
@@ -144,7 +144,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="ipaddresses" class="field-name anchored">ipAddresses (<code><a href="/docs/reference/scalar/string">[String!]</a></code>)</span>
+  <span id="ip_addresses" class="field-name anchored">ipAddresses (<code><a href="/docs/reference/scalar/string">[String!]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>List of ip addresses</p>
@@ -153,7 +153,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="ipaddressesenabled" class="field-name anchored">ipAddressesEnabled (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="ip_addresses_enabled" class="field-name anchored">ipAddressesEnabled (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Whether the knowledge base is ip address protected</p>
@@ -171,7 +171,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="metadescription" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="meta_description" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta description</p>
@@ -180,7 +180,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="metarobots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="meta_robots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta robots</p>
@@ -189,7 +189,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="opengraph" class="field-name anchored">openGraph (<code><a href="/docs/reference/object/opengraph">OpenGraph</a></code>)</span>
+  <span id="open_graph" class="field-name anchored">openGraph (<code><a href="/docs/reference/object/open_graph">OpenGraph</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The OpenGraph information</p>
@@ -198,7 +198,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="pagetitle" class="field-name anchored">pageTitle (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="page_title" class="field-name anchored">pageTitle (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta description of the knowledge base</p>
@@ -216,7 +216,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="passwordenabled" class="field-name anchored">passwordEnabled (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="password_enabled" class="field-name anchored">passwordEnabled (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Whether the knowledge base is password protected</p>
@@ -234,7 +234,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="publishedtheme" class="field-name anchored">publishedTheme (<code><a href="/docs/reference/object/theme">Theme!</a></code>)</span>
+  <span id="published_theme" class="field-name anchored">publishedTheme (<code><a href="/docs/reference/object/theme">Theme!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The published theme of the knowledge base</p>
@@ -243,7 +243,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="ratingstype" class="field-name anchored">ratingsType (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="ratings_type" class="field-name anchored">ratingsType (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The type of the knowledge base ratings</p>
@@ -252,7 +252,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="redirectlegacy" class="field-name anchored">redirectLegacy (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="redirect_legacy" class="field-name anchored">redirectLegacy (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Whether legacy knowledge base redirects to this one</p>
@@ -261,7 +261,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="siteurl" class="field-name anchored">siteUrl (<code><a href="/docs/reference/scalar/url">Url!</a></code>)</span>
+  <span id="site_url" class="field-name anchored">siteUrl (<code><a href="/docs/reference/scalar/url">Url!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The knowledge base site url</p>
@@ -279,7 +279,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="subdomainurl" class="field-name anchored">subdomainUrl (<code><a href="/docs/reference/scalar/url">Url!</a></code>)</span>
+  <span id="subdomain_url" class="field-name anchored">subdomainUrl (<code><a href="/docs/reference/scalar/url">Url!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The knowledge base subdomain url</p>
@@ -315,7 +315,7 @@ A Groove Knowledge Base. Contains Articles, Categories, Topics etc
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

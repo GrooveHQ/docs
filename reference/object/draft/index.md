@@ -38,7 +38,7 @@ Your Drafts are only visible to you.
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the draft was created</p>
@@ -55,7 +55,7 @@ Your Drafts are only visible to you.
 </div>
 
 <div class="field-entry ">
-  <span id="quotedtext" class="field-name anchored">quotedText (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="quoted_text" class="field-name anchored">quotedText (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The quoted text in the draft</p>
@@ -64,7 +64,7 @@ Your Drafts are only visible to you.
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the draft was last updated</p>

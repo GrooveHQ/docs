@@ -19,7 +19,7 @@ A Groove Knowledge Base Article
 ## Fields
 
 <div class="field-entry ">
-  <span id="attachments" class="field-name anchored">attachments (<code><a href="/docs/reference/object/articleattachment">[ArticleAttachment!]</a></code>)</span>
+  <span id="attachments" class="field-name anchored">attachments (<code><a href="/docs/reference/object/article_attachment">[ArticleAttachment!]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>List of attachments on the article</p>
@@ -55,7 +55,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -64,7 +64,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="deletedat" class="field-name anchored">deletedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="deleted_at" class="field-name anchored">deletedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was deleted</p>
@@ -99,7 +99,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="knowledgebase" class="field-name anchored">knowledgeBase (<code><a href="/docs/reference/object/knowledgebase">KnowledgeBase!</a></code>)</span>
+  <span id="knowledge_base" class="field-name anchored">knowledgeBase (<code><a href="/docs/reference/object/knowledge_base">KnowledgeBase!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The KB the entity belongs to</p>
@@ -108,7 +108,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="metadescription" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="meta_description" class="field-name anchored">metaDescription (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta description</p>
@@ -117,7 +117,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="metarobots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="meta_robots" class="field-name anchored">metaRobots (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The meta robots</p>
@@ -126,7 +126,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="opengraph" class="field-name anchored">openGraph (<code><a href="/docs/reference/object/opengraph">OpenGraph</a></code>)</span>
+  <span id="open_graph" class="field-name anchored">openGraph (<code><a href="/docs/reference/object/open_graph">OpenGraph</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The OpenGraph information</p>
@@ -135,7 +135,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="pagetitle" class="field-name anchored">pageTitle (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="page_title" class="field-name anchored">pageTitle (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>HTML page title</p>
@@ -153,7 +153,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="publishedat" class="field-name anchored">publishedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="published_at" class="field-name anchored">publishedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last published</p>
@@ -162,7 +162,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="ratings" class="field-name anchored">ratings (<code><a href="/docs/reference/object/articlerating">[ArticleRating!]</a></code>)</span>
+  <span id="ratings" class="field-name anchored">ratings (<code><a href="/docs/reference/object/article_rating">[ArticleRating!]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The ratings on this Article</p>
@@ -171,7 +171,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="ratingstype" class="field-name anchored">ratingsType (<code><a href="/docs/reference/enum/articleratingtypes">ArticleRatingTypes</a></code>)</span>
+  <span id="ratings_type" class="field-name anchored">ratingsType (<code><a href="/docs/reference/enum/article_rating_types">ArticleRatingTypes</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The type of the ratings</p>
@@ -180,7 +180,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="relatedarticles" class="field-name anchored">relatedArticles (<code><a href="/docs/reference/object/article">[Article!]</a></code>)</span>
+  <span id="related_articles" class="field-name anchored">relatedArticles (<code><a href="/docs/reference/object/article">[Article!]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>List of articles linked to this one</p>
@@ -198,7 +198,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/publishstate">PublishState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/publish_state">PublishState!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Current status</p>
@@ -225,7 +225,7 @@ A Groove Knowledge Base Article
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

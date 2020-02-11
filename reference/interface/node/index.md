@@ -18,7 +18,7 @@ An object with an ID.
 
 - <code><a href="/docs/reference/object/changeset">Changeset</a></code></li>
 
-- <code><a href="/docs/reference/object/chatchannel">ChatChannel</a></code></li>
+- <code><a href="/docs/reference/object/chat_channel">ChatChannel</a></code></li>
 
 - <code><a href="/docs/reference/object/company">Company</a></code></li>
 
@@ -26,21 +26,21 @@ An object with an ID.
 
 - <code><a href="/docs/reference/object/conversation">Conversation</a></code></li>
 
-- <code><a href="/docs/reference/object/customfield">CustomField</a></code></li>
+- <code><a href="/docs/reference/object/custom_field">CustomField</a></code></li>
 
-- <code><a href="/docs/reference/object/customfieldgroup">CustomFieldGroup</a></code></li>
+- <code><a href="/docs/reference/object/custom_field_group">CustomFieldGroup</a></code></li>
 
 - <code><a href="/docs/reference/object/draft">Draft</a></code></li>
 
 - <code><a href="/docs/reference/object/export">Export</a></code></li>
 
-- <code><a href="/docs/reference/object/facebookchannel">FacebookChannel</a></code></li>
+- <code><a href="/docs/reference/object/facebook_channel">FacebookChannel</a></code></li>
 
 - <code><a href="/docs/reference/object/folder">Folder</a></code></li>
 
-- <code><a href="/docs/reference/object/knowledgebase">KnowledgeBase</a></code></li>
+- <code><a href="/docs/reference/object/knowledge_base">KnowledgeBase</a></code></li>
 
-- <code><a href="/docs/reference/object/mailboxchannel">MailboxChannel</a></code></li>
+- <code><a href="/docs/reference/object/mailbox_channel">MailboxChannel</a></code></li>
 
 - <code><a href="/docs/reference/object/tag">Tag</a></code></li>
 
@@ -48,7 +48,7 @@ An object with an ID.
 
 - <code><a href="/docs/reference/object/theme">Theme</a></code></li>
 
-- <code><a href="/docs/reference/object/twitterchannel">TwitterChannel</a></code></li>
+- <code><a href="/docs/reference/object/twitter_channel">TwitterChannel</a></code></li>
 
 ## Fields
 

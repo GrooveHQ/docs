@@ -11,7 +11,7 @@ Information about pagination in a connection.
 ## Fields
 
 <div class="field-entry ">
-  <span id="endcursor" class="field-name anchored">endCursor (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="end_cursor" class="field-name anchored">endCursor (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When paginating forwards, the cursor to continue.</p>
@@ -20,7 +20,7 @@ Information about pagination in a connection.
 </div>
 
 <div class="field-entry ">
-  <span id="hasnextpage" class="field-name anchored">hasNextPage (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="has_next_page" class="field-name anchored">hasNextPage (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When paginating forwards, are there more items?</p>
@@ -29,7 +29,7 @@ Information about pagination in a connection.
 </div>
 
 <div class="field-entry ">
-  <span id="haspreviouspage" class="field-name anchored">hasPreviousPage (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="has_previous_page" class="field-name anchored">hasPreviousPage (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When paginating backwards, are there more items?</p>
@@ -38,7 +38,7 @@ Information about pagination in a connection.
 </div>
 
 <div class="field-entry ">
-  <span id="startcursor" class="field-name anchored">startCursor (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="start_cursor" class="field-name anchored">startCursor (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When paginating backwards, the cursor to continue.</p>

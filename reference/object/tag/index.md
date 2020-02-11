@@ -23,7 +23,7 @@ A tag/label
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -47,7 +47,7 @@ A tag/label
 </div>
 
 <div class="field-entry ">
-  <span id="taggingscount" class="field-name anchored">taggingsCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
+  <span id="taggings_count" class="field-name anchored">taggingsCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -55,7 +55,7 @@ A tag/label
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 

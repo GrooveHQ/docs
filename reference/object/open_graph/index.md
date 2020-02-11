@@ -20,7 +20,7 @@ OpenGraph information
 </div>
 
 <div class="field-entry ">
-  <span id="imageurl" class="field-name anchored">imageUrl (<code><a href="/docs/reference/scalar/url">Url</a></code>)</span>
+  <span id="image_url" class="field-name anchored">imageUrl (<code><a href="/docs/reference/scalar/url">Url</a></code>)</span>
 
   <div class="description-wrapper">
    <p>OpenGraph image URL</p>

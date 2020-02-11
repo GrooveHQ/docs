@@ -29,7 +29,7 @@ Which fields you want to display in the sidebar of linked Trello Cards
 </div>
 
 <div class="field-entry ">
-  <span id="duedate" class="field-name anchored">dueDate (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="due_date" class="field-name anchored">dueDate (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Show Trello Card due date in the sidebar of linked conversations</p>
@@ -47,7 +47,7 @@ Which fields you want to display in the sidebar of linked Trello Cards
 </div>
 
 <div class="field-entry ">
-  <span id="lastupdated" class="field-name anchored">lastUpdated (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="last_updated" class="field-name anchored">lastUpdated (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Show Trello Card last updated date in the sidebar of linked conversations</p>
@@ -65,7 +65,7 @@ Which fields you want to display in the sidebar of linked Trello Cards
 </div>
 
 <div class="field-entry ">
-  <span id="listandboard" class="field-name anchored">listAndBoard (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="list_and_board" class="field-name anchored">listAndBoard (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Show Trello List and Board in the sidebar of linked conversations</p>

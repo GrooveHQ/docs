@@ -15,7 +15,7 @@ A Company represents an organization containing one or more Contacts
 ## Connections
 
 <div class="field-entry ">
-  <span id="contacts" class="field-name connection-name anchored">contacts (<code><a href="/docs/reference/connection_type/contactconnection">ContactConnection</a></code>)</span>
+  <span id="contacts" class="field-name connection-name anchored">contacts (<code><a href="/docs/reference/connection_type/contact_connection">ContactConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All contacts in this organization</p>
@@ -78,7 +78,7 @@ A Company represents an organization containing one or more Contacts
 ## Fields
 
 <div class="field-entry ">
-  <span id="companyinformation" class="field-name anchored">companyInformation (<code><a href="/docs/reference/object/customfieldassociation">[CustomFieldAssociation!]!</a></code>)</span>
+  <span id="company_information" class="field-name anchored">companyInformation (<code><a href="/docs/reference/object/custom_field_association">[CustomFieldAssociation!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Additional information about the company</p>
@@ -87,7 +87,7 @@ A Company represents an organization containing one or more Contacts
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the company was created</p>
@@ -96,7 +96,7 @@ A Company represents an organization containing one or more Contacts
 </div>
 
 <div class="field-entry ">
-  <span id="createdby" class="field-name anchored">createdBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="created_by" class="field-name anchored">createdBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent that created this company</p>
@@ -105,7 +105,7 @@ A Company represents an organization containing one or more Contacts
 </div>
 
 <div class="field-entry ">
-  <span id="financialinformation" class="field-name anchored">financialInformation (<code><a href="/docs/reference/object/customfieldassociation">[CustomFieldAssociation!]!</a></code>)</span>
+  <span id="financial_information" class="field-name anchored">financialInformation (<code><a href="/docs/reference/object/custom_field_association">[CustomFieldAssociation!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Financial information</p>
@@ -140,7 +140,7 @@ A Company represents an organization containing one or more Contacts
 </div>
 
 <div class="field-entry ">
-  <span id="socialinformation" class="field-name anchored">socialInformation (<code><a href="/docs/reference/object/customfieldassociation">[CustomFieldAssociation!]!</a></code>)</span>
+  <span id="social_information" class="field-name anchored">socialInformation (<code><a href="/docs/reference/object/custom_field_association">[CustomFieldAssociation!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Social information</p>
@@ -149,7 +149,7 @@ A Company represents an organization containing one or more Contacts
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the contact was last updated</p>
@@ -158,7 +158,7 @@ A Company represents an organization containing one or more Contacts
 </div>
 
 <div class="field-entry ">
-  <span id="updatedby" class="field-name anchored">updatedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="updated_by" class="field-name anchored">updatedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent that last updated this company</p>

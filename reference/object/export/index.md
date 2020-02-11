@@ -15,7 +15,7 @@ A Groove Export. Currently only one type: Conversations
 ## Fields
 
 <div class="field-entry ">
-  <span id="cancelledat" class="field-name anchored">cancelledAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="cancelled_at" class="field-name anchored">cancelledAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -23,7 +23,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="cancelledby" class="field-name anchored">cancelledBy (<code><a href="/docs/reference/object/agent">Agent</a></code>)</span>
+  <span id="cancelled_by" class="field-name anchored">cancelledBy (<code><a href="/docs/reference/object/agent">Agent</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent who cancelled the export</p>
@@ -32,7 +32,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="completedat" class="field-name anchored">completedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="completed_at" class="field-name anchored">completedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -40,7 +40,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -48,7 +48,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="deletedby" class="field-name anchored">deletedBy (<code><a href="/docs/reference/object/agent">Agent</a></code>)</span>
+  <span id="deleted_by" class="field-name anchored">deletedBy (<code><a href="/docs/reference/object/agent">Agent</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent who deleted the export</p>
@@ -57,7 +57,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="exportedat" class="field-name anchored">exportedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="exported_at" class="field-name anchored">exportedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -65,7 +65,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="failedat" class="field-name anchored">failedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="failed_at" class="field-name anchored">failedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -90,7 +90,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="queuedat" class="field-name anchored">queuedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="queued_at" class="field-name anchored">queuedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -98,7 +98,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="requestedby" class="field-name anchored">requestedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="requested_by" class="field-name anchored">requestedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent who requested the export</p>
@@ -107,7 +107,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="startedat" class="field-name anchored">startedAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="started_at" class="field-name anchored">startedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -115,7 +115,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/exportstate">ExportState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/export_state">ExportState!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The state of the export</p>
@@ -124,7 +124,7 @@ A Groove Export. Currently only one type: Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 

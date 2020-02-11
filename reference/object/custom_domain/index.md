@@ -20,7 +20,7 @@ A Groove KB Custom Domain. Contains expiry and Lets Encrypt certificate etc deta
 </div>
 
 <div class="field-entry ">
-  <span id="expiresat" class="field-name anchored">expiresAt (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="expires_at" class="field-name anchored">expiresAt (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The LetsEncrypt certificate expiration date</p>

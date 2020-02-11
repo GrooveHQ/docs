@@ -15,7 +15,7 @@ A Facebook account connected with Groove
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -24,7 +24,7 @@ A Facebook account connected with Groove
 </div>
 
 <div class="field-entry ">
-  <span id="hasinvalidtoken" class="field-name anchored">hasInvalidToken (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="has_invalid_token" class="field-name anchored">hasInvalidToken (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>If your current token is valid or not</p>
@@ -50,7 +50,7 @@ A Facebook account connected with Groove
 </div>
 
 <div class="field-entry ">
-  <span id="tokenexpiresat" class="field-name anchored">tokenExpiresAt (<code><a href="/docs/reference/scalar/datetime">DateTime</a></code>)</span>
+  <span id="token_expires_at" class="field-name anchored">tokenExpiresAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When your current access token expires</p>
@@ -68,7 +68,7 @@ A Facebook account connected with Groove
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

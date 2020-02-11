@@ -26,7 +26,7 @@ A adding/editing/removal of an Integration on a Conversation by an Agent.
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -35,7 +35,7 @@ A adding/editing/removal of an Integration on a Conversation by an Agent.
 </div>
 
 <div class="field-entry ">
-  <span id="externalid" class="field-name anchored">externalId (<code><a href="/docs/reference/scalar/id">ID!</a></code>)</span>
+  <span id="external_id" class="field-name anchored">externalId (<code><a href="/docs/reference/scalar/id">ID!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The external identifier of this Integration</p>
@@ -52,7 +52,7 @@ A adding/editing/removal of an Integration on a Conversation by an Agent.
 </div>
 
 <div class="field-entry ">
-  <span id="provider" class="field-name anchored">provider (<code><a href="/docs/reference/enum/providerenum">ProviderEnum!</a></code>)</span>
+  <span id="provider" class="field-name anchored">provider (<code><a href="/docs/reference/enum/provider_enum">ProviderEnum!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The integration provider</p>
@@ -79,7 +79,7 @@ A adding/editing/removal of an Integration on a Conversation by an Agent.
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

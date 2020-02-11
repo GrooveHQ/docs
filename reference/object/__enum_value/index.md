@@ -27,7 +27,7 @@ One possible value for a given Enum. Enum values are unique values, not a placeh
 </div>
 
 <div class="field-entry ">
-  <span id="isdeprecated" class="field-name anchored">isDeprecated (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="is_deprecated" class="field-name anchored">isDeprecated (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -35,7 +35,7 @@ One possible value for a given Enum. Enum values are unique values, not a placeh
 </div>
 
 <div class="field-entry ">
-  <span id="deprecationreason" class="field-name anchored">deprecationReason (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
+  <span id="deprecation_reason" class="field-name anchored">deprecationReason (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
 

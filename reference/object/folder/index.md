@@ -25,7 +25,7 @@ Channels/Agents/Teams.
 ## Connections
 
 <div class="field-entry ">
-  <span id="channels" class="field-name connection-name anchored">channels (<code><a href="/docs/reference/connection_type/channelconnection">ChannelConnection</a></code>)</span>
+  <span id="channels" class="field-name connection-name anchored">channels (<code><a href="/docs/reference/connection_type/channel_connection">ChannelConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The Channels this Folder is visible in</p>
@@ -88,7 +88,7 @@ Channels/Agents/Teams.
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -105,7 +105,7 @@ Channels/Agents/Teams.
 </div>
 
 <div class="field-entry ">
-  <span id="displaycountwheninactive" class="field-name anchored">displayCountWhenInactive (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
+  <span id="display_count_when_inactive" class="field-name anchored">displayCountWhenInactive (<code><a href="/docs/reference/scalar/boolean">Boolean!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Hide folder counts in side navigation</p>
@@ -122,7 +122,7 @@ Channels/Agents/Teams.
 </div>
 
 <div class="field-entry ">
-  <span id="matchtype" class="field-name anchored">matchType (<code><a href="/docs/reference/enum/foldermatchtypes">FolderMatchTypes!</a></code>)</span>
+  <span id="match_type" class="field-name anchored">matchType (<code><a href="/docs/reference/enum/folder_match_types">FolderMatchTypes!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The match type of the Folder Conditions e.g. any, all</p>
@@ -140,7 +140,7 @@ Channels/Agents/Teams.
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/channelstate">ChannelState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/channel_state">ChannelState!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The state of the Channel</p>
@@ -149,7 +149,7 @@ Channels/Agents/Teams.
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 

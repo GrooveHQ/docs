@@ -32,7 +32,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -49,7 +49,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="messageid" class="field-name anchored">messageId (<code><a href="/docs/reference/scalar/id">ID!</a></code>)</span>
+  <span id="message_id" class="field-name anchored">messageId (<code><a href="/docs/reference/scalar/id">ID!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The ID of the Message the customer read</p>
@@ -58,7 +58,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

@@ -26,7 +26,7 @@ Collaborator on another.
 ## Fields
 
 <div class="field-entry ">
-  <span id="contactinformation" class="field-name anchored">contactInformation (<code><a href="/docs/reference/object/customfieldassociation">[CustomFieldAssociation!]!</a></code>)</span>
+  <span id="contact_information" class="field-name anchored">contactInformation (<code><a href="/docs/reference/object/custom_field_association">[CustomFieldAssociation!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The contact information</p>
@@ -35,7 +35,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="contacttype" class="field-name anchored">contactType (<code><a href="/docs/reference/enum/contacttype">ContactType!</a></code>)</span>
+  <span id="contact_type" class="field-name anchored">contactType (<code><a href="/docs/reference/enum/contact_type">ContactType!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The contact type</p>
@@ -44,7 +44,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="conversationcount" class="field-name anchored">conversationCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
+  <span id="conversation_count" class="field-name anchored">conversationCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The total conversations this contact has been involved in</p>
@@ -53,7 +53,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the contact was created</p>
@@ -62,7 +62,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="createdby" class="field-name anchored">createdBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="created_by" class="field-name anchored">createdBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent that created this contact</p>
@@ -71,7 +71,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="educationinformation" class="field-name anchored">educationInformation (<code><a href="/docs/reference/object/customfieldassociation">[CustomFieldAssociation!]!</a></code>)</span>
+  <span id="education_information" class="field-name anchored">educationInformation (<code><a href="/docs/reference/object/custom_field_association">[CustomFieldAssociation!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Education details</p>
@@ -80,7 +80,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="emails" class="field-name anchored">emails (<code><a href="/docs/reference/object/emailaddress">[EmailAddress!]!</a></code>)</span>
+  <span id="emails" class="field-name anchored">emails (<code><a href="/docs/reference/object/email_address">[EmailAddress!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All email addresses associated with this contact</p>
@@ -89,7 +89,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="firstname" class="field-name anchored">firstName (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="first_name" class="field-name anchored">firstName (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Their given name</p>
@@ -115,7 +115,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="lastname" class="field-name anchored">lastName (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="last_name" class="field-name anchored">lastName (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Their surname</p>
@@ -124,7 +124,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="professionalinformation" class="field-name anchored">professionalInformation (<code><a href="/docs/reference/object/customfieldassociation">[CustomFieldAssociation!]!</a></code>)</span>
+  <span id="professional_information" class="field-name anchored">professionalInformation (<code><a href="/docs/reference/object/custom_field_association">[CustomFieldAssociation!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Professional information</p>
@@ -133,7 +133,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="socialinformation" class="field-name anchored">socialInformation (<code><a href="/docs/reference/object/customfieldassociation">[CustomFieldAssociation!]!</a></code>)</span>
+  <span id="social_information" class="field-name anchored">socialInformation (<code><a href="/docs/reference/object/custom_field_association">[CustomFieldAssociation!]!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All social media information</p>
@@ -142,7 +142,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When the contact was last updated</p>
@@ -151,7 +151,7 @@ Collaborator on another.
 </div>
 
 <div class="field-entry ">
-  <span id="updatedby" class="field-name anchored">updatedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="updated_by" class="field-name anchored">updatedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent that last updated this contact</p>

@@ -13,7 +13,7 @@ Depending on the kind of a type, certain fields describe information about that 
 ## Fields
 
 <div class="field-entry ">
-  <span id="kind" class="field-name anchored">kind (<code><a href="/docs/reference/enum/__typekind">__TypeKind!</a></code>)</span>
+  <span id="kind" class="field-name anchored">kind (<code><a href="/docs/reference/enum/__type_kind">__TypeKind!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -75,7 +75,7 @@ Depending on the kind of a type, certain fields describe information about that 
 </div>
 
 <div class="field-entry ">
-  <span id="possibletypes" class="field-name anchored">possibleTypes (<code><a href="/docs/reference/object/__type">[__Type!]</a></code>)</span>
+  <span id="possible_types" class="field-name anchored">possibleTypes (<code><a href="/docs/reference/object/__type">[__Type!]</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -83,7 +83,7 @@ Depending on the kind of a type, certain fields describe information about that 
 </div>
 
 <div class="field-entry ">
-  <span id="enumvalues" class="field-name anchored">enumValues (<code><a href="/docs/reference/object/__enumvalue">[__EnumValue!]</a></code>)</span>
+  <span id="enum_values" class="field-name anchored">enumValues (<code><a href="/docs/reference/object/__enum_value">[__EnumValue!]</a></code>)</span>
 
   <div class="description-wrapper">
      <table class="arguments">
@@ -113,7 +113,7 @@ Depending on the kind of a type, certain fields describe information about that 
 </div>
 
 <div class="field-entry ">
-  <span id="inputfields" class="field-name anchored">inputFields (<code><a href="/docs/reference/object/__inputvalue">[__InputValue!]</a></code>)</span>
+  <span id="input_fields" class="field-name anchored">inputFields (<code><a href="/docs/reference/object/__input_value">[__InputValue!]</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -121,7 +121,7 @@ Depending on the kind of a type, certain fields describe information about that 
 </div>
 
 <div class="field-entry ">
-  <span id="oftype" class="field-name anchored">ofType (<code><a href="/docs/reference/object/__type">__Type</a></code>)</span>
+  <span id="of_type" class="field-name anchored">ofType (<code><a href="/docs/reference/object/__type">__Type</a></code>)</span>
 
   <div class="description-wrapper">
 

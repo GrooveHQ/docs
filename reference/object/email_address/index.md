@@ -9,7 +9,7 @@ grand_parent: Reference
 ## Fields
 
 <div class="field-entry ">
-  <span id="emailaddress" class="field-name anchored">emailAddress (<code><a href="/docs/reference/scalar/email">Email!</a></code>)</span>
+  <span id="email_address" class="field-name anchored">emailAddress (<code><a href="/docs/reference/scalar/email">Email!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The email address</p>

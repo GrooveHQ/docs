@@ -9,7 +9,7 @@ grand_parent: Reference
 ## Fields
 
 <div class="field-entry ">
-  <span id="customfield" class="field-name anchored">customField (<code><a href="/docs/reference/object/customfield">CustomField!</a></code>)</span>
+  <span id="custom_field" class="field-name anchored">customField (<code><a href="/docs/reference/object/custom_field">CustomField!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The custom field associated with this list</p>

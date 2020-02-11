@@ -46,7 +46,7 @@ An individual Message. e.g. email, chat message, agent note.
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was created</p>
@@ -63,7 +63,7 @@ An individual Message. e.g. email, chat message, agent note.
 </div>
 
 <div class="field-entry ">
-  <span id="messagetype" class="field-name anchored">messageType (<code><a href="/docs/reference/enum/messagetypes">MessageTypes!</a></code>)</span>
+  <span id="message_type" class="field-name anchored">messageType (<code><a href="/docs/reference/enum/message_types">MessageTypes!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The type of Message</p>
@@ -72,7 +72,7 @@ An individual Message. e.g. email, chat message, agent note.
 </div>
 
 <div class="field-entry ">
-  <span id="plaintextbody" class="field-name anchored">plainTextBody (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="plain_text_body" class="field-name anchored">plainTextBody (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Body of the message in plain text</p>
@@ -93,7 +93,7 @@ Messages, Merges, Ratings</p>
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>When it was last updated</p>

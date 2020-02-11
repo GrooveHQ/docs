@@ -29,7 +29,7 @@ User defined segments to group contacts/companies
 </div>
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The datetime when the segment was created</p>
@@ -38,7 +38,7 @@ User defined segments to group contacts/companies
 </div>
 
 <div class="field-entry ">
-  <span id="createdby" class="field-name anchored">createdBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="created_by" class="field-name anchored">createdBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent who created the segment</p>
@@ -73,7 +73,7 @@ User defined segments to group contacts/companies
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The datetime when the segment was last updated</p>
@@ -82,7 +82,7 @@ User defined segments to group contacts/companies
 </div>
 
 <div class="field-entry ">
-  <span id="updatedby" class="field-name anchored">updatedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
+  <span id="updated_by" class="field-name anchored">updatedBy (<code><a href="/docs/reference/object/agent">Agent!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The agent who last updated the segment</p>
@@ -91,7 +91,7 @@ User defined segments to group contacts/companies
 </div>
 
 <div class="field-entry ">
-  <span id="visibility" class="field-name anchored">visibility (<code><a href="/docs/reference/enum/permissiontype">PermissionType!</a></code>)</span>
+  <span id="visibility" class="field-name anchored">visibility (<code><a href="/docs/reference/enum/permission_type">PermissionType!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The visibility of the segment</p>

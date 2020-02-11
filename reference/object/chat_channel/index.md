@@ -17,7 +17,7 @@ A Channel for Chat conversations
 ## Connections
 
 <div class="field-entry ">
-  <span id="conversations" class="field-name connection-name anchored">conversations (<code><a href="/docs/reference/connection_type/conversationconnection">ConversationConnection</a></code>)</span>
+  <span id="conversations" class="field-name connection-name anchored">conversations (<code><a href="/docs/reference/connection_type/conversation_connection">ConversationConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All conversations in this channel</p>
@@ -78,7 +78,7 @@ A Channel for Chat conversations
 </div>
 
 <div class="field-entry ">
-  <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/connection_type/folderconnection">FolderConnection</a></code>)</span>
+  <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/connection_type/folder_connection">FolderConnection</a></code>)</span>
 
   <div class="description-wrapper">
    <p>All folders visible by this agent, in this Channel</p>
@@ -139,7 +139,7 @@ A Channel for Chat conversations
 </div>
 
 <div class="field-entry ">
-  <span id="widgets" class="field-name connection-name anchored">widgets (<code><a href="/docs/reference/connection_type/widgetconnection">WidgetConnection!</a></code>)</span>
+  <span id="widgets" class="field-name connection-name anchored">widgets (<code><a href="/docs/reference/connection_type/widget_connection">WidgetConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The associated widgets that initiate chats on this channel</p>
@@ -202,7 +202,7 @@ A Channel for Chat conversations
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -227,7 +227,7 @@ A Channel for Chat conversations
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/channelstate">ChannelState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/channel_state">ChannelState!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The state of the Channel</p>
@@ -236,7 +236,7 @@ A Channel for Chat conversations
 </div>
 
 <div class="field-entry ">
-  <span id="type" class="field-name anchored">type (<code><a href="/docs/reference/enum/channeltype">ChannelType!</a></code>)</span>
+  <span id="type" class="field-name anchored">type (<code><a href="/docs/reference/enum/channel_type">ChannelType!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The communication type of the Channel</p>
@@ -245,7 +245,7 @@ A Channel for Chat conversations
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 

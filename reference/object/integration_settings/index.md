@@ -11,7 +11,7 @@ Account-wide preferences for all integrations
 ## Fields
 
 <div class="field-entry ">
-  <span id="github" class="field-name anchored">github (<code><a href="/docs/reference/object/githubsettings">GithubSettings</a></code>)</span>
+  <span id="github" class="field-name anchored">github (<code><a href="/docs/reference/object/github_settings">GithubSettings</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Github integration preferences</p>

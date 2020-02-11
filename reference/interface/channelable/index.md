@@ -10,18 +10,18 @@ Standard fields shared between all Channel types
 
 ## Implemented by
 
-- <code><a href="/docs/reference/object/chatchannel">ChatChannel</a></code></li>
+- <code><a href="/docs/reference/object/chat_channel">ChatChannel</a></code></li>
 
-- <code><a href="/docs/reference/object/facebookchannel">FacebookChannel</a></code></li>
+- <code><a href="/docs/reference/object/facebook_channel">FacebookChannel</a></code></li>
 
-- <code><a href="/docs/reference/object/mailboxchannel">MailboxChannel</a></code></li>
+- <code><a href="/docs/reference/object/mailbox_channel">MailboxChannel</a></code></li>
 
-- <code><a href="/docs/reference/object/twitterchannel">TwitterChannel</a></code></li>
+- <code><a href="/docs/reference/object/twitter_channel">TwitterChannel</a></code></li>
 
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -46,7 +46,7 @@ Standard fields shared between all Channel types
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/channelstate">ChannelState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/channel_state">ChannelState!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The state of the Channel</p>
@@ -55,7 +55,7 @@ Standard fields shared between all Channel types
 </div>
 
 <div class="field-entry ">
-  <span id="type" class="field-name anchored">type (<code><a href="/docs/reference/enum/channeltype">ChannelType!</a></code>)</span>
+  <span id="type" class="field-name anchored">type (<code><a href="/docs/reference/enum/channel_type">ChannelType!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The communication type of the Channel</p>
@@ -64,7 +64,7 @@ Standard fields shared between all Channel types
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 

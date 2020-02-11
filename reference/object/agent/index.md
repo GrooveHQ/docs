@@ -15,7 +15,7 @@ An Agent, with a login, belonging to one Account, belonging zero or more Teams
 ## Connections
 
 <div class="field-entry ">
-  <span id="teams" class="field-name connection-name anchored">teams (<code><a href="/docs/reference/connection_type/teamconnection">TeamConnection!</a></code>)</span>
+  <span id="teams" class="field-name connection-name anchored">teams (<code><a href="/docs/reference/connection_type/team_connection">TeamConnection!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The teams that the agent belongs to</p>
@@ -78,7 +78,7 @@ An Agent, with a login, belonging to one Account, belonging zero or more Teams
 ## Fields
 
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -110,7 +110,7 @@ An Agent, with a login, belonging to one Account, belonging zero or more Teams
 </div>
 
 <div class="field-entry ">
-  <span id="role" class="field-name anchored">role (<code><a href="/docs/reference/enum/agentrole">AgentRole!</a></code>)</span>
+  <span id="role" class="field-name anchored">role (<code><a href="/docs/reference/enum/agent_role">AgentRole!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -118,7 +118,7 @@ An Agent, with a login, belonging to one Account, belonging zero or more Teams
 </div>
 
 <div class="field-entry ">
-  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/agentstate">AgentState!</a></code>)</span>
+  <span id="state" class="field-name anchored">state (<code><a href="/docs/reference/enum/agent_state">AgentState!</a></code>)</span>
 
   <div class="description-wrapper">
 
@@ -134,7 +134,7 @@ An Agent, with a login, belonging to one Account, belonging zero or more Teams
 </div>
 
 <div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/datetime">DateTime!</a></code>)</span>
+  <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
 
