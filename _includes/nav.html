@@ -54,7 +54,7 @@
 
                                 {%- if grand_child.has_children -%}
                                   {%- if page.url == grand_child.url or page.parent == grand_child.title -%}
-                                    {%- assign great_grand_children_list = pages_list | where: "parent", grand_child.title | where: "grand_parent", child.title -%}
+                                    {%- assign great_grand_children_list = pages_list | where: "parent", grand_child.title | where: "grand_parent", child.title | where: "great_grand_parent", node.title -%}
 
                                     <ul class="ggchildren navigation-list-child-list">
                                       {%- for great_grand_child in great_grand_children_list -%}
