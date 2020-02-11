@@ -1,6 +1,5 @@
 ---
 title: Voyager
-parent: GraphQL API
 has_children: true
 nav_order: 2
 style: full-page-content voyager
@@ -14,9 +13,9 @@ Our full schema is shown below or you can launch it in [it's own window](/docs/g
 
 We also provide several smaller, partial views on our GraphQL schema. This allows you to focus in on the particular Groove app you are working with:
 
-* [Inbox]({{ site.baseurl }}{% link graphql-api/voyager/inbox/index.md%}) - only the Inbox-related API.
-* [Knowledge Base]({{ site.baseurl }}{% link graphql-api/voyager/kb/index.md%}) - only the parts of our GraphQL schema that relate to our Knowledge Base.
-* [CRM]({{ site.baseurl }}{% link graphql-api/voyager/crm/index.md%}) -the CRM part of our GraphQL schema
+- [Inbox]({{ site.baseurl }}{% link graphql-api/voyager/inbox/index.md%}) - only the Inbox-related API.
+- [Knowledge Base]({{ site.baseurl }}{% link graphql-api/voyager/kb/index.md%}) - only the parts of our GraphQL schema that relate to our Knowledge Base.
+- [CRM]({{ site.baseurl }}{% link graphql-api/voyager/crm/index.md%}) -the CRM part of our GraphQL schema
 
 NOTE: Please do keep in mind the above graphs are incomplete and some important fields might be omitted. Its better
 
