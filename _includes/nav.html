@@ -25,7 +25,7 @@
                 <ul class="children navigation-list-child-list ">
                   {%- for child in children_list -%}
                     <li class="child navigation-list-item {% if page.url == child.url or page.parent == child.title %} active{% endif %}">
-                      {%- if page.url == child.url or page.parent == child.title -%}
+                      {%- if page.url == child.url or page.parent == child.title or page.grand_parent == child.title -%}
                         {%- assign second_level_url = child.url | absolute_url -%}
                       {%- endif -%}
 
@@ -37,7 +37,7 @@
 
                       {%- if child.has_children -%}
                         {%- if page.url == child.url or page.parent == child.title or page.grand_parent == child.title -%}
-                          {%- assign grand_children_list = pages_list | where: "parent", child.title -%}
+                          {%- assign grand_children_list = pages_list | where: "parent", child.title | where: "grand_parent", node.title -%}
 
                           <ul class="gchildren navigation-list-child-list">
                             {%- for grand_child in grand_children_list -%}
@@ -54,7 +54,7 @@
 
                                 {%- if grand_child.has_children -%}
                                   {%- if page.url == grand_child.url or page.parent == grand_child.title -%}
-                                    {%- assign great_grand_children_list = pages_list | where: "parent", grand_child.title -%}
+                                    {%- assign great_grand_children_list = pages_list | where: "parent", grand_child.title | where: "grand_parent", child.title -%}
 
                                     <ul class="ggchildren navigation-list-child-list">
                                       {%- for great_grand_child in great_grand_children_list -%}

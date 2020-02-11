@@ -80,7 +80,7 @@ layout: table_wrappers
             <h2 class="text-delta">Table of contents</h2>
             <ul>
               {% for child in pages_list %}
-                {% if child.parent == page.title and child.title != page.title %}
+                {% if child.parent == page.title and child.title != page.title and child.grand_parent == page.parent %}
                 <li>
                   <a href="{{ child.url | absolute_url }}">{{ child.title }}</a>{% if child.summary %} - {{ child.summary }}{% endif %}
                 </li>
