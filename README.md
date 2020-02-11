@@ -63,11 +63,11 @@ This will write a file under the app dir.
 
 3.  Copy the Voyager HTML file into this repo
 
-    cp ../app/tmp/voyager-static.html ./graphql-api/voyager/voyager.html
+    cp ../app/tmp/voyager-static.html ./voyager/voyager.html
 
 4.  Commit the new voyager file to this repo
 
-    git add graphql-api/voyager/voyager.html;
+    git add voyager/voyager.html;
     git commit;
 
 5.  Profit

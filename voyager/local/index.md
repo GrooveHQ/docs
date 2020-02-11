@@ -12,6 +12,6 @@ This Voyager instance points at your local docker. It may be faster to refresh t
 
 TODO skip this page showing in non-dev envs.
 
-Launch the Voyager in [it's own window](/docs/graphql-api/voyager/voyager.html){:target="\_blank"}
+Launch the Voyager in [it's own window](/docs/voyager/voyager.html){:target="\_blank"}
 
 <iframe width="100%" height="100%" src="./voyager.html" frameborder="0" allowfullscreen></iframe>

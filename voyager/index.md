@@ -9,13 +9,13 @@ style: full-page-content voyager
 
 Explore Groove's API in a visual and interactive manner using [GraphQL Voyager](https://github.com/APIs-guru/graphql-voyager)
 
-Our full schema is shown below or you can launch it in [it's own window](/docs/graphql-api/voyager/voyager.html){:target="\_blank"}.
+Our full schema is shown below or you can launch it in [it's own window](/docs/voyager/voyager.html){:target="\_blank"}.
 
 We also provide several smaller, partial views on our GraphQL schema. This allows you to focus in on the particular Groove app you are working with:
 
-- [Inbox]({{ site.baseurl }}{% link graphql-api/voyager/inbox/index.md%}) - only the Inbox-related API.
-- [Knowledge Base]({{ site.baseurl }}{% link graphql-api/voyager/kb/index.md%}) - only the parts of our GraphQL schema that relate to our Knowledge Base.
-- [CRM]({{ site.baseurl }}{% link graphql-api/voyager/crm/index.md%}) -the CRM part of our GraphQL schema
+- [Inbox]({{ site.baseurl }}{% link voyager/inbox/index.md%}) - only the Inbox-related API.
+- [Knowledge Base]({{ site.baseurl }}{% link voyager/kb/index.md%}) - only the parts of our GraphQL schema that relate to our Knowledge Base.
+- [CRM]({{ site.baseurl }}{% link voyager/crm/index.md%}) -the CRM part of our GraphQL schema
 
 NOTE: Please do keep in mind the above graphs are incomplete and some important fields might be omitted. Its better
 

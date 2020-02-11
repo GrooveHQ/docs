@@ -8,7 +8,7 @@ class Voyager
   def self.default_config
     GrooveGraphql.default_config.merge({
       template: './lib/voyager.html.eruby',
-      output_dir: 'graphql-api/voyager',
+      output_dir: 'voyager',
       output_filename: 'voyager.html',
     })
   end
