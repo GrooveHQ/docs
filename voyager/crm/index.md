@@ -10,7 +10,7 @@ style: full-page-content voyager
 
 Explore Groove's CRM API using GraphQL Voyager.
 
-Please note - this is a partial, and possibly incomplete view of our GraphQL API. For the full schema please see our [entire schema]({{ site.baseurl }}{% link graphql-api/voyager/index.md%}).
+Please note - this is a partial, and possibly incomplete view of our GraphQL API. For the full schema please see our [entire schema]({{ site.baseurl }}{% link voyager/index.md%}).
 
 Click on a Type to zoom in on it in the main view. Click on a field type for more information about it.
 
