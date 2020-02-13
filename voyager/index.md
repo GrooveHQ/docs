@@ -1,7 +1,7 @@
 ---
 title: Voyager
 has_children: true
-nav_order: 2
+nav_order: 3
 style: full-page-content voyager
 ---
 
@@ -24,5 +24,6 @@ When using Voyager, simply click on a Type to zoom in on it in the main view. Cl
 ProTip: Uncheck the 'Skip Relay' checkboxes to show all connection types (these are hidden by default)!
 
 <!-- the following link wont work on dev - but it works on GH pages... -->
+
 
 <iframe width="100%" height="100%" src="./voyager.html" frameborder="0" allowfullscreen></iframe>

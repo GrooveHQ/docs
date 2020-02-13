@@ -1,6 +1,6 @@
 ---
 title: Authentication
-parent: Getting Started
+parent: Overview
 nav_order: 2
 ---
 

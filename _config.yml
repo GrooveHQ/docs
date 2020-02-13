@@ -29,6 +29,9 @@ remote_theme: pmarsceill/just-the-docs
 logo: "https://www.groovehq.com/images/navbarLogo.svg"
 search_enabled: true
 
+include:
+  - index.md
+
 # Build settings
 markdown: kramdown
 
