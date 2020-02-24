@@ -13,9 +13,10 @@ class Voyager
     })
   end
 
-  attr_reader :config
+  attr_reader :config, :api_token
 
-  def initialize(config = {})
+  def initialize(token: token, config: {})
+    @api_token = token
     @config = OpenStruct.new(Voyager.default_config.merge(config))
   end
 
@@ -33,7 +34,7 @@ class Voyager
     print "Fetching #{sub_schema} IDL and writing to file #{outfile}..."
 
     File.open(outfile, 'w+') do |file|
-      json = GrooveGraphql.query(sub_schema, config)
+      json = GrooveGraphql.query(sub_schema, config, api_token)
       pretty_json = JSON.pretty_generate(JSON.parse(json)) # GR: Notably jank...
       file.write eruby.result(introspectionQueryResultJSON: pretty_json)
     end

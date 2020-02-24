@@ -1,3 +1,4 @@
+# Unfortunately this doesnt appear to work.
 require 'ostruct'
 require 'net/https'
 require 'graphql-docs'
@@ -12,9 +13,10 @@ class RefDocs
     })
   end
 
-  attr_reader :config
+  attr_reader :config, :api_token
 
-  def initialize(config = {})
+  def initialize(api_token: api_token, config: {})
+    @api_token = api_token
     @config = OpenStruct.new(RefDocs.default_config.merge(config))
   end
 
@@ -29,7 +31,7 @@ class RefDocs
     outdir2 = "#{config.output_dir}/#{sub_schema}/#{config.sub_dir}2"
     print "Fetching #{sub_schema} IDL and writing reference docs to dir #{outdir}..."
 
-    schema = GrooveGraphql.fetch_idl(sub_schema, config)
+    schema = GrooveGraphql.fetch_idl(sub_schema, config, api_token)
 
     tmpfile = './schema.graphql'
     File.open(tmpfile, 'w+') do |file|

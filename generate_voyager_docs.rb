@@ -3,5 +3,7 @@ Bundler.setup(:default, :generator)
 
 require_relative 'lib/voyager'
 
-Voyager.new.generate_all_files
+api_token = ARGV[0]
+
+Voyager.new(token: api_token).generate_all_files
 

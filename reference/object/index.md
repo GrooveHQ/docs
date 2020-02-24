@@ -11,3 +11,8 @@ Objects in GraphQL represent the resources that you can access. Objects can cont
 
 For more information, see [the GraphQL spec](https://facebook.github.io/graphql/#sec-Objects).
 
+Note: this is not a comprehensive list of all accessible Objects. We exclude certain auto-generated ones from this list, i.e.:
+
+- Connections
+- Edges
+

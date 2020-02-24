@@ -26,4 +26,4 @@ ProTip: Uncheck the 'Skip Relay' checkboxes to show all connection types (these 
 <!-- the following link wont work on dev - but it works on GH pages... -->
 
 
-<iframe width="100%" height="100%" src="./voyager.html" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="100%" src="./all/voyager.html" frameborder="0" allowfullscreen></iframe>

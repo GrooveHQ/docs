@@ -12,9 +12,10 @@ class GrooveGraphql
     }
   end
 
-  def self.query(sub_schema, config)
+  def self.query(sub_schema, config, api_token)
     uri = URI("#{config.host}/#{config.endpoint}")
     req = Net::HTTP::Post.new(uri)
+    req['Authorization'] = "Bearer #{api_token}"
     params = {
       query: config.introspectionQuery,
       filter_schema: sub_schema == :all ? nil: sub_schema,
@@ -24,9 +25,10 @@ class GrooveGraphql
     self.fetch uri, req
   end
 
-  def self.fetch_idl(sub_schema, config)
+  def self.fetch_idl(sub_schema, config, api_token)
     uri = URI("#{config.host}/#{config.schema_endpoint}")
     req = Net::HTTP::Get.new(uri)
+    req['Authorization'] = "Bearer #{api_token}"
     params = {
       filter_schema: sub_schema == :all ? nil: sub_schema,
     }.compact
