@@ -12,6 +12,18 @@ An object with an ID.
 
 - <code><a href="/docs/reference/object/agent">Agent</a></code></li>
 
+- <code><a href="/docs/reference/object/condition">Condition</a></code></li>
+
+- <code><a href="/docs/reference/object/draft">Draft</a></code></li>
+
+- <code><a href="/docs/reference/object/email_channel">EmailChannel</a></code></li>
+
+- <code><a href="/docs/reference/object/email_conversation">EmailConversation</a></code></li>
+
+- <code><a href="/docs/reference/object/folder">Folder</a></code></li>
+
+- <code><a href="/docs/reference/object/tag">Tag</a></code></li>
+
 - <code><a href="/docs/reference/object/team">Team</a></code></li>
 
 ## Fields

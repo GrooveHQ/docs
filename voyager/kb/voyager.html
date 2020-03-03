@@ -549,6 +549,57 @@
           "possibleTypes": null
         },
         {
+          "kind": "INPUT_OBJECT",
+          "name": "AssignedFilter",
+          "description": "Filter by assigned agent/team, or those that explicitly are not assigned.\n\nE.g. To find a conversation assigned to a specific Agent (and any group):\n\n```\nfilter: { assigned: { agent: \"ag_1234567\" }`\n```\n\nTo find a conversation assigned to a specific Agent (and NO group):\n\n```\nfilter: { assigned: { agent: \"ag_1234567\", no_group: true }\n```\n",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "agent",
+              "description": "Filter by assigned Agent ID",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "noAgent",
+              "description": "Find conversations that have no assigned Agent.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "team",
+              "description": "Filter by assigned Team ID",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "noTeam",
+              "description": "Find conversations that have no assigned Team",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
           "kind": "SCALAR",
           "name": "Boolean",
           "description": "Represents `true` or `false` values.",
@@ -556,6 +607,698 @@
           "inputFields": null,
           "interfaces": null,
           "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "ChannelConnected",
+          "description": "Standard channel connection fields\n",
+          "fields": [
+            {
+              "name": "channels",
+              "description": "The Channels in this organization",
+              "args": [
+                {
+                  "name": "after",
+                  "description": "Returns the elements in the list that come after the specified cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "before",
+                  "description": "Returns the elements in the list that come before the specified cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "first",
+                  "description": "Returns the first _n_ elements from the list.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "last",
+                  "description": "Returns the last _n_ elements from the list.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "filter",
+                  "description": "Filter the Channels",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ChannelFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "orderBy",
+                  "description": "Sort order of results",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ChannelOrder",
+                    "ofType": null
+                  },
+                  "defaultValue": "{field:\"POSITION\",direction:\"ASC\"}"
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ChannelConnection",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "QueryRoot",
+              "ofType": null
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ChannelConnection",
+          "description": "The connection type for Channel.",
+          "fields": [
+            {
+              "name": "edges",
+              "description": "A list of edges.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ChannelEdge",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pageInfo",
+              "description": "Information to aid in pagination.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ChannelEdge",
+          "description": "An edge in a connection.",
+          "fields": [
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ChannelFilter",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "state",
+              "description": "Filter by the Channel status",
+              "type": {
+                "kind": "ENUM",
+                "name": "ChannelState",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ChannelOrder",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "field",
+              "description": "The field to order channels by",
+              "type": {
+                "kind": "ENUM",
+                "name": "ChannelOrderField",
+                "ofType": null
+              },
+              "defaultValue": "POSITION"
+            },
+            {
+              "name": "direction",
+              "description": "The sort direction",
+              "type": {
+                "kind": "ENUM",
+                "name": "OrderDirection",
+                "ofType": null
+              },
+              "defaultValue": "ASC"
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ChannelOrderField",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "CREATED_AT",
+              "description": "Order by creation time",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "NAME",
+              "description": "Order by name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "POSITION",
+              "description": "Order by preferred row order",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "UPDATED_AT",
+              "description": "Order by update time",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ChannelState",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "UNCONFIRMED",
+              "description": "Initial value",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "DEMO",
+              "description": "Doesnt have a primary source yet (e.g. email, chat widget, Twitter Username)",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CONFIRMED",
+              "description": "Optional. For channels that require an extra setup step. E.g. Some EmailChannels need user to confirm they are forwarding emails to Groove.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ACTIVE",
+              "description": "Groove has received a message on this channel",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "ConversationConnected",
+          "description": "Standard conversation connection fields\n",
+          "fields": [
+            {
+              "name": "conversations",
+              "description": "Related conversations",
+              "args": [
+                {
+                  "name": "after",
+                  "description": "Returns the elements in the list that come after the specified cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "before",
+                  "description": "Returns the elements in the list that come before the specified cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "first",
+                  "description": "Returns the first _n_ elements from the list.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "last",
+                  "description": "Returns the last _n_ elements from the list.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "filter",
+                  "description": "Filter the Conversations",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ConversationFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "orderBy",
+                  "description": "Sort order of results",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ConversationOrder",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ConversationConnection",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "QueryRoot",
+              "ofType": null
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ConversationConnection",
+          "description": "The connection type for Conversation.",
+          "fields": [
+            {
+              "name": "edges",
+              "description": "A list of edges.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ConversationEdge",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pageInfo",
+              "description": "Information to aid in pagination.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ConversationEdge",
+          "description": "An edge in a connection.",
+          "fields": [
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ConversationFilter",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "assigned",
+              "description": "Filter by assigned agent/team, or unassigned",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "AssignedFilter",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "channel",
+              "description": "The specific Channel ID to filter by",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "deleted",
+              "description": "Filter by trashed (soft-deleted) Conversations",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "draftAuthor",
+              "description": "Filter conversations that have drafts by this Author ID",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "folder",
+              "description": "The specific Folder ID to filter by",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "keywords",
+              "description": "Search for conversations that match these keywords",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "mentionedAgent",
+              "description": "Filter conversations that mention this Agent ID",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "rating",
+              "description": "Search for conversations whose latest rating matches",
+              "type": {
+                "kind": "ENUM",
+                "name": "Rating",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "starred",
+              "description": "Filter by starred/unstarred Conversations",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "state",
+              "description": "Filter by Conversation status",
+              "type": {
+                "kind": "ENUM",
+                "name": "ConversationState",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "tag",
+              "description": "Filter conversations with this specific Tag ID",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "tagName",
+              "description": "Search for conversations with this tag name",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ConversationOrder",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "field",
+              "description": "The field to order conversations by",
+              "type": {
+                "kind": "ENUM",
+                "name": "ConversationOrderField",
+                "ofType": null
+              },
+              "defaultValue": "UPDATED_AT"
+            },
+            {
+              "name": "direction",
+              "description": "The sort direction",
+              "type": {
+                "kind": "ENUM",
+                "name": "OrderDirection",
+                "ofType": null
+              },
+              "defaultValue": "DESC"
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ConversationOrderField",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "STATE",
+              "description": "Order by state",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "UPDATED_AT",
+              "description": "Order by User update time",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ConversationState",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "UNREAD",
+              "description": "A new conversation, or one with unread messages",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "OPENED",
+              "description": "An Agent has viewed this conversation",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CLOSED",
+              "description": "Conversation has been closed (or snoozed)",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "DELETED",
+              "description": "Moved to trash (soft-deleted)",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SPAM",
+              "description": "Flagged as spam",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
           "possibleTypes": null
         },
         {
@@ -567,6 +1310,24 @@
           "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "FolderConnected",
+          "description": "Standard folders connection field\n",
+          "fields": [
+
+          ],
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "QueryRoot",
+              "ofType": null
+            }
+          ]
         },
         {
           "kind": "SCALAR",
@@ -726,7 +1487,7 @@
         {
           "kind": "OBJECT",
           "name": "QueryRoot",
-          "description": "The schema's entry-point for queries. This acts as the public, top-level\nAPI from which all queries must start.\n",
+          "description": "The schema's entry-point for queries. This acts as the public, top-level\nAPI from which all queries must start.\n\nCHANGELOG\n\n2020-01\n  - [NEW] `mailboxes` now accessible via `channels`\n",
           "fields": [
             {
               "name": "agents",
@@ -802,6 +1563,156 @@
               "deprecationReason": null
             },
             {
+              "name": "channels",
+              "description": "The Channels in this organization",
+              "args": [
+                {
+                  "name": "after",
+                  "description": "Returns the elements in the list that come after the specified cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "before",
+                  "description": "Returns the elements in the list that come before the specified cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "first",
+                  "description": "Returns the first _n_ elements from the list.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "last",
+                  "description": "Returns the last _n_ elements from the list.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "filter",
+                  "description": "Filter the Channels",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ChannelFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "orderBy",
+                  "description": "Sort order of results",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ChannelOrder",
+                    "ofType": null
+                  },
+                  "defaultValue": "{field:\"POSITION\",direction:\"ASC\"}"
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ChannelConnection",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversations",
+              "description": "Related conversations",
+              "args": [
+                {
+                  "name": "after",
+                  "description": "Returns the elements in the list that come after the specified cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "before",
+                  "description": "Returns the elements in the list that come before the specified cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "first",
+                  "description": "Returns the first _n_ elements from the list.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "last",
+                  "description": "Returns the last _n_ elements from the list.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "filter",
+                  "description": "Filter the Conversations",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ConversationFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "orderBy",
+                  "description": "Sort order of results",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ConversationOrder",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ConversationConnection",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "node",
               "description": "Fetches an object given its ID.",
               "args": [
@@ -856,11 +1767,66 @@
             },
             {
               "kind": "INTERFACE",
+              "name": "ConversationConnected",
+              "ofType": null
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ChannelConnected",
+              "ofType": null
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "FolderConnected",
+              "ofType": null
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "TagConnected",
+              "ofType": null
+            },
+            {
+              "kind": "INTERFACE",
               "name": "TeamConnected",
               "ofType": null
             }
           ],
           "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "Rating",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "ANY",
+              "description": "Any rating",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "AWESOME",
+              "description": "Rated as awesome",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "OK",
+              "description": "Rated as OK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BAD",
+              "description": "Oh snap",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
           "possibleTypes": null
         },
         {
@@ -872,6 +1838,24 @@
           "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "TagConnected",
+          "description": "Standard tags connection field.\n",
+          "fields": [
+
+          ],
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "QueryRoot",
+              "ofType": null
+            }
+          ]
         },
         {
           "kind": "INTERFACE",
