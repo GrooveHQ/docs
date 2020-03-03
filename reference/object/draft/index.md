@@ -13,6 +13,53 @@ reply is sent.
 
 Your Drafts are only visible to you.
 
+To fetch a specific draft you created:
+
+```
+query Draft {
+  node(id: $draftId) {
+  edges {
+    node {
+      color
+      count
+      createdAt
+      id
+      name
+      updatedAt
+    }
+  }
+  pageInfo {
+    hasNextPage
+  }
+  }
+}
+```
+
+To fetch all your drafts in a specific conversation:
+
+```
+query Conversations {
+  conversations {
+  edges {
+    node {
+      ... on Conversable {
+        id
+        number
+        drafts {
+          edges {
+            node {
+              id
+              body
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+}
+```
+
 ## Implements
 
 - <code><a href="/docs/reference/interface/node">Node</a></code>

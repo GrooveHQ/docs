@@ -1877,7 +1877,7 @@
             },
             {
               "name": "drafts",
-              "description": "Draft Agent messages on this conversation",
+              "description": "Draft messages by the current user, on this conversation",
               "args": [
                 {
                   "name": "after",
@@ -2722,7 +2722,7 @@
         {
           "kind": "OBJECT",
           "name": "Draft",
-          "description": "A Draft Message that you are composing on a given conversation.\n\nDrafts are saved while composing a reply, and should be removed once the\nreply is sent.\n\nYour Drafts are only visible to you.\n",
+          "description": "A Draft Message that you are composing on a given conversation.\n\nDrafts are saved while composing a reply, and should be removed once the\nreply is sent.\n\nYour Drafts are only visible to you.\n\nTo fetch a specific draft you created:\n\n```\nquery Draft {\n  node(id: $draftId) {\n    edges {\n      node {\n        color\n        count\n        createdAt\n        id\n        name\n        updatedAt\n      }\n    }\n    pageInfo {\n      hasNextPage\n    }\n  }\n}\n```\n\nTo fetch all your drafts in a specific conversation:\n\n```\nquery Conversations {\n  conversations {\n    edges {\n      node {\n        ... on Conversable {\n          id\n          number\n          drafts {\n            edges {\n              node {\n                id\n                body\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n```\n",
           "fields": [
             {
               "name": "body",
@@ -3408,7 +3408,7 @@
             },
             {
               "name": "drafts",
-              "description": "Draft Agent messages on this conversation",
+              "description": "Draft messages by the current user, on this conversation",
               "args": [
                 {
                   "name": "after",
@@ -5260,7 +5260,7 @@
         {
           "kind": "OBJECT",
           "name": "Tag",
-          "description": "An Inbox label.\n\nTags can be applied to Conversations, and they can be used in Folder\ndefinitions to create 'smart' Folders based on a tag.\n",
+          "description": "An Inbox label.\n\nTags can be applied to Conversations, and they can be used in Folder\ndefinitions to create 'smart' Folders based on a tag.\n\nTo fetch all tags in your account:\n\n```\nquery Tags {\n  tags {\n    edges {\n      node {\n        color\n        count\n        createdAt\n        id\n        name\n        updatedAt\n      }\n    }\n    pageInfo {\n      hasNextPage\n    }\n  }\n}\n```\n\nTo fetch all tags applied to a specific conversation:\n\n```\n%(query Conversation {\n  node(id: $conversationId) {\n    ... on Conversable {\n      id\n      number\n      tags {\n        edges {\n          node {\n            color\n            count\n            createdAt\n            id\n            name\n            updatedAt\n          }\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n    }\n  }\n}\n```\n\n",
           "fields": [
             {
               "name": "color",

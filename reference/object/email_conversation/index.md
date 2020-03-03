@@ -150,7 +150,7 @@ CHANGELOG
   <span id="drafts" class="field-name connection-name anchored">drafts (<code><a href="/docs/reference/connection_type/draft/draft_connection">DraftConnection</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>Draft Agent messages on this conversation</p>
+   <p>Draft messages by the current user, on this conversation</p>
      <table class="arguments">
   <thead>
   <tr>

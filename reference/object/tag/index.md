@@ -11,6 +11,56 @@ An Inbox label.
 Tags can be applied to Conversations, and they can be used in Folder
 definitions to create 'smart' Folders based on a tag.
 
+To fetch all tags in your account:
+
+```
+query Tags {
+  tags {
+  edges {
+    node {
+      color
+      count
+      createdAt
+      id
+      name
+      updatedAt
+    }
+  }
+  pageInfo {
+    hasNextPage
+  }
+  }
+}
+```
+
+To fetch all tags applied to a specific conversation:
+
+```
+%(query Conversation {
+  node(id: $conversationId) {
+  ... on Conversable {
+    id
+    number
+    tags {
+      edges {
+        node {
+          color
+          count
+          createdAt
+          id
+          name
+          updatedAt
+        }
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+  }
+  }
+}
+```
+
 ## Implements
 
 - <code><a href="/docs/reference/interface/node">Node</a></code>
