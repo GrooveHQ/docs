@@ -144,6 +144,8 @@ CHANGELOG
 
 - <code><a href="/docs/reference/interface/node">Node</a></code>
 
+- <code><a href="/docs/reference/interface/tag_connected">TagConnected</a></code>
+
 ## Connections
 
 <div class="field-entry ">

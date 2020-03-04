@@ -8,3 +8,7 @@ grand_parent: Reference
 
 Standard tags connection field.
 
+## Implemented by
+
+- <code><a href="/docs/reference/object/email_conversation">EmailConversation</a></code></li>
+
