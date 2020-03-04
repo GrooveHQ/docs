@@ -1547,6 +1547,33 @@
           "description": null,
           "fields": [
             {
+              "name": "conversationClose",
+              "description": "Sets a Conversation state to 'closed'\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationClose( input: { conversationId: $conversationId }) {\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationCloseInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationClosePayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "conversationCreateEmail",
               "description": "Create an Email Conversation.\n\nInitiate a new conversation, and sends an email. E.g.\n\n```\nmutation(\n  $assigned: AssignmentInput,\n  $channelId: ID!,\n  $changesetId: String,\n  $message: EmailMessageInput!,\n  $state: ConversationState,\n) {\n  conversationCreateEmail(\n    input: {\n      assigned: $assigned,\n      channelId: $channelId,\n      changesetId: $changesetId,\n      message: $message,\n      state: $state,\n    }\n  ) {\n    conversation {\n      id\n      title\n      state\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
               "args": [
@@ -1601,6 +1628,87 @@
               "deprecationReason": null
             },
             {
+              "name": "conversationFollow",
+              "description": "Add one or more followers to a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!, $followerIds: [ID!]!) {\n  conversationFollow(\n    input: {\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    conversation {\n      ... on Conversable {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-follow a conversation, see `conversationUnfollow`\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationFollowInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationFollowPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversationOpen",
+              "description": "Sets a Conversation state to 'opened'\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationOpen( input: { conversationId: $conversationId }) {\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationOpenInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationOpenPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversationSpam",
+              "description": "Marks a Conversation as spam\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationSpam( input: { conversationId: $conversationId }) {\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationSpamInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationSpamPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "conversationStar",
               "description": "Star a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationStar( input: { conversationId: $conversationId } ) {\n    conversation {\n      ... on Conversable {\n        id\n        starred\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo un-star a conversation, see `conversationUnstar`\n",
               "args": [
@@ -1649,6 +1757,60 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "conversationTagPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversationUnfollow",
+              "description": "Unfollows one or more agents from a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!, $followerIds: [ID!]!) {\n  conversationUnfollow(\n    input: {\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    conversation {\n      ... on Conversable {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo follow a conversation, see `conversationFollow`\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationUnfollowInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationUnfollowPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversationUnread",
+              "description": "Sets a Conversation state to 'unread'\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationUnread( input: { conversationId: $conversationId }) {\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationUnreadInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationUnreadPayload",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3271,6 +3433,94 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "conversationCloseInput",
+          "description": "Autogenerated input type of conversationClose",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to close",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationClosePayload",
+          "description": "Autogenerated return type of conversationClose",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "conversationCreateEmailInput",
           "description": "Autogenerated input type of conversationCreateEmail",
           "fields": null,
@@ -3519,6 +3769,292 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "conversationFollowInput",
+          "description": "Autogenerated input type of conversationFollow",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to tag",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "followerIds",
+              "description": "The IDs of the agents to add as followers",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationFollowPayload",
+          "description": "Autogenerated return type of conversationFollow",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "conversationOpenInput",
+          "description": "Autogenerated input type of conversationOpen",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to open",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationOpenPayload",
+          "description": "Autogenerated return type of conversationOpen",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "conversationSpamInput",
+          "description": "Autogenerated input type of conversationSpam",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to mark as spam",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationSpamPayload",
+          "description": "Autogenerated return type of conversationSpam",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "conversationStarInput",
           "description": "Autogenerated input type of conversationStar",
           "fields": null,
@@ -3666,6 +4202,204 @@
           "kind": "OBJECT",
           "name": "conversationTagPayload",
           "description": "Autogenerated return type of conversationTag",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "conversationUnfollowInput",
+          "description": "Autogenerated input type of conversationUnfollow",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to tag",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "followerIds",
+              "description": "The IDs of the agents to remove as followers",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationUnfollowPayload",
+          "description": "Autogenerated return type of conversationUnfollow",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "conversationUnreadInput",
+          "description": "Autogenerated input type of conversationUnread",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to un-read",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationUnreadPayload",
+          "description": "Autogenerated return type of conversationUnread",
           "fields": [
             {
               "name": "clientMutationId",
