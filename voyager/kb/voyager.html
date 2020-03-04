@@ -1683,7 +1683,7 @@
             },
             {
               "name": "conversationUntag",
-              "description": "Add one or more tags to a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!, $tagIds: [ID!]!) {\n  conversationUntag(\n    input: {\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    conversation {\n      ... on Conversable {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo un-tag a conversation, see `conversationUntag`\n",
+              "description": "Removes one or more tags from a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!, $tagIds: [ID!]!) {\n  conversationUntag(\n    input: {\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    conversation {\n      ... on Conversable {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo tag a conversation, see `conversationTag`\n",
               "args": [
                 {
                   "name": "input",

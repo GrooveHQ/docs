@@ -7,7 +7,7 @@ great_grand_parent: Reference
 
 # conversationUntag
 
-Add one or more tags to a Conversation.
+Removes one or more tags from a Conversation.
 
 For example:
 
@@ -40,7 +40,7 @@ mutation($conversationId: ID!, $tagIds: [ID!]!) {
 })
 ```
 
-To un-tag a conversation, see `conversationUntag`
+To tag a conversation, see `conversationTag`
 
 ## Input fields
 
