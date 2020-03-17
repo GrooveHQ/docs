@@ -27,7 +27,7 @@
         {
           "kind": "OBJECT",
           "name": "Agent",
-          "description": "An Agent, with a login, belonging to one Account, belonging zero or more\nTeams.\n\nFor example, to find all active agents, along with the teams they belong\nto, ordered by name.\n\n```\nquery Agents {\n  agents {\n    edges {\n      node {\n        createdAt\n        email\n        id\n        name\n        role\n        state\n        subdomain\n        teams {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n        username\n        updatedAt\n      }\n    }\n  }\n}\n```\n\nTo query for invited agents:\n\n```\nquery Agents {\n  agents(filter: {state: INVITED}){\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n```\n\nTo reverse order the search:\n\n```\nquery Agents {\n  agents( orderBy: { field: NAME, direction: DESC } ) {\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n```\n\n\nTo fetch a single Agent:\n\n```\nquery Node {\n  node(id: $agentId) {\n    ... on Agent {\n      id\n      name\n    }\n  }\n}\n```\n",
+          "description": "An Agent, with a login, belonging to one Account, belonging zero or more\nTeams.\n\nFor example, to find all active agents, along with the teams they belong\nto, ordered by name.\n\n```\nquery Agents {\n  agents {\n    edges {\n      node {\n        createdAt\n        email\n        id\n        name\n        role\n        state\n        subdomain\n        teams {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n        username\n        updatedAt\n      }\n    }\n  }\n}\n```\n\nTo query for invited agents:\n\n```\nquery Agents {\n  agents(filter: {state: INVITED}){\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n```\n\nTo reverse order the search:\n\n```\nquery Agents {\n  agents( orderBy: { field: NAME, direction: DESC } ) {\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n```\n\nTo fetch agents ordered by the most times you assigned them to a conversation\n\n```\nquery Agents {\n  agents( orderBy: { field: ASSIGNMENT_COUNT, direction: DESC } ) {\n    nodes {\n      id\n      name\n    }\n  }\n}\n```\n\nTo fetch a single Agent:\n\n```\nquery Node {\n  node(id: $agentId) {\n    ... on Agent {\n      id\n      name\n    }\n  }\n}\n```\n",
           "fields": [
             {
               "name": "createdAt",
@@ -199,105 +199,10 @@
               "kind": "INTERFACE",
               "name": "Timestamped",
               "ofType": null
-            },
-            {
-              "kind": "INTERFACE",
-              "name": "TeamConnected",
-              "ofType": null
             }
           ],
           "enumValues": null,
           "possibleTypes": null
-        },
-        {
-          "kind": "INTERFACE",
-          "name": "AgentConnected",
-          "description": "Standard agents connection field.\n",
-          "fields": [
-            {
-              "name": "agents",
-              "description": "Related agents.",
-              "args": [
-                {
-                  "name": "after",
-                  "description": "Returns the elements in the list that come after the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "before",
-                  "description": "Returns the elements in the list that come before the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "first",
-                  "description": "Returns the first _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "last",
-                  "description": "Returns the last _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "filter",
-                  "description": "Filter by one or more Agent fields",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "AgentFilter",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "orderBy",
-                  "description": "Sort order of results",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "AgentOrder",
-                    "ofType": null
-                  },
-                  "defaultValue": "{field:\"NAME\",direction:\"ASC\"}"
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "AgentConnection",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": [
-            {
-              "kind": "OBJECT",
-              "name": "QueryRoot",
-              "ofType": null
-            }
-          ]
         },
         {
           "kind": "OBJECT",
@@ -486,6 +391,12 @@
             {
               "name": "UPDATED_AT",
               "description": "Order by update time",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ASSIGNMENT_COUNT",
+              "description": "Order by the number of times you assigned them to a conversation",
               "isDeprecated": false,
               "deprecationReason": null
             }
@@ -695,100 +606,6 @@
             {
               "kind": "OBJECT",
               "name": "EmailChannel",
-              "ofType": null
-            }
-          ]
-        },
-        {
-          "kind": "INTERFACE",
-          "name": "ChannelConnected",
-          "description": "Standard channel connection fields\n",
-          "fields": [
-            {
-              "name": "channels",
-              "description": "The Channels in this organization",
-              "args": [
-                {
-                  "name": "after",
-                  "description": "Returns the elements in the list that come after the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "before",
-                  "description": "Returns the elements in the list that come before the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "first",
-                  "description": "Returns the first _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "last",
-                  "description": "Returns the last _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "filter",
-                  "description": "Filter the Channels",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "ChannelFilter",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "orderBy",
-                  "description": "Sort order of results",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "ChannelOrder",
-                    "ofType": null
-                  },
-                  "defaultValue": "{field:\"POSITION\",direction:\"ASC\"}"
-                }
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ChannelConnection",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": [
-            {
-              "kind": "OBJECT",
-              "name": "QueryRoot",
               "ofType": null
             }
           ]
@@ -1107,7 +924,7 @@
                     "name": "ConversationFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{}"
                 },
                 {
                   "name": "orderBy",
@@ -1148,7 +965,7 @@
             },
             {
               "name": "folders",
-              "description": "Visible/accessible folders. Each associated with one or more mailboxes",
+              "description": "Visible/accessible folders. Each can be associated with one or more mailboxes",
               "args": [
                 {
                   "name": "after",
@@ -1198,7 +1015,7 @@
                     "name": "FolderFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{state:\"ACTIVE\"}"
                 },
                 {
                   "name": "orderBy",
@@ -1610,7 +1427,7 @@
               "deprecationReason": null
             },
             {
-              "name": "NEQ",
+              "name": "NOT_EQ",
               "description": "Not equal to",
               "isDeprecated": false,
               "deprecationReason": null
@@ -2013,7 +1830,7 @@
                     "name": "AgentFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{}"
                 },
                 {
                   "name": "orderBy",
@@ -2197,6 +2014,16 @@
                   "defaultValue": null
                 },
                 {
+                  "name": "filter",
+                  "description": "Filter by one or more Tag fields",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "TagFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": "{state:\"USED\"}"
+                },
+                {
                   "name": "orderBy",
                   "description": "Sort order of results",
                   "type": {
@@ -2275,101 +2102,6 @@
             {
               "kind": "OBJECT",
               "name": "EmailConversation",
-              "ofType": null
-            }
-          ]
-        },
-        {
-          "kind": "INTERFACE",
-          "name": "ConversationConnected",
-          "description": "Standard conversation connection fields\n",
-          "fields": [
-            {
-              "name": "conversations",
-              "description": "Related conversations",
-              "args": [
-                {
-                  "name": "after",
-                  "description": "Returns the elements in the list that come after the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "before",
-                  "description": "Returns the elements in the list that come before the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "first",
-                  "description": "Returns the first _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "last",
-                  "description": "Returns the last _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "filter",
-                  "description": "Filter the Conversations",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "ConversationFilter",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "orderBy",
-                  "description": "Sort order of results",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "ConversationOrder",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ConversationConnection",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": [
-            {
-              "kind": "OBJECT",
-              "name": "Folder",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "QueryRoot",
               "ofType": null
             }
           ]
@@ -2796,7 +2528,13 @@
             },
             {
               "name": "CLOSED",
-              "description": "Conversation has been closed (or snoozed)",
+              "description": "Conversation has been closed",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SNOOZED",
+              "description": "Conversation has been snoozed",
               "isDeprecated": false,
               "deprecationReason": null
             },
@@ -3084,7 +2822,7 @@
         {
           "kind": "OBJECT",
           "name": "EmailChannel",
-          "description": "A Groove Mailbox. Contains Conversations and Folders\n\nTo fetch your mailboxes, you can issue this query:\n\n```\n    query Mailboxes {\n      channels(state: UNCONFIRMED) {\n        edges {\n          node {\n            ... on EmailChannel {\n              createdAt\n              forwardEmailAddress\n              fromName\n              id\n              name\n              signature\n              updatedAt\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n      }\n    }\n```\n\nTo fetch inactive mailboxes:\n\n```\n    query Mailboxes {\n      channels(states: [UNCONFIRMED, DEMO, CONFIRMED]) {\n        edges {\n          node {\n            ... on EmailChannel {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n```\n\nTo fetch accessible folders (paginated) for each of your mailboxes:\n\n```\n    query Mailboxes {\n      channels(state: UNCONFIRMED) {\n        edges {\n          node {\n            ... on EmailChannel {\n              id\n              name\n              folders {\n                edges {\n                  node {\n                    id\n                    name\n                  }\n                  pageInfo {\n                    hasNextPage\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n```\n\nTo fetch conversations in this mailbox\n\n```\n    query Mailboxes {\n      channels {\n        edges {\n          node {\n            ... on EmailChannel {\n              id\n              name\n              conversations {\n                edges {\n                  node {\n                    id\n                    name\n                  }\n                  pageInfo {\n                    hasNextPage\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n```\n\n",
+          "description": "A Groove Channel. Contains Conversations and Folders\n\nTo fetch your active mailboxes, you can issue this query:\n\n```\n    query Channels {\n      channels {\n        nodes {\n          ... on EmailChannel {\n            createdAt\n            forwardEmailAddress\n            fromName\n            id\n            name\n            signature\n            updatedAt\n          }\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n    }\n```\n\nTo fetch inactive mailboxes:\n\n```\n    query Channels {\n      channels(filter: { state: UNCONFIRMED }) {\n        nodes {\n          ... on EmailChannel {\n            id\n            name\n          }\n        }\n      }\n    }\n```\n\nTo fetch accessible folders (paginated) for each of your mailboxes:\n\n```\n    query Channels {\n      channels {\n        nodes {\n          ... on EmailChannel {\n            id\n            name\n            folders {\n              nodes {\n                id\n                name\n              }\n              pageInfo {\n                hasNextPage\n              }\n            }\n          }\n        }\n      }\n    }\n```\n\nTo fetch conversations in this mailbox\n\n```\n    query Channels {\n      channels {\n        nodes {\n          ... on EmailChannel {\n            id\n            name\n            conversations {\n              nodes {\n                id\n                name\n              }\n              pageInfo {\n                hasNextPage\n              }\n            }\n          }\n        }\n      }\n    }\n```\n\n",
           "fields": [
             {
               "name": "conversations",
@@ -3138,7 +2876,7 @@
                     "name": "ConversationFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{}"
                 },
                 {
                   "name": "orderBy",
@@ -3179,7 +2917,7 @@
             },
             {
               "name": "email",
-              "description": "The email address associated with the mailbox",
+              "description": "The email address associated with this mailbox",
               "args": [
 
               ],
@@ -3197,7 +2935,7 @@
             },
             {
               "name": "folders",
-              "description": "Visible/accessible folders. Each associated with one or more mailboxes",
+              "description": "Visible/accessible folders. Each can be associated with one or more mailboxes",
               "args": [
                 {
                   "name": "after",
@@ -3247,7 +2985,7 @@
                     "name": "FolderFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{state:\"ACTIVE\"}"
                 },
                 {
                   "name": "orderBy",
@@ -3270,7 +3008,7 @@
             },
             {
               "name": "forwardEmailAddress",
-              "description": "The forwarding email address associated with the mailbox",
+              "description": "The forwarding email address associated with this mailbox",
               "args": [
 
               ],
@@ -3288,7 +3026,7 @@
             },
             {
               "name": "fromName",
-              "description": "Setting on which name replies should be from (Agent|Mailbox)",
+              "description": "Setting on which name replies should be from (Agent|Channel)",
               "args": [
 
               ],
@@ -3360,7 +3098,7 @@
             },
             {
               "name": "signature",
-              "description": "The default signature on outgoing message from this mailbox",
+              "description": "The default signature on outgoing messages from this mailbox",
               "args": [
 
               ],
@@ -3451,7 +3189,7 @@
         {
           "kind": "OBJECT",
           "name": "EmailConversation",
-          "description": "A Groove Conversation initiated in an Email Channel.\n\nTo fetch a specific conversation by ID:\n\n```\nquery Conversation {\n  node(id: \"cnv_12345678\") {\n    ... on Conversable {\n      assigned {\n        at\n        agent {\n          id\n          name\n        }\n        team {\n          id\n          name\n        }\n      }\n      counts {\n        attachments\n        interactions\n        messages\n        notes\n        stateChanges\n      }\n      createdAt\n      deletedAt\n      drafts {\n        edges {\n          node {\n            id\n          }\n        }\n      }\n      followers {\n        edges {\n          node {\n            id\n            email\n          }\n        }\n      }\n      id\n      number\n      snoozed {\n        by { id }\n        until\n      }\n      starred\n      state\n      stateUpdatedAt\n      systemUpdatedAt\n      tags {\n        edges {\n          node {\n            id\n            name\n          }\n        }\n      }\n      title\n      updatedAt\n    }\n  }\n})\n```\n\nTo fetch all conversations in a specific Channel/Folder:\n\n```\nquery Conversations {\n  conversations(\n    filter: {\n      channel: \"ch_4567890\",\n      folder: \"fol_8901234\",\n    }\n  ) {\n    edges {\n      node {\n        ... on Conversable {\n          id\n          number\n        }\n      }\n      pageInfo {\n        hasNextPage\n      }\n    }\n  }\n}\n```\n\nTo find conversations in \"all channels\" that apply to a specific folder, omit the Channel.\n\n```\nquery Conversations {\n  conversations( filter: { folder: \"fol_8901234\" }) {\n    edges {\n      node {\n        ... on Conversable {\n          id\n          number\n        }\n      }\n      pageInfo {\n        hasNextPage\n      }\n    }\n  }\n}\n```\n\nConversations are returned newest first. To sort showing oldest firstt:\n\n```\nquery Conversations {\n  conversations( orderBy: { field: UPDATED_AT, direction: ASC } ) {\n    edges {\n      node {\n        ... on Conversable {\n          id\n          number\n        }\n      }\n      pageInfo {\n        hasNextPage\n      }\n    }\n  }\n}\n```\n\nCHANGELOG\n\n2020-01\n  - [NEW] `channel` replaces `conversationType`\n  - [NEW] all counts fields now grouped under `counts` type\n  - [NEW] `assignment` replaces `assignee` and `assigned_group`\n",
+          "description": "A Groove Conversation initiated in an Email Channel.\n\nTo fetch a specific conversation by ID:\n\n```\nquery Conversation {\n  node(id: \"cnv_12345678\") {\n    ... on Conversable {\n      assigned {\n        at\n        agent {\n          id\n          name\n        }\n        team {\n          id\n          name\n        }\n      }\n      counts {\n        attachments\n        interactions\n        messages\n        notes\n        stateChanges\n      }\n      createdAt\n      deletedAt\n      drafts {\n        nodes {\n          id\n        }\n      }\n      followers {\n        nodes {\n          id\n          email\n        }\n      }\n      id\n      number\n      snoozed {\n        by { id }\n        until\n      }\n      starred\n      state\n      stateUpdatedAt\n      systemUpdatedAt\n      tags {\n        nodes {\n          id\n          name\n        }\n      }\n      title\n      updatedAt\n    }\n  }\n})\n```\n\nTo fetch all conversations in a specific Channel/Folder:\n\n```\nquery Conversations {\n  conversations(\n    filter: {\n      channel: \"ch_4567890\",\n      folder: \"fol_8901234\",\n    }\n  ) {\n    edges {\n      node {\n        ... on Conversable {\n          id\n          number\n        }\n      }\n      pageInfo {\n        hasNextPage\n      }\n    }\n  }\n}\n```\n\nTo find conversations in \"all channels\" that apply to a specific folder, omit the Channel.\n\n```\nquery Conversations {\n  conversations( filter: { folder: \"fol_8901234\" }) {\n    edges {\n      node {\n        ... on Conversable {\n          id\n          number\n        }\n      }\n      pageInfo {\n        hasNextPage\n      }\n    }\n  }\n}\n```\n\nConversations are returned newest first. To sort showing oldest firstt:\n\n```\nquery Conversations {\n  conversations( orderBy: { field: UPDATED_AT, direction: ASC } ) {\n    edges {\n      node {\n        ... on Conversable {\n          id\n          number\n        }\n      }\n      pageInfo {\n        hasNextPage\n      }\n    }\n  }\n}\n```\n\nCHANGELOG\n\n2020-01\n  - [NEW] `channel` replaces `conversationType`\n  - [NEW] all counts fields now grouped under `counts` type\n  - [NEW] `assignment` replaces `assignee` and `assigned_group`\n",
           "fields": [
             {
               "name": "assigned",
@@ -3640,7 +3378,7 @@
                     "name": "AgentFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{}"
                 },
                 {
                   "name": "orderBy",
@@ -3824,6 +3562,16 @@
                   "defaultValue": null
                 },
                 {
+                  "name": "filter",
+                  "description": "Filter by one or more Tag fields",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "TagFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": "{state:\"USED\"}"
+                },
+                {
                   "name": "orderBy",
                   "description": "Sort order of results",
                   "type": {
@@ -3889,11 +3637,6 @@
             {
               "kind": "INTERFACE",
               "name": "Conversable",
-              "ofType": null
-            },
-            {
-              "kind": "INTERFACE",
-              "name": "TagConnected",
               "ofType": null
             }
           ],
@@ -4039,11 +3782,11 @@
         {
           "kind": "OBJECT",
           "name": "Folder",
-          "description": "A Groove Folder. Each folder containsr a set of Conditions that allow for\nsmart filtering of conversations in a Channel.\n\nFor example, to show Only your active Conversations, you can create\nFolder called \"Mine\" which contains these two Conditions:\n  1. Assigned to Me\n  2. State is Open\n\nBy default Folders apply to, and are visible across, all of your Channels.\nHowever you cane configured them to be to applicable/visible to selected\nChannels/Agents/Teams.\n\nTo fetch all folders, and their conditions:\n\n```\nquery Folders {\n  folders {\n    edges {\n      node {\n        agents {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n        conditions(orderBy: { field: CREATED_AT, direction: DESC }) {\n          edges {\n            node {\n              id\n              param\n              operator\n              value\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n        conversationCount\n        createdAt\n        default\n        description\n        displayCountWhenInactive\n        id\n        locked\n        matchType\n        name\n        position\n        state\n        teams {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n        updatedAt\n      }\n    }\n  }\n}\n```\n\nTo find associated conversations in this folder:\n\n```\nquery Folders {\n  folders {\n    edges {\n      node {\n        id\n        conversations {\n          edges {\n            node {\n              ... on Conversable {\n                id\n                number\n              }\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n        conversationCount\n      }\n    }\n  }\n}\n```\n\nBy default folders are sorted by their user-defined row order. To sort\nby name instead:\n\n```\nquery Folders {\n  folders( orderBy: { field: NAME, direction: ASC } ) {\n    edges {\n      node {\n        id\n      }\n    }\n  }\n}\n```\n\nTo find conversations in this folder for a specific channel:\n\n```\nquery Folders {\n  folders {\n    edges {\n      node {\n        id\n        conversations ( channel: \"ch_12345678\" ) {\n          edges {\n            node {\n              ... on Conversable {\n                id\n                number\n              }\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n      }\n    }\n  }\n}\n```\n",
+          "description": "A Groove Folder. Each folder contains a set of Conditions that allow for\nsmart filtering of conversations in a Channel.\n\nFor example, to show Only your active Conversations, you can create\nFolder called \"Mine\" which contains these two Conditions:\n  1. Assigned to Me\n  2. State is Open\n\nBy default Folders apply to, and are visible across, all of your Channels.\nHowever you cane configured them to be to applicable/visible to selected\nChannels/Agents/Teams.\n\nTo fetch all folders, and their conditions:\n\n```\nquery Folders {\n  folders {\n    nodes {\n      agents {\n        nodes {\n          id\n          email\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n      conditions(\n        orderBy: { field: CREATED_AT, direction: DESC }\n      ) {\n        nodes {\n          id\n          param\n          operator\n          value\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n      conversationCount\n      createdAt\n      default\n      description\n      displayCountWhenInactive\n      id\n      locked\n      matchType\n      name\n      position\n      state\n      teams {\n        nodes {\n          id\n          name\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n      updatedAt\n    }\n  }\n}\n```\n\nTo find associated conversations in this folder:\n\n```\nquery Folders {\n  folders {\n    nodes {\n      id\n      conversations {\n        nodes {\n          ... on Conversable {\n            id\n            number\n          }\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n      conversationCount\n    }\n  }\n}\n```\n\nBy default folders are sorted by their user-defined row order. To sort\nby name instead:\n\n```\nquery Folders {\n  folders( orderBy: { field: NAME, direction: ASC } ) {\n    nodes {\n      id\n    }\n  }\n}\n```\n\nTo find conversations in this folder for a specific channel:\n\n```\nquery Folders {\n  folders {\n    nodes {\n      id\n      conversations ( channel: \"ch_12345678\" ) {\n        nodes {\n          ... on Conversable {\n            id\n            number\n          }\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n    }\n  }\n}\n```\n\n",
           "fields": [
             {
               "name": "agents",
-              "description": "The Agents who can see this folder. An empty list implies either everyone can see it, or only certain Teams can (see `teams` field)",
+              "description": "The Agents who can see this folder. An empty list implies only certain Teams have visiblity (refer to the `teams` field)",
               "args": [
                 {
                   "name": "after",
@@ -4084,6 +3827,26 @@
                     "ofType": null
                   },
                   "defaultValue": null
+                },
+                {
+                  "name": "filter",
+                  "description": "Filter by one or more Agent fields",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "AgentFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": "{}"
+                },
+                {
+                  "name": "orderBy",
+                  "description": "Sort order of results",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "AgentOrder",
+                    "ofType": null
+                  },
+                  "defaultValue": "{field:\"NAME\",direction:\"ASC\"}"
                 }
               ],
               "type": {
@@ -4096,7 +3859,7 @@
             },
             {
               "name": "channels",
-              "description": "The Channels in which this Folder is visible.",
+              "description": "The related Channels",
               "args": [
                 {
                   "name": "after",
@@ -4137,6 +3900,26 @@
                     "ofType": null
                   },
                   "defaultValue": null
+                },
+                {
+                  "name": "filter",
+                  "description": "Filter the Channels",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ChannelFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": "{}"
+                },
+                {
+                  "name": "orderBy",
+                  "description": "Sort order of results",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ChannelOrder",
+                    "ofType": null
+                  },
+                  "defaultValue": "{field:\"POSITION\",direction:\"ASC\"}"
                 }
               ],
               "type": {
@@ -4226,18 +4009,9 @@
             },
             {
               "name": "conversationCount",
-              "description": "The number of conversations that are in this folder",
+              "description": "The number of conversations that are in this folder (across ALL Channels)",
               "args": [
-                {
-                  "name": "mailboxId",
-                  "description": "The specific Mailbox ID to filter by",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "ID",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
+
               ],
               "type": {
                 "kind": "NON_NULL",
@@ -4303,7 +4077,7 @@
                     "name": "ConversationFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{}"
                 },
                 {
                   "name": "orderBy",
@@ -4530,105 +4304,10 @@
               "kind": "INTERFACE",
               "name": "Timestamped",
               "ofType": null
-            },
-            {
-              "kind": "INTERFACE",
-              "name": "ConversationConnected",
-              "ofType": null
             }
           ],
           "enumValues": null,
           "possibleTypes": null
-        },
-        {
-          "kind": "INTERFACE",
-          "name": "FolderConnected",
-          "description": "Standard folders connection field\n",
-          "fields": [
-            {
-              "name": "folders",
-              "description": "Visible/accessible folders. Each associated with one or more mailboxes",
-              "args": [
-                {
-                  "name": "after",
-                  "description": "Returns the elements in the list that come after the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "before",
-                  "description": "Returns the elements in the list that come before the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "first",
-                  "description": "Returns the first _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "last",
-                  "description": "Returns the last _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "filter",
-                  "description": "Filter by one or more Folder fields",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "FolderFilter",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "orderBy",
-                  "description": "Sort order of results",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "FolderOrder",
-                    "ofType": null
-                  },
-                  "defaultValue": "{field:\"POSITION\",direction:\"ASC\"}"
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "FolderConnection",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": [
-            {
-              "kind": "OBJECT",
-              "name": "QueryRoot",
-              "ofType": null
-            }
-          ]
         },
         {
           "kind": "OBJECT",
@@ -4867,7 +4546,7 @@
               "deprecationReason": null
             },
             {
-              "name": "HIDDEN",
+              "name": "INACTIVE",
               "description": "Folder is hidden",
               "isDeprecated": false,
               "deprecationReason": null
@@ -4901,8 +4580,35 @@
           "description": null,
           "fields": [
             {
+              "name": "conversationAssign",
+              "description": "Assigns a Conversation to either an Agent, a Team, or both.\n\nFor example:\n\n```\nmutation(\n  $agentId: ID,\n  $changesetId: String,\n  $conversationId: ID!,\n  $teamId: ID,\n) {\n  conversationAssign(\n    input: {\n      changesetId: $changesetId,\n      agentId: $agentId,\n      conversationId: $conversationId,\n      teamId: $teamId,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        assigned {\n          at\n          agent {\n            id\n            name\n          }\n          team {\n            id\n            name\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-assign a conversation, see `conversationUnassign`\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationAssignInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationAssignPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "conversationClose",
-              "description": "Sets a Conversation state to 'closed'\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationClose( input: { conversationId: $conversationId }) {\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "description": "Sets a Conversation state to 'closed'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationClose( input: {\n    changesetId: $changesetId,\n    conversationId: $conversationId,\n  }) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -4929,7 +4635,7 @@
             },
             {
               "name": "conversationCreateEmail",
-              "description": "Create an Email Conversation.\n\nInitiate a new conversation, and sends an email. E.g.\n\n```\nmutation(\n  $assigned: AssignmentInput,\n  $channelId: ID!,\n  $changesetId: String,\n  $message: EmailMessageInput!,\n  $state: ConversationState,\n) {\n  conversationCreateEmail(\n    input: {\n      assigned: $assigned,\n      channelId: $channelId,\n      changesetId: $changesetId,\n      message: $message,\n      state: $state,\n    }\n  ) {\n    conversation {\n      id\n      title\n      state\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "description": "Create an Email Conversation.\n\nInitiate a new conversation, and sends an email. E.g.\n\n```\nmutation(\n  $assigned: AssignmentInput,\n  $channelId: ID!,\n  $changesetId: String,\n  $message: EmailMessageInput!,\n  $state: ConversationState,\n) {\n  conversationCreateEmail(\n    input: {\n      assigned: $assigned,\n      channelId: $channelId,\n      changesetId: $changesetId,\n      message: $message,\n      state: $state,\n    }\n  ) {\n    changesetId\n    conversation {\n      id\n      title\n      state\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -4956,7 +4662,7 @@
             },
             {
               "name": "conversationDelete",
-              "description": "Soft or hard delete an Email Conversation.\n\nTo trash (soft-delete) a conversation:\n\n```\nmutation(\n  $conversationId: \"cnv_1234567\",\n  $deleteMode: SOFT,\n) {\n  conversationDelete(\n    input: {\n      conversationId: $conversationId,\n      deleteMode: $deleteMode\n    }\n  ) {\n    deletedConversationId\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo permanently delete a conversation:\n\n```\nmutation(\n  $conversationId: \"cnv_1234567\",\n  $deleteMode: HARD,\n) {\n  conversationDelete(\n    input: {\n      conversationId: $conversationId,\n      deleteMode: $deleteMode\n    }\n  ) {\n    deletedConversationId\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
+              "description": "Soft or hard delete an Email Conversation.\n\nTo trash (soft-delete) a conversation:\n\n```\nmutation(\n  $conversationId: \"cnv_1234567\",\n  $deleteMode: SOFT,\n) {\n  conversationDelete(\n    input: {\n      conversationId: $conversationId,\n      deleteMode: $deleteMode\n    }\n  ) {\n    deletedConversationId\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo permanently delete a conversation:\n\n```\nmutation(\n  $conversationId: \"cnv_1234567\",\n  $deleteMode: HARD,\n) {\n  conversationDelete(\n    input: {\n      conversationId: $conversationId,\n      deleteMode: $deleteMode\n    }\n  ) {\n    deletedConversationId\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -4983,7 +4689,7 @@
             },
             {
               "name": "conversationFollow",
-              "description": "Add one or more followers to a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!, $followerIds: [ID!]!) {\n  conversationFollow(\n    input: {\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    conversation {\n      ... on Conversable {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-follow a conversation, see `conversationUnfollow`\n",
+              "description": "Add one or more followers to a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $followerIds: [ID!]!\n) {\n  conversationFollow(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo un-follow a conversation, see `conversationUnfollow`\n",
               "args": [
                 {
                   "name": "input",
@@ -5009,8 +4715,35 @@
               "deprecationReason": null
             },
             {
+              "name": "conversationMerge",
+              "description": "Merges a Conversation (aka child, or source) into another (parent aka\ndestination).\n\nThe 'into' destination (parent) conversation is preserved. The source/child\nconversation is deleted.\n\nFor example:\n\n```\n```\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationMergeInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationMergePayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "conversationOpen",
-              "description": "Sets a Conversation state to 'opened'\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationOpen( input: { conversationId: $conversationId }) {\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "description": "Sets a Conversation state to 'opened'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationOpen( input: {\n    changesetId: $changesetId,\n    conversationId: $conversationId,\n  }) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -5036,8 +4769,35 @@
               "deprecationReason": null
             },
             {
+              "name": "conversationSnooze",
+              "description": "Snoozes a Conversation, until a specific date, or indefinitely.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $until: DateTime\n) {\n  conversationSnooze(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      until: $until\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n        snoozed {\n          by { id }\n          until\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-snooze and reopen a conversation, use `conversationOpen`\n\nTo un-snooze a conversation, while keeping it closed, use `conversationClose`\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationSnoozeInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationSnoozePayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "conversationSpam",
-              "description": "Marks a Conversation as spam\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationSpam( input: { conversationId: $conversationId }) {\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "description": "Marks a Conversation as spam\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationSpam(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -5064,7 +4824,7 @@
             },
             {
               "name": "conversationStar",
-              "description": "Star a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationStar( input: { conversationId: $conversationId } ) {\n    conversation {\n      ... on Conversable {\n        id\n        starred\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo un-star a conversation, see `conversationUnstar`\n",
+              "description": "Star a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationStar(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        starred\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-star a conversation, see `conversationUnstar`\n",
               "args": [
                 {
                   "name": "input",
@@ -5091,7 +4851,7 @@
             },
             {
               "name": "conversationTag",
-              "description": "Add one or more tags to a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!, $tagIds: [ID!]!) {\n  conversationTag(\n    input: {\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    conversation {\n      ... on Conversable {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo un-tag a conversation, see `conversationUntag`\n",
+              "description": "Add one or more tags to a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $tagIds: [ID!]!\n) {\n  conversationTag(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-tag a conversation, see `conversationUntag`\n",
               "args": [
                 {
                   "name": "input",
@@ -5117,8 +4877,35 @@
               "deprecationReason": null
             },
             {
+              "name": "conversationUnassign",
+              "description": "Unassigns a Conversation from either an Agent, a Team, or both.\n\nFor example:\n\n```\nmutation(\n  $agent: Boolean,\n  $changesetId: String,\n  $conversationId: ID!,\n  $team: Boolean,\n) {\n  conversationUnassign(\n    input: {\n      changesetId: $changesetId,\n      agent: $agent,\n      conversationId: $conversationId,\n      team: $team,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        assigned {\n          at\n          agent {\n            id\n            name\n          }\n          team {\n            id\n            name\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo reassign a conversation, see `conversationAssign`\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "conversationUnassignInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "conversationUnassignPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "conversationUnfollow",
-              "description": "Unfollows one or more agents from a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!, $followerIds: [ID!]!) {\n  conversationUnfollow(\n    input: {\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    conversation {\n      ... on Conversable {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo follow a conversation, see `conversationFollow`\n",
+              "description": "Unfollows one or more agents from a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $followerIds: [ID!]!\n) {\n  conversationUnfollow(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo follow a conversation, see `conversationFollow`\n",
               "args": [
                 {
                   "name": "input",
@@ -5145,7 +4932,7 @@
             },
             {
               "name": "conversationUnread",
-              "description": "Sets a Conversation state to 'unread'\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationUnread( input: { conversationId: $conversationId }) {\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n",
+              "description": "Sets a Conversation state to 'unread'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationUnread(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -5172,7 +4959,7 @@
             },
             {
               "name": "conversationUnstar",
-              "description": "Un-star a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!) {\n  conversationUnstar( input: { conversationId: $conversationId } ) {\n    conversation {\n      ... on Conversable {\n        id\n        starred\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo star a conversation, see `conversationStar`\n",
+              "description": "Un-star a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationUnstar(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        starred\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo star a conversation, see `conversationStar`\n",
               "args": [
                 {
                   "name": "input",
@@ -5199,7 +4986,7 @@
             },
             {
               "name": "conversationUntag",
-              "description": "Removes one or more tags from a Conversation.\n\nFor example:\n\n```\nmutation($conversationId: ID!, $tagIds: [ID!]!) {\n  conversationUntag(\n    input: {\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    conversation {\n      ... on Conversable {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo tag a conversation, see `conversationTag`\n",
+              "description": "Removes one or more tags from a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $tagIds: [ID!]!\n) {\n  conversationUntag(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo tag a conversation, see `conversationTag`\n",
               "args": [
                 {
                   "name": "input",
@@ -5219,6 +5006,87 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "conversationUntagPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "tagCreate",
+              "description": "Create an Inbox Tag.\n\n```\nmutation(\n  $color: String,\n  $name: String!,\n) {\n  tagCreate(\n    input: {\n      color: $color,\n      name: $name,\n    }\n  ) {\n    tag {\n      id\n      color\n      name\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo apply an existing Tag to a Conversation, see conversationTag\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "tagCreateInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "tagCreatePayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "tagDelete",
+              "description": "Permanently deletes an Inbox Tag.\n\n```\nmutation(\n  $tagId: ID!,\n) {\n  tagDelete(\n    input: {\n      tagId: $tagId,\n    }\n  ) {\n    deletedTagId\n    errors {\n      path\n      message\n    }\n  }\n}\n\nNOTE: If you'd like to remove a Tag that is applied to a Conversation,\nsee the `conversationUntag` mutation.\n```\n\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "tagDeleteInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "tagDeletePayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "tagUpdate",
+              "description": "Update an Inbox Tag.\n\n```\nmutation(\n  $color: String,\n  $name: String,\n  $tagId: ID!,\n) {\n  tagUpdate(\n    input: {\n      color: $color,\n      name: $name,\n      tagId: $tagId,\n    }\n  ) {\n    tag {\n      id\n      color\n      name\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo change tags applied to a Conversation, see the `conversationTag` or\n`conversationUntag` mutations.\n",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "tagUpdateInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "tagUpdatePayload",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -5454,7 +5322,7 @@
                     "name": "AgentFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{}"
                 },
                 {
                   "name": "orderBy",
@@ -5477,7 +5345,7 @@
             },
             {
               "name": "channels",
-              "description": "The Channels in this organization",
+              "description": "The related Channels",
               "args": [
                 {
                   "name": "after",
@@ -5527,7 +5395,7 @@
                     "name": "ChannelFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{}"
                 },
                 {
                   "name": "orderBy",
@@ -5604,7 +5472,7 @@
                     "name": "ConversationFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{}"
                 },
                 {
                   "name": "orderBy",
@@ -5627,7 +5495,7 @@
             },
             {
               "name": "folders",
-              "description": "Visible/accessible folders. Each associated with one or more mailboxes",
+              "description": "Visible/accessible folders. Each can be associated with one or more mailboxes",
               "args": [
                 {
                   "name": "after",
@@ -5677,7 +5545,7 @@
                     "name": "FolderFilter",
                     "ofType": null
                   },
-                  "defaultValue": null
+                  "defaultValue": "{state:\"ACTIVE\"}"
                 },
                 {
                   "name": "orderBy",
@@ -5788,6 +5656,16 @@
                   "defaultValue": null
                 },
                 {
+                  "name": "filter",
+                  "description": "Filter by one or more Tag fields",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "TagFilter",
+                    "ofType": null
+                  },
+                  "defaultValue": "{state:\"USED\"}"
+                },
+                {
                   "name": "orderBy",
                   "description": "Sort order of results",
                   "type": {
@@ -5809,36 +5687,7 @@
           ],
           "inputFields": null,
           "interfaces": [
-            {
-              "kind": "INTERFACE",
-              "name": "TagConnected",
-              "ofType": null
-            },
-            {
-              "kind": "INTERFACE",
-              "name": "AgentConnected",
-              "ofType": null
-            },
-            {
-              "kind": "INTERFACE",
-              "name": "ConversationConnected",
-              "ofType": null
-            },
-            {
-              "kind": "INTERFACE",
-              "name": "ChannelConnected",
-              "ofType": null
-            },
-            {
-              "kind": "INTERFACE",
-              "name": "FolderConnected",
-              "ofType": null
-            },
-            {
-              "kind": "INTERFACE",
-              "name": "TeamConnected",
-              "ofType": null
-            }
+
           ],
           "enumValues": null,
           "possibleTypes": null
@@ -5903,18 +5752,14 @@
             },
             {
               "name": "until",
-              "description": "When the conversation is snoozed until",
+              "description": "When the conversation is snoozed until. If blank, it is snoozed indefinitely",
               "args": [
 
               ],
               "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "DateTime",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "DateTime",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -5940,7 +5785,7 @@
         {
           "kind": "OBJECT",
           "name": "Tag",
-          "description": "An Inbox label.\n\nTags can be applied to Conversations, and they can be used in Folder\ndefinitions to create 'smart' Folders based on a tag.\n\nTo fetch all tags in your account:\n\n```\nquery Tags {\n  tags {\n    edges {\n      node {\n        color\n        count\n        createdAt\n        id\n        name\n        updatedAt\n      }\n    }\n    pageInfo {\n      hasNextPage\n    }\n  }\n}\n```\n\nTo fetch all tags applied to a specific conversation:\n\n```\n%(query Conversation {\n  node(id: $conversationId) {\n    ... on Conversable {\n      id\n      number\n      tags {\n        edges {\n          node {\n            color\n            count\n            createdAt\n            id\n            name\n            updatedAt\n          }\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n    }\n  }\n}\n```\n\n",
+          "description": "An Inbox label.\n\nTags can be applied to Conversations, and they can be used in Folder\ndefinitions to create 'smart' Folders based on a tag.\n\nTo fetch all tags in your account:\n\n```\nquery Tags {\n  tags {\n    nodes {\n      color\n      count\n      createdAt\n      id\n      name\n      updatedAt\n    }\n    pageInfo {\n      hasNextPage\n    }\n  }\n}\n```\n\nTo fetch all tags applied to a specific conversation:\n\n```\n%(query Conversation {\n  node(id: $conversationId) {\n    ... on Conversable {\n      id\n      number\n      tags {\n        nodes {\n          color\n          count\n          createdAt\n          id\n          name\n          updatedAt\n        }\n        pageInfo {\n          hasNextPage\n        }\n      }\n    }\n  }\n}\n```\n\n",
           "fields": [
             {
               "name": "color",
@@ -6064,91 +5909,6 @@
           "possibleTypes": null
         },
         {
-          "kind": "INTERFACE",
-          "name": "TagConnected",
-          "description": "Standard tags connection field.\n",
-          "fields": [
-            {
-              "name": "tags",
-              "description": "All tags.",
-              "args": [
-                {
-                  "name": "after",
-                  "description": "Returns the elements in the list that come after the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "before",
-                  "description": "Returns the elements in the list that come before the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "first",
-                  "description": "Returns the first _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "last",
-                  "description": "Returns the last _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "orderBy",
-                  "description": "Sort order of results",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "TagOrder",
-                    "ofType": null
-                  },
-                  "defaultValue": "{field:\"NAME\",direction:\"ASC\"}"
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "TagConnection",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": [
-            {
-              "kind": "OBJECT",
-              "name": "EmailConversation",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "QueryRoot",
-              "ofType": null
-            }
-          ]
-        },
-        {
           "kind": "OBJECT",
           "name": "TagConnection",
           "description": "The connection type for Tag.",
@@ -6262,6 +6022,27 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "TagFilter",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "state",
+              "description": "Filter by Tag status(es)",
+              "type": {
+                "kind": "ENUM",
+                "name": "TagState",
+                "ofType": null
+              },
+              "defaultValue": "USED"
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "TagOrder",
           "description": null,
           "fields": null,
@@ -6333,27 +6114,27 @@
           "possibleTypes": null
         },
         {
-          "kind": "INTERFACE",
-          "name": "TeamConnected",
-          "description": "Standard teams connection field.\n",
-          "fields": [
-
-          ],
+          "kind": "ENUM",
+          "name": "TagState",
+          "description": null,
+          "fields": null,
           "inputFields": null,
           "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": [
+          "enumValues": [
             {
-              "kind": "OBJECT",
-              "name": "Agent",
-              "ofType": null
+              "name": "USED",
+              "description": "Tag is applied to one or more Conversations (count > 0)",
+              "isDeprecated": false,
+              "deprecationReason": null
             },
             {
-              "kind": "OBJECT",
-              "name": "QueryRoot",
-              "ofType": null
+              "name": "UNUSED",
+              "description": "Tag is not applied to any conversations (count = 0)",
+              "isDeprecated": false,
+              "deprecationReason": null
             }
-          ]
+          ],
+          "possibleTypes": null
         },
         {
           "kind": "INTERFACE",
@@ -7399,10 +7180,170 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "conversationAssignInput",
+          "description": "Autogenerated input type of conversationAssign",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to snooze",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "agentId",
+              "description": "The Agent to assign the conversation to",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "teamId",
+              "description": "The Team to assign the conversation to",
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationAssignPayload",
+          "description": "Autogenerated return type of conversationAssign",
+          "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversation",
+              "description": "The updated Conversation",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "INTERFACE",
+                "name": "Conversable",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "conversationCloseInput",
           "description": "Autogenerated input type of conversationClose",
           "fields": null,
           "inputFields": [
+            {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "conversationId",
               "description": "The ID of the Conversation to close",
@@ -7437,6 +7378,24 @@
           "name": "conversationClosePayload",
           "description": "Autogenerated return type of conversationClose",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -7506,6 +7465,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "assigned",
               "description": "The initially assigned Agent/Group",
               "type": {
@@ -7526,16 +7495,6 @@
                   "name": "ID",
                   "ofType": null
                 }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "changesetId",
-              "description": "A client-generated UUID used to group all the actions resulting from\nthis change.\n\nLeave blank to let the server generate one for you.\n",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
               },
               "defaultValue": null
             },
@@ -7583,6 +7542,24 @@
           "name": "conversationCreateEmailPayload",
           "description": "Autogenerated return type of conversationCreateEmail",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -7768,6 +7745,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "conversationId",
               "description": "The ID of the Conversation to tag",
               "type": {
@@ -7823,6 +7810,24 @@
           "name": "conversationFollowPayload",
           "description": "Autogenerated return type of conversationFollow",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -7887,10 +7892,186 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "conversationMergeInput",
+          "description": "Autogenerated input type of conversationMerge",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to merge (source/child)",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "intoConversationId",
+              "description": "The ID of the Conversation to merge into (destination/parent)",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationMergePayload",
+          "description": "Autogenerated return type of conversationMerge",
+          "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversation",
+              "description": "The deleted source Conversation",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INTERFACE",
+                  "name": "Conversable",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "intoConversation",
+              "description": "The updated destination Conversation",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INTERFACE",
+                  "name": "Conversable",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "conversationOpenInput",
           "description": "Autogenerated input type of conversationOpen",
           "fields": null,
           "inputFields": [
+            {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "conversationId",
               "description": "The ID of the Conversation to open",
@@ -7925,6 +8106,164 @@
           "name": "conversationOpenPayload",
           "description": "Autogenerated return type of conversationOpen",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversation",
+              "description": "The updated Conversation",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "INTERFACE",
+                "name": "Conversable",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "conversationSnoozeInput",
+          "description": "Autogenerated input type of conversationSnooze",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to snooze",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "until",
+              "description": "When the conversation is snoozed until. Leave blank to snooze indefinitely",
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationSnoozePayload",
+          "description": "Autogenerated return type of conversationSnooze",
+          "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -7994,6 +8333,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "conversationId",
               "description": "The ID of the Conversation to mark as spam",
               "type": {
@@ -8027,6 +8376,24 @@
           "name": "conversationSpamPayload",
           "description": "Autogenerated return type of conversationSpam",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -8096,6 +8463,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "conversationId",
               "description": "The ID of the Conversation to star",
               "type": {
@@ -8129,6 +8506,24 @@
           "name": "conversationStarPayload",
           "description": "Autogenerated return type of conversationStar",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -8198,6 +8593,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "conversationId",
               "description": "The ID of the Conversation to tag",
               "type": {
@@ -8253,6 +8658,174 @@
           "name": "conversationTagPayload",
           "description": "Autogenerated return type of conversationTag",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "conversation",
+              "description": "The updated Conversation",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "INTERFACE",
+                "name": "Conversable",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": "Errors related to user input",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "conversationUnassignInput",
+          "description": "Autogenerated input type of conversationUnassign",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "conversationId",
+              "description": "The ID of the Conversation to snooze",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "agent",
+              "description": "Unassign the current Agent from the conversation",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "team",
+              "description": "Unassign the Team from the conversation",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "conversationUnassignPayload",
+          "description": "Autogenerated return type of conversationUnassign",
+          "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -8322,6 +8895,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "conversationId",
               "description": "The ID of the Conversation to tag",
               "type": {
@@ -8377,6 +8960,24 @@
           "name": "conversationUnfollowPayload",
           "description": "Autogenerated return type of conversationUnfollow",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -8446,6 +9047,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "conversationId",
               "description": "The ID of the Conversation to un-read",
               "type": {
@@ -8479,6 +9090,24 @@
           "name": "conversationUnreadPayload",
           "description": "Autogenerated return type of conversationUnread",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -8548,6 +9177,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "conversationId",
               "description": "The ID of the Conversation to star",
               "type": {
@@ -8581,6 +9220,24 @@
           "name": "conversationUnstarPayload",
           "description": "Autogenerated return type of conversationUnstar",
           "fields": [
+            {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
@@ -8650,6 +9307,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "changesetId",
+              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "conversationId",
               "description": "The ID of the Conversation to tag",
               "type": {
@@ -8706,6 +9373,24 @@
           "description": "Autogenerated return type of conversationUntag",
           "fields": [
             {
+              "name": "changesetId",
+              "description": "The changeset ID for this change.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "clientMutationId",
               "description": "A unique identifier for the client performing the mutation.",
               "args": [
@@ -8755,6 +9440,346 @@
                     }
                   }
                 }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "tagCreateInput",
+          "description": "Autogenerated input type of tagCreate",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "color",
+              "description": "The display color",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "name",
+              "description": "The display label",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "tagCreatePayload",
+          "description": "Autogenerated return type of tagCreate",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": null,
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "tag",
+              "description": null,
+              "args": [
+
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Tag",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "tagDeleteInput",
+          "description": "Autogenerated input type of tagDelete",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "tagId",
+              "description": "The ID of the Tag to edit",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "tagDeletePayload",
+          "description": "Autogenerated return type of tagDelete",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "deletedTagId",
+              "description": "The ID of the deleted object",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": null,
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "tagUpdateInput",
+          "description": "Autogenerated input type of tagUpdate",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "color",
+              "description": "The new display color",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "tagId",
+              "description": "The ID of the Tag to edit",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "name",
+              "description": "The new display label",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "tagUpdatePayload",
+          "description": "Autogenerated return type of tagUpdate",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "A unique identifier for the client performing the mutation.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "errors",
+              "description": null,
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "UserError",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "tag",
+              "description": null,
+              "args": [
+
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Tag",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
