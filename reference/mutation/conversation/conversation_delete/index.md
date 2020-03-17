@@ -23,6 +23,10 @@ mutation(
   }
   ) {
   deletedConversationId
+  diffs {
+    query
+    delta
+  }
   errors {
     path
     message
@@ -79,6 +83,15 @@ mutation(
 
   <div class="description-wrapper">
    <p>The ID of the deleted object</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="diffs" class="field-name anchored">diffs (<code><a href="/docs/reference/object/diff">[Diff!]!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The movement in search/folder counts due to this mutation</p>
 
   </div>
 </div>

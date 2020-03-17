@@ -28,6 +28,7 @@ mutation(
     state: $state,
   }
   ) {
+  changesetId
   conversation {
     id
     title
@@ -54,6 +55,15 @@ mutation(
 ## Return fields
 
 <div class="field-entry ">
+  <span id="changeset_id" class="field-name anchored">changesetId (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The changeset ID for this change.</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
   <span id="client_mutation_id" class="field-name anchored">clientMutationId (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
@@ -66,6 +76,15 @@ mutation(
   <span id="conversation" class="field-name anchored">conversation (<code><a href="/docs/reference/object/email_conversation">EmailConversation</a></code>)</span>
 
   <div class="description-wrapper">
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="diffs" class="field-name anchored">diffs (<code><a href="/docs/reference/object/diff">[Diff!]!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The movement in search/folder counts due to this mutation</p>
 
   </div>
 </div>

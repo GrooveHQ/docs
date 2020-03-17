@@ -6,28 +6,26 @@ grand_parent: Reference
 
 # EmailChannel
 
-A Groove Mailbox. Contains Conversations and Folders
+A Groove Channel. Contains Conversations and Folders
 
-To fetch your mailboxes, you can issue this query:
+To fetch your active mailboxes, you can issue this query:
 
 ```
-  query Mailboxes {
-    channels(state: UNCONFIRMED) {
-      edges {
-        node {
-          ... on EmailChannel {
-            createdAt
-            forwardEmailAddress
-            fromName
-            id
-            name
-            signature
-            updatedAt
-          }
+  query Channels {
+    channels {
+      nodes {
+        ... on EmailChannel {
+          createdAt
+          forwardEmailAddress
+          fromName
+          id
+          name
+          signature
+          updatedAt
         }
-        pageInfo {
-          hasNextPage
-        }
+      }
+      pageInfo {
+        hasNextPage
       }
     }
   }
@@ -36,14 +34,12 @@ To fetch your mailboxes, you can issue this query:
 To fetch inactive mailboxes:
 
 ```
-  query Mailboxes {
-    channels(states: [UNCONFIRMED, DEMO, CONFIRMED]) {
-      edges {
-        node {
-          ... on EmailChannel {
-            id
-            name
-          }
+  query Channels {
+    channels(filter: { state: UNCONFIRMED }) {
+      nodes {
+        ... on EmailChannel {
+          id
+          name
         }
       }
     }
@@ -53,23 +49,19 @@ To fetch inactive mailboxes:
 To fetch accessible folders (paginated) for each of your mailboxes:
 
 ```
-  query Mailboxes {
-    channels(state: UNCONFIRMED) {
-      edges {
-        node {
-          ... on EmailChannel {
-            id
-            name
-            folders {
-              edges {
-                node {
-                  id
-                  name
-                }
-                pageInfo {
-                  hasNextPage
-                }
-              }
+  query Channels {
+    channels {
+      nodes {
+        ... on EmailChannel {
+          id
+          name
+          folders {
+            nodes {
+              id
+              name
+            }
+            pageInfo {
+              hasNextPage
             }
           }
         }
@@ -81,23 +73,19 @@ To fetch accessible folders (paginated) for each of your mailboxes:
 To fetch conversations in this mailbox
 
 ```
-  query Mailboxes {
+  query Channels {
     channels {
-      edges {
-        node {
-          ... on EmailChannel {
-            id
-            name
-            conversations {
-              edges {
-                node {
-                  id
-                  name
-                }
-                pageInfo {
-                  hasNextPage
-                }
-              }
+      nodes {
+        ... on EmailChannel {
+          id
+          name
+          conversations {
+            nodes {
+              id
+              name
+            }
+            pageInfo {
+              hasNextPage
             }
           }
         }
@@ -158,6 +146,7 @@ To fetch conversations in this mailbox
   </td>
   <td>
     <p>Filter the Conversations</p>
+       <p>The default value is <code>{}</code>.</p>
    </td>
   </tr>
 
@@ -201,7 +190,7 @@ To fetch conversations in this mailbox
   <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/connection_type/folder/folder_connection">FolderConnection</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>Visible/accessible folders. Each associated with one or more mailboxes</p>
+   <p>Visible/accessible folders. Each can be associated with one or more mailboxes</p>
      <table class="arguments">
   <thead>
   <tr>
@@ -239,6 +228,7 @@ To fetch conversations in this mailbox
   </td>
   <td>
     <p>Filter by one or more Folder fields</p>
+       <p>The default value is <code>{"state"=>"ACTIVE"}</code>.</p>
    </td>
   </tr>
 
@@ -293,7 +283,7 @@ To fetch conversations in this mailbox
   <span id="email" class="field-name anchored">email (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The email address associated with the mailbox</p>
+   <p>The email address associated with this mailbox</p>
 
   </div>
 </div>
@@ -302,7 +292,7 @@ To fetch conversations in this mailbox
   <span id="forward_email_address" class="field-name anchored">forwardEmailAddress (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The forwarding email address associated with the mailbox</p>
+   <p>The forwarding email address associated with this mailbox</p>
 
   </div>
 </div>
@@ -311,7 +301,7 @@ To fetch conversations in this mailbox
   <span id="from_name" class="field-name anchored">fromName (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>Setting on which name replies should be from (Agent|Mailbox)</p>
+   <p>Setting on which name replies should be from (Agent|Channel)</p>
 
   </div>
 </div>
@@ -346,7 +336,7 @@ To fetch conversations in this mailbox
   <span id="signature" class="field-name anchored">signature (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The default signature on outgoing message from this mailbox</p>
+   <p>The default signature on outgoing messages from this mailbox</p>
 
   </div>
 </div>

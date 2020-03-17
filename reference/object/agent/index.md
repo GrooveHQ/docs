@@ -73,6 +73,19 @@ query Agents {
 }
 ```
 
+To fetch agents ordered by the most times you assigned them to a conversation
+
+```
+query Agents {
+  agents( orderBy: { field: ASSIGNMENT_COUNT, direction: DESC } ) {
+  nodes {
+    id
+    name
+  }
+  }
+}
+```
+
 To fetch a single Agent:
 
 ```
@@ -89,8 +102,6 @@ query Node {
 ## Implements
 
 - <code><a href="/docs/reference/interface/node">Node</a></code>
-
-- <code><a href="/docs/reference/interface/team_connected">TeamConnected</a></code>
 
 - <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
 

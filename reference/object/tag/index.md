@@ -16,15 +16,13 @@ To fetch all tags in your account:
 ```
 query Tags {
   tags {
-  edges {
-    node {
-      color
-      count
-      createdAt
-      id
-      name
-      updatedAt
-    }
+  nodes {
+    color
+    count
+    createdAt
+    id
+    name
+    updatedAt
   }
   pageInfo {
     hasNextPage
@@ -42,15 +40,13 @@ To fetch all tags applied to a specific conversation:
     id
     number
     tags {
-      edges {
-        node {
-          color
-          count
-          createdAt
-          id
-          name
-          updatedAt
-        }
+      nodes {
+        color
+        count
+        createdAt
+        id
+        name
+        updatedAt
       }
       pageInfo {
         hasNextPage

@@ -50,7 +50,7 @@ grand_parent: Reference
    <p>Less Than or EQual to</p>
   </div>
 
-  <h4 id="neq" class="name anchored">NEQ</h4>
+  <h4 id="not_eq" class="name anchored">NOT_EQ</h4>
 
   <div class="description-wrapper">
    <p>Not equal to</p>

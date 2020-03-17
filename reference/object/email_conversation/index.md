@@ -35,18 +35,14 @@ query Conversation {
     createdAt
     deletedAt
     drafts {
-      edges {
-        node {
-          id
-        }
+      nodes {
+        id
       }
     }
     followers {
-      edges {
-        node {
-          id
-          email
-        }
+      nodes {
+        id
+        email
       }
     }
     id
@@ -60,11 +56,9 @@ query Conversation {
     stateUpdatedAt
     systemUpdatedAt
     tags {
-      edges {
-        node {
-          id
-          name
-        }
+      nodes {
+        id
+        name
       }
     }
     title
@@ -151,8 +145,6 @@ CHANGELOG
 - <code><a href="/docs/reference/interface/conversable">Conversable</a></code>
 
 - <code><a href="/docs/reference/interface/node">Node</a></code>
-
-- <code><a href="/docs/reference/interface/tag_connected">TagConnected</a></code>
 
 ## Connections
 
@@ -259,6 +251,7 @@ CHANGELOG
   </td>
   <td>
     <p>Filter by one or more Agent fields</p>
+       <p>The default value is <code>{}</code>.</p>
    </td>
   </tr>
 
@@ -331,6 +324,17 @@ CHANGELOG
   </td>
   <td>
     <p>Returns the elements in the list that come before the specified cursor.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">filter</code></td>
+  <td>
+    <code><a href="/docs/reference/input_object/tag/tag_filter">TagFilter</a></code>
+  </td>
+  <td>
+    <p>Filter by one or more Tag fields</p>
+       <p>The default value is <code>{"state"=>"USED"}</code>.</p>
    </td>
   </tr>
 

@@ -12,13 +12,19 @@ Add one or more followers to a Conversation.
 For example:
 
 ```
-mutation($conversationId: ID!, $followerIds: [ID!]!) {
+mutation(
+  $changesetId: String,
+  $conversationId: ID!,
+  $followerIds: [ID!]!
+) {
   conversationFollow(
   input: {
+    changesetId: $changesetId,
     conversationId: $conversationId,
     followerIds: $followerIds
   }
   ) {
+  changesetId
   conversation {
     ... on Conversable {
       id
@@ -32,12 +38,16 @@ mutation($conversationId: ID!, $followerIds: [ID!]!) {
       }
     }
   }
+  diffs {
+    query
+    delta
+  }
   errors {
     path
     message
   }
   }
-}
+})
 ```
 
 To un-follow a conversation, see `conversationUnfollow`
@@ -55,6 +65,15 @@ To un-follow a conversation, see `conversationUnfollow`
 ## Return fields
 
 <div class="field-entry ">
+  <span id="changeset_id" class="field-name anchored">changesetId (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The changeset ID for this change.</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
   <span id="client_mutation_id" class="field-name anchored">clientMutationId (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
@@ -68,6 +87,15 @@ To un-follow a conversation, see `conversationUnfollow`
 
   <div class="description-wrapper">
    <p>The updated Conversation</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="diffs" class="field-name anchored">diffs (<code><a href="/docs/reference/object/diff">[Diff!]!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The movement in search/folder counts due to this mutation</p>
 
   </div>
 </div>

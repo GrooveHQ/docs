@@ -14,7 +14,7 @@ grand_parent: Reference
    <p>Folder is enabled</p>
   </div>
 
-  <h4 id="hidden" class="name anchored">HIDDEN</h4>
+  <h4 id="inactive" class="name anchored">INACTIVE</h4>
 
   <div class="description-wrapper">
    <p>Folder is hidden</p>

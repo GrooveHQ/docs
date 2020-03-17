@@ -6,7 +6,7 @@ grand_parent: Reference
 
 # Folder
 
-A Groove Folder. Each folder containsr a set of Conditions that allow for
+A Groove Folder. Each folder contains a set of Conditions that allow for
 smart filtering of conversations in a Channel.
 
 For example, to show Only your active Conversations, you can create
@@ -23,53 +23,50 @@ To fetch all folders, and their conditions:
 ```
 query Folders {
   folders {
-  edges {
-    node {
-      agents {
-        edges {
-          node {
-            id
-            email
-          }
-        }
+  nodes {
+    agents {
+      nodes {
+        id
+        email
       }
-      conditions(orderBy: { field: CREATED_AT, direction: DESC }) {
-        edges {
-          node {
-            id
-            param
-            operator
-            value
-          }
-        }
-        pageInfo {
-          hasNextPage
-        }
+      pageInfo {
+        hasNextPage
       }
-      conversationCount
-      createdAt
-      default
-      description
-      displayCountWhenInactive
-      id
-      locked
-      matchType
-      name
-      position
-      state
-      teams {
-        edges {
-          node {
-            id
-            name
-          }
-        }
-        pageInfo {
-          hasNextPage
-        }
-      }
-      updatedAt
     }
+    conditions(
+      orderBy: { field: CREATED_AT, direction: DESC }
+    ) {
+      nodes {
+        id
+        param
+        operator
+        value
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+    conversationCount
+    createdAt
+    default
+    description
+    displayCountWhenInactive
+    id
+    locked
+    matchType
+    name
+    position
+    state
+    teams {
+      nodes {
+        id
+        name
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+    updatedAt
   }
   }
 }
@@ -80,24 +77,20 @@ To find associated conversations in this folder:
 ```
 query Folders {
   folders {
-  edges {
-    node {
-      id
-      conversations {
-        edges {
-          node {
-            ... on Conversable {
-              id
-              number
-            }
-          }
-        }
-        pageInfo {
-          hasNextPage
+  nodes {
+    id
+    conversations {
+      nodes {
+        ... on Conversable {
+          id
+          number
         }
       }
-      conversationCount
+      pageInfo {
+        hasNextPage
+      }
     }
+    conversationCount
   }
   }
 }
@@ -109,10 +102,8 @@ by name instead:
 ```
 query Folders {
   folders( orderBy: { field: NAME, direction: ASC } ) {
-  edges {
-    node {
-      id
-    }
+  nodes {
+    id
   }
   }
 }
@@ -123,21 +114,17 @@ To find conversations in this folder for a specific channel:
 ```
 query Folders {
   folders {
-  edges {
-    node {
-      id
-      conversations ( channel: "ch_12345678" ) {
-        edges {
-          node {
-            ... on Conversable {
-              id
-              number
-            }
-          }
+  nodes {
+    id
+    conversations ( channel: "ch_12345678" ) {
+      nodes {
+        ... on Conversable {
+          id
+          number
         }
-        pageInfo {
-          hasNextPage
-        }
+      }
+      pageInfo {
+        hasNextPage
       }
     }
   }
@@ -146,8 +133,6 @@ query Folders {
 ```
 
 ## Implements
-
-- <code><a href="/docs/reference/interface/conversation_connected">ConversationConnected</a></code>
 
 - <code><a href="/docs/reference/interface/node">Node</a></code>
 
@@ -159,8 +144,7 @@ query Folders {
   <span id="agents" class="field-name connection-name anchored">agents (<code><a href="/docs/reference/connection_type/agent/agent_connection">AgentConnection</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The Agents who can see this folder. An empty list implies either everyone can
-see it, or only certain Teams can (see <code>teams</code> field)</p>
+   <p>The Agents who can see this folder. An empty list implies only certain Teams have visiblity (refer to the <code>teams</code> field)</p>
      <table class="arguments">
   <thead>
   <tr>
@@ -192,6 +176,17 @@ see it, or only certain Teams can (see <code>teams</code> field)</p>
   </tr>
 
   <tr>
+  <td><code class="anchored">filter</code></td>
+  <td>
+    <code><a href="/docs/reference/input_object/agent/agent_filter">AgentFilter</a></code>
+  </td>
+  <td>
+    <p>Filter by one or more Agent fields</p>
+       <p>The default value is <code>{}</code>.</p>
+   </td>
+  </tr>
+
+  <tr>
   <td><code class="anchored">first</code></td>
   <td>
     <code><a href="/docs/reference/scalar/int">Int</a></code>
@@ -208,6 +203,17 @@ see it, or only certain Teams can (see <code>teams</code> field)</p>
   </td>
   <td>
     <p>Returns the last <em>n</em> elements from the list.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">orderBy</code></td>
+  <td>
+    <code><a href="/docs/reference/input_object/agent/agent_order">AgentOrder</a></code>
+  </td>
+  <td>
+    <p>Sort order of results</p>
+       <p>The default value is <code>{"field"=>"NAME", "direction"=>"ASC"}</code>.</p>
    </td>
   </tr>
 
@@ -221,7 +227,7 @@ see it, or only certain Teams can (see <code>teams</code> field)</p>
   <span id="channels" class="field-name connection-name anchored">channels (<code><a href="/docs/reference/connection_type/channel/channel_connection">ChannelConnection!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The Channels in which this Folder is visible.</p>
+   <p>The related Channels</p>
      <table class="arguments">
   <thead>
   <tr>
@@ -253,6 +259,17 @@ see it, or only certain Teams can (see <code>teams</code> field)</p>
   </tr>
 
   <tr>
+  <td><code class="anchored">filter</code></td>
+  <td>
+    <code><a href="/docs/reference/input_object/channel/channel_filter">ChannelFilter</a></code>
+  </td>
+  <td>
+    <p>Filter the Channels</p>
+       <p>The default value is <code>{}</code>.</p>
+   </td>
+  </tr>
+
+  <tr>
   <td><code class="anchored">first</code></td>
   <td>
     <code><a href="/docs/reference/scalar/int">Int</a></code>
@@ -269,6 +286,17 @@ see it, or only certain Teams can (see <code>teams</code> field)</p>
   </td>
   <td>
     <p>Returns the last <em>n</em> elements from the list.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">orderBy</code></td>
+  <td>
+    <code><a href="/docs/reference/input_object/channel/channel_order">ChannelOrder</a></code>
+  </td>
+  <td>
+    <p>Sort order of results</p>
+       <p>The default value is <code>{"field"=>"POSITION", "direction"=>"ASC"}</code>.</p>
    </td>
   </tr>
 
@@ -402,6 +430,7 @@ see it, or only certain Teams can (see <code>teams</code> field)</p>
   </td>
   <td>
     <p>Filter the Conversations</p>
+       <p>The default value is <code>{}</code>.</p>
    </td>
   </tr>
 
@@ -445,8 +474,7 @@ see it, or only certain Teams can (see <code>teams</code> field)</p>
   <span id="teams" class="field-name connection-name anchored">teams (<code><a href="/docs/reference/connection_type/team/team_connection">TeamConnection</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The Teams who can see this folder. An empty list implies either everyone can
-see it, or only certain Agents can (see <code>agents</code> field)</p>
+   <p>The Teams who can see this folder. An empty list implies only certain Agents can (see <code>agents</code> field)</p>
      <table class="arguments">
   <thead>
   <tr>
@@ -497,6 +525,17 @@ see it, or only certain Agents can (see <code>agents</code> field)</p>
    </td>
   </tr>
 
+  <tr>
+  <td><code class="anchored">orderBy</code></td>
+  <td>
+    <code><a href="/docs/reference/input_object/team/team_order">TeamOrder</a></code>
+  </td>
+  <td>
+    <p>Sort order of results</p>
+       <p>The default value is <code>{"field"=>"NAME", "direction"=>"ASC"}</code>.</p>
+   </td>
+  </tr>
+
   </tbody>
 </table>
 
@@ -509,29 +548,7 @@ see it, or only certain Agents can (see <code>agents</code> field)</p>
   <span id="conversation_count" class="field-name anchored">conversationCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The number of conversations that are in this folder</p>
-     <table class="arguments">
-  <thead>
-  <tr>
-    <th>Argument</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-  </thead>
-  <tbody>
-
-  <tr>
-  <td><code class="anchored">mailboxId</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/id">ID</a></code>
-  </td>
-  <td>
-    <p>The specific Mailbox ID to filter by</p>
-   </td>
-  </tr>
-
-  </tbody>
-</table>
+   <p>The number of conversations that are in this folder (across ALL Channels)</p>
 
   </div>
 </div>

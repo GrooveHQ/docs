@@ -12,13 +12,19 @@ Unfollows one or more agents from a Conversation.
 For example:
 
 ```
-mutation($conversationId: ID!, $followerIds: [ID!]!) {
+mutation(
+  $changesetId: String,
+  $conversationId: ID!,
+  $followerIds: [ID!]!
+) {
   conversationUnfollow(
   input: {
+    changesetId: $changesetId,
     conversationId: $conversationId,
     followerIds: $followerIds
   }
   ) {
+  changesetId
   conversation {
     ... on Conversable {
       id
@@ -31,6 +37,10 @@ mutation($conversationId: ID!, $followerIds: [ID!]!) {
         }
       }
     }
+  }
+  diffs {
+    query
+    delta
   }
   errors {
     path
@@ -55,6 +65,15 @@ To follow a conversation, see `conversationFollow`
 ## Return fields
 
 <div class="field-entry ">
+  <span id="changeset_id" class="field-name anchored">changesetId (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The changeset ID for this change.</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
   <span id="client_mutation_id" class="field-name anchored">clientMutationId (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
@@ -68,6 +87,15 @@ To follow a conversation, see `conversationFollow`
 
   <div class="description-wrapper">
    <p>The updated Conversation</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="diffs" class="field-name anchored">diffs (<code><a href="/docs/reference/object/diff">[Diff!]!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The movement in search/folder counts due to this mutation</p>
 
   </div>
 </div>

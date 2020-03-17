@@ -12,20 +12,33 @@ Un-star a Conversation.
 For example:
 
 ```
-mutation($conversationId: ID!) {
-  conversationUnstar( input: { conversationId: $conversationId } ) {
+mutation(
+  $changesetId: String,
+  $conversationId: ID!
+) {
+  conversationUnstar(
+  input: {
+    changesetId: $changesetId,
+    conversationId: $conversationId
+  }
+  ) {
+  changesetId
   conversation {
     ... on Conversable {
       id
       starred
     }
   }
+  diffs {
+    query
+    delta
+  }
   errors {
     path
     message
   }
   }
-})
+}
 ```
 
 To star a conversation, see `conversationStar`
@@ -43,6 +56,15 @@ To star a conversation, see `conversationStar`
 ## Return fields
 
 <div class="field-entry ">
+  <span id="changeset_id" class="field-name anchored">changesetId (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The changeset ID for this change.</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
   <span id="client_mutation_id" class="field-name anchored">clientMutationId (<code><a href="/docs/reference/scalar/string">String</a></code>)</span>
 
   <div class="description-wrapper">
@@ -56,6 +78,15 @@ To star a conversation, see `conversationStar`
 
   <div class="description-wrapper">
    <p>The updated Conversation</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="diffs" class="field-name anchored">diffs (<code><a href="/docs/reference/object/diff">[Diff!]!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The movement in search/folder counts due to this mutation</p>
 
   </div>
 </div>

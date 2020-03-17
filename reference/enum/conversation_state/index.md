@@ -11,7 +11,7 @@ grand_parent: Reference
   <h4 id="closed" class="name anchored">CLOSED</h4>
 
   <div class="description-wrapper">
-   <p>Conversation has been closed (or snoozed)</p>
+   <p>Conversation has been closed</p>
   </div>
 
   <h4 id="deleted" class="name anchored">DELETED</h4>
@@ -24,6 +24,12 @@ grand_parent: Reference
 
   <div class="description-wrapper">
    <p>An Agent has viewed this conversation</p>
+  </div>
+
+  <h4 id="snoozed" class="name anchored">SNOOZED</h4>
+
+  <div class="description-wrapper">
+   <p>Conversation has been snoozed</p>
   </div>
 
   <h4 id="spam" class="name anchored">SPAM</h4>

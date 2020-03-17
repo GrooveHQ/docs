@@ -21,10 +21,10 @@ snoozed until.
 </div>
 
 <div class="field-entry ">
-  <span id="until" class="field-name anchored">until (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
+  <span id="until" class="field-name anchored">until (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>When the conversation is snoozed until</p>
+   <p>When the conversation is snoozed until. If blank, it is snoozed indefinitely</p>
 
   </div>
 </div>
