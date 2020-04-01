@@ -1,12 +1,45 @@
 ---
-title: Channelable
+title: Channel
 parent: Interfaces
 grand_parent: Reference
 ---
 
-# Channelable
+# Channel
 
-Standard fields shared between all Channel types
+A Groove Channel is a source of incoming Conversations. It dictates how
+messages in those Conversations are sent and received.
+
+For example, a EmailChannel is a Channel where messages are sent email.
+To fetch all of these:
+
+```
+query Channels {
+  channels {
+  nodes {
+    ... on Channel {
+      __typename
+      id
+      name
+    }
+  }
+  }
+}
+```
+
+By default Channels are sorted by their user-defined row-order, aka
+position. To sort by name:
+
+```
+query Channels {
+  channels( orderBy: { field: NAME, direction: ASC } ) {
+  nodes {
+    ... on EmailChannel {
+      id
+    }
+  }
+  }
+}
+```
 
 ## Implemented by
 
@@ -18,6 +51,7 @@ Standard fields shared between all Channel types
   <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
+   <p>When it was created</p>
 
   </div>
 </div>

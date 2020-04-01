@@ -1,12 +1,27 @@
 ---
-title: Conversable
+title: Conversation
 parent: Interfaces
 grand_parent: Reference
 ---
 
-# Conversable
+# Conversation
 
-Standard interface for all types of Conversations
+A Groove Conversation is a thread of messages e.g. emails, chats, notes.
+and associated actions (or events) e.g. 'opened', 'snoozed', 'assigned'
+that have happened."
+
+To fetch Messages/Ratings/StateChanges etc on a Conversation, first use the
+`groups` connection to fetch all related Changsets. Then, separately query
+the `changesets` connection (with specific IDs) to fetch the full Changesets.
+
+See ChangesetGroup for more detail.
+
+CHANGELOG
+
+2020-01
+  - [NEW] `channel` replaces `conversationType`
+  - [NEW] all counts fields now grouped under `counts` type
+  - [NEW] `assignment` replaces `assignee` and `assigned_group`
 
 ## Implemented by
 
@@ -24,7 +39,7 @@ Standard interface for all types of Conversations
 </div>
 
 <div class="field-entry ">
-  <span id="channel" class="field-name anchored">channel (<code><a href="/docs/reference/union/channel">Channel!</a></code>)</span>
+  <span id="channel" class="field-name anchored">channel (<code><a href="/docs/reference/interface/channel">Channel!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The channel in which this conversation is happening</p>

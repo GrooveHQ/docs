@@ -72,28 +72,11 @@ query Folders {
 }
 ```
 
-To find associated conversations in this folder:
+To find associated conversations in this folder, use the QueryRoot
+`conversations` with a `filter` argument e.g.:
 
 ```
-query Folders {
-  folders {
-  nodes {
-    id
-    conversations {
-      nodes {
-        ... on Conversable {
-          id
-          number
-        }
-      }
-      pageInfo {
-        hasNextPage
-      }
-    }
-    conversationCount
-  }
-  }
-}
+conversations(filter: { folderId: "fol_1234567" }) { ...
 ```
 
 By default folders are sorted by their user-defined row order. To sort
@@ -118,7 +101,7 @@ query Folders {
     id
     conversations ( channel: "ch_12345678" ) {
       nodes {
-        ... on Conversable {
+        ... on Conversation {
           id
           number
         }
@@ -379,88 +362,6 @@ query Folders {
   <td>
     <p>Sort order of results</p>
        <p>The default value is <code>{"field"=>"CREATED_AT", "direction"=>"ASC"}</code>.</p>
-   </td>
-  </tr>
-
-  </tbody>
-</table>
-
-  </div>
-</div>
-
-<div class="field-entry ">
-  <span id="conversations" class="field-name connection-name anchored">conversations (<code><a href="/docs/reference/connection_type/conversation/conversation_connection">ConversationConnection</a></code>)</span>
-
-  <div class="description-wrapper">
-   <p>Related conversations</p>
-     <table class="arguments">
-  <thead>
-  <tr>
-    <th>Argument</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-  </thead>
-  <tbody>
-
-  <tr>
-  <td><code class="anchored">after</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/string">String</a></code>
-  </td>
-  <td>
-    <p>Returns the elements in the list that come after the specified cursor.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">before</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/string">String</a></code>
-  </td>
-  <td>
-    <p>Returns the elements in the list that come before the specified cursor.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">filter</code></td>
-  <td>
-    <code><a href="/docs/reference/input_object/conversation/conversation_filter">ConversationFilter</a></code>
-  </td>
-  <td>
-    <p>Filter the Conversations</p>
-       <p>The default value is <code>{}</code>.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">first</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/int">Int</a></code>
-  </td>
-  <td>
-    <p>Returns the first <em>n</em> elements from the list.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">last</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/int">Int</a></code>
-  </td>
-  <td>
-    <p>Returns the last <em>n</em> elements from the list.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">orderBy</code></td>
-  <td>
-    <code><a href="/docs/reference/input_object/conversation/conversation_order">ConversationOrder</a></code>
-  </td>
-  <td>
-    <p>Sort order of results</p>
    </td>
   </tr>
 

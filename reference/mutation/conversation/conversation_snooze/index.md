@@ -26,7 +26,7 @@ mutation(
   ) {
   changesetId
   conversation {
-    ... on Conversable {
+    ... on Conversation {
       id
       state
       snoozed {
@@ -82,7 +82,7 @@ To un-snooze a conversation, while keeping it closed, use `conversationClose`
 </div>
 
 <div class="field-entry ">
-  <span id="conversation" class="field-name anchored">conversation (<code><a href="/docs/reference/interface/conversable">Conversable</a></code>)</span>
+  <span id="conversation" class="field-name anchored">conversation (<code><a href="/docs/reference/interface/conversation">Conversation</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The updated Conversation</p>

@@ -27,7 +27,7 @@
         {
           "kind": "OBJECT",
           "name": "Agent",
-          "description": "An Agent, with a login, belonging to one Account, belonging zero or more\nTeams.\n\nFor example, to find all active agents, along with the teams they belong\nto, ordered by name.\n\n```\nquery Agents {\n  agents {\n    edges {\n      node {\n        createdAt\n        email\n        id\n        name\n        role\n        state\n        subdomain\n        teams {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n        username\n        updatedAt\n      }\n    }\n  }\n}\n```\n\nTo query for invited agents:\n\n```\nquery Agents {\n  agents(filter: {state: INVITED}){\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n```\n\nTo reverse order the search:\n\n```\nquery Agents {\n  agents( orderBy: { field: NAME, direction: DESC } ) {\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n```\n\nTo fetch agents ordered by the most times you assigned them to a conversation\n\n```\nquery Agents {\n  agents( orderBy: { field: ASSIGNMENT_COUNT, direction: DESC } ) {\n    nodes {\n      id\n      name\n    }\n  }\n}\n```\n\nTo fetch a single Agent:\n\n```\nquery Node {\n  node(id: $agentId) {\n    ... on Agent {\n      id\n      name\n    }\n  }\n}\n```\n",
+          "description": "An Agent, with a login, belonging to one Account, belonging zero or more\nTeams.\n\nFor example, to find all active agents, along with the teams they belong\nto, ordered by name.\n\n```\nquery Agents {\n  agents {\n    edges {\n      node {\n        createdAt\n        email\n        id\n        name\n        role\n        state\n        subdomain\n        teams {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n          pageInfo {\n            hasNextPage\n          }\n        }\n        username\n        updatedAt\n      }\n    }\n  }\n}\n```\n\nTo query for invited agents:\n\n```\nquery Agents {\n  agents(filter: {state: INVITED}){\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n```\n\nTo reverse order the search:\n\n```\nquery Agents {\n  agents( orderBy: { field: NAME, direction: DESC } ) {\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n```\n\n\nTo fetch a single Agent:\n\n```\nquery Node {\n  node(id: $agentId) {\n    ... on Agent {\n      id\n      name\n    }\n  }\n}\n```\n",
           "fields": [
             {
               "name": "createdAt",
@@ -393,12 +393,6 @@
               "description": "Order by update time",
               "isDeprecated": false,
               "deprecationReason": null
-            },
-            {
-              "name": "ASSIGNMENT_COUNT",
-              "description": "Order by the number of times you assigned them to a conversation",
-              "isDeprecated": false,
-              "deprecationReason": null
             }
           ],
           "possibleTypes": null
@@ -463,57 +457,6 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AssignedFilter",
-          "description": "Filter by assigned agent/team, or those that explicitly are not assigned.\n\nE.g. To find a conversation assigned to a specific Agent (and any group):\n\n```\nfilter: { assigned: { agent: \"ag_1234567\" }`\n```\n\nTo find a conversation assigned to a specific Agent (and NO group):\n\n```\nfilter: { assigned: { agent: \"ag_1234567\", no_group: true }\n```\n",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "agent",
-              "description": "Filter by assigned Agent ID",
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "noAgent",
-              "description": "Find conversations that have no assigned Agent.",
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "team",
-              "description": "Filter by assigned Team ID",
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "noTeam",
-              "description": "Find conversations that have no assigned Team",
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
           "name": "AssignmentInput",
           "description": null,
           "fields": null,
@@ -551,473 +494,6 @@
           "inputFields": null,
           "interfaces": null,
           "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ChannelConnection",
-          "description": "The connection type for Channel.",
-          "fields": [
-            {
-              "name": "edges",
-              "description": "A list of edges.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ChannelEdge",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pageInfo",
-              "description": "Information to aid in pagination.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "PageInfo",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ChannelEdge",
-          "description": "An edge in a connection.",
-          "fields": [
-            {
-              "name": "cursor",
-              "description": "A cursor for use in pagination.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "ChannelFilter",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "state",
-              "description": "Filter by the Channel status",
-              "type": {
-                "kind": "ENUM",
-                "name": "ChannelState",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "ChannelOrder",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "field",
-              "description": "The field to order channels by",
-              "type": {
-                "kind": "ENUM",
-                "name": "ChannelOrderField",
-                "ofType": null
-              },
-              "defaultValue": "POSITION"
-            },
-            {
-              "name": "direction",
-              "description": "The sort direction",
-              "type": {
-                "kind": "ENUM",
-                "name": "OrderDirection",
-                "ofType": null
-              },
-              "defaultValue": "ASC"
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "ENUM",
-          "name": "ChannelOrderField",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": [
-            {
-              "name": "CREATED_AT",
-              "description": "Order by creation time",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "NAME",
-              "description": "Order by name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "POSITION",
-              "description": "Order by preferred row order",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "UPDATED_AT",
-              "description": "Order by update time",
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "possibleTypes": null
-        },
-        {
-          "kind": "ENUM",
-          "name": "ChannelState",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": [
-            {
-              "name": "UNCONFIRMED",
-              "description": "Initial value",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "DEMO",
-              "description": "Doesnt have a primary source yet (e.g. email, chat widget, Twitter Username)",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "CONFIRMED",
-              "description": "Optional. For channels that require an extra setup step. E.g. Some EmailChannels need user to confirm they are forwarding emails to Groove.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ACTIVE",
-              "description": "Groove has received a message on this channel",
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ConversationConnection",
-          "description": "The connection type for Conversation.",
-          "fields": [
-            {
-              "name": "edges",
-              "description": "A list of edges.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ConversationEdge",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pageInfo",
-              "description": "Information to aid in pagination.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "PageInfo",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ConversationEdge",
-          "description": "An edge in a connection.",
-          "fields": [
-            {
-              "name": "cursor",
-              "description": "A cursor for use in pagination.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "ConversationFilter",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "assigned",
-              "description": "Filter by assigned agent/team, or unassigned",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "AssignedFilter",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "channel",
-              "description": "The specific Channel ID to filter by",
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "deleted",
-              "description": "Filter by trashed (soft-deleted) Conversations",
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "draftAuthor",
-              "description": "Filter conversations that have drafts by this Author ID",
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "folder",
-              "description": "The specific Folder ID to filter by",
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "keywords",
-              "description": "Search for conversations that match these keywords",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "mentionedAgent",
-              "description": "Filter conversations that mention this Agent ID",
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "rating",
-              "description": "Search for conversations whose latest rating matches",
-              "type": {
-                "kind": "ENUM",
-                "name": "Rating",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "starred",
-              "description": "Filter by starred/unstarred Conversations",
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "state",
-              "description": "Filter by Conversation status",
-              "type": {
-                "kind": "ENUM",
-                "name": "ConversationState",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "tag",
-              "description": "Filter conversations with this specific Tag ID",
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "tagName",
-              "description": "Search for conversations with this tag name",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "ConversationOrder",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "field",
-              "description": "The field to order conversations by",
-              "type": {
-                "kind": "ENUM",
-                "name": "ConversationOrderField",
-                "ofType": null
-              },
-              "defaultValue": "UPDATED_AT"
-            },
-            {
-              "name": "direction",
-              "description": "The sort direction",
-              "type": {
-                "kind": "ENUM",
-                "name": "OrderDirection",
-                "ofType": null
-              },
-              "defaultValue": "DESC"
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "ENUM",
-          "name": "ConversationOrderField",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": [
-            {
-              "name": "STATE",
-              "description": "Order by state",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "UPDATED_AT",
-              "description": "Order by User update time",
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
           "possibleTypes": null
         },
         {
@@ -1263,7 +739,7 @@
           "fields": [
             {
               "name": "conversationAssign",
-              "description": "Assigns a Conversation to either an Agent, a Team, or both.\n\nFor example:\n\n```\nmutation(\n  $agentId: ID,\n  $changesetId: String,\n  $conversationId: ID!,\n  $teamId: ID,\n) {\n  conversationAssign(\n    input: {\n      changesetId: $changesetId,\n      agentId: $agentId,\n      conversationId: $conversationId,\n      teamId: $teamId,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        assigned {\n          at\n          agent {\n            id\n            name\n          }\n          team {\n            id\n            name\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-assign a conversation, see `conversationUnassign`\n",
+              "description": "Assigns a Conversation to either an Agent, a Team, or both.\n\nFor example:\n\n```\nmutation(\n  $agentId: ID,\n  $changesetId: String,\n  $conversationId: ID!,\n  $teamId: ID,\n) {\n  conversationAssign(\n    input: {\n      changesetId: $changesetId,\n      agentId: $agentId,\n      conversationId: $conversationId,\n      teamId: $teamId,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        assigned {\n          at\n          agent {\n            id\n            name\n          }\n          team {\n            id\n            name\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-assign a conversation, see `conversationUnassign`\n",
               "args": [
                 {
                   "name": "input",
@@ -1290,7 +766,7 @@
             },
             {
               "name": "conversationClose",
-              "description": "Sets a Conversation state to 'closed'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationClose( input: {\n    changesetId: $changesetId,\n    conversationId: $conversationId,\n  }) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
+              "description": "Sets a Conversation state to 'closed'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationClose( input: {\n    changesetId: $changesetId,\n    conversationId: $conversationId,\n  }) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -1371,7 +847,7 @@
             },
             {
               "name": "conversationFollow",
-              "description": "Add one or more followers to a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $followerIds: [ID!]!\n) {\n  conversationFollow(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo un-follow a conversation, see `conversationUnfollow`\n",
+              "description": "Add one or more followers to a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $followerIds: [ID!]!\n) {\n  conversationFollow(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n})\n```\n\nTo un-follow a conversation, see `conversationUnfollow`\n",
               "args": [
                 {
                   "name": "input",
@@ -1397,35 +873,8 @@
               "deprecationReason": null
             },
             {
-              "name": "conversationMerge",
-              "description": "Merges a Conversation (aka child, or source) into another (parent aka\ndestination).\n\nThe 'into' destination (parent) conversation is preserved. The source/child\nconversation is deleted.\n\nFor example:\n\n```\n```\n",
-              "args": [
-                {
-                  "name": "input",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "conversationMergeInput",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "conversationMergePayload",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "conversationOpen",
-              "description": "Sets a Conversation state to 'opened'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationOpen( input: {\n    changesetId: $changesetId,\n    conversationId: $conversationId,\n  }) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
+              "description": "Sets a Conversation state to 'opened'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationOpen( input: {\n    changesetId: $changesetId,\n    conversationId: $conversationId,\n  }) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -1452,7 +901,7 @@
             },
             {
               "name": "conversationSnooze",
-              "description": "Snoozes a Conversation, until a specific date, or indefinitely.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $until: DateTime\n) {\n  conversationSnooze(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      until: $until\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n        snoozed {\n          by { id }\n          until\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-snooze and reopen a conversation, use `conversationOpen`\n\nTo un-snooze a conversation, while keeping it closed, use `conversationClose`\n",
+              "description": "Snoozes a Conversation, until a specific date, or indefinitely.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $until: DateTime\n) {\n  conversationSnooze(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      until: $until\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        state\n        snoozed {\n          by { id }\n          until\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-snooze and reopen a conversation, use `conversationOpen`\n\nTo un-snooze a conversation, while keeping it closed, use `conversationClose`\n",
               "args": [
                 {
                   "name": "input",
@@ -1479,7 +928,7 @@
             },
             {
               "name": "conversationSpam",
-              "description": "Marks a Conversation as spam\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationSpam(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
+              "description": "Marks a Conversation as spam\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationSpam(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -1506,7 +955,7 @@
             },
             {
               "name": "conversationStar",
-              "description": "Star a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationStar(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        starred\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-star a conversation, see `conversationUnstar`\n",
+              "description": "Star a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationStar(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        starred\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-star a conversation, see `conversationUnstar`\n",
               "args": [
                 {
                   "name": "input",
@@ -1533,7 +982,7 @@
             },
             {
               "name": "conversationTag",
-              "description": "Add one or more tags to a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $tagIds: [ID!]!\n) {\n  conversationTag(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-tag a conversation, see `conversationUntag`\n",
+              "description": "Add one or more tags to a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $tagIds: [ID!]!\n) {\n  conversationTag(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo un-tag a conversation, see `conversationUntag`\n",
               "args": [
                 {
                   "name": "input",
@@ -1560,7 +1009,7 @@
             },
             {
               "name": "conversationUnassign",
-              "description": "Unassigns a Conversation from either an Agent, a Team, or both.\n\nFor example:\n\n```\nmutation(\n  $agent: Boolean,\n  $changesetId: String,\n  $conversationId: ID!,\n  $team: Boolean,\n) {\n  conversationUnassign(\n    input: {\n      changesetId: $changesetId,\n      agent: $agent,\n      conversationId: $conversationId,\n      team: $team,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        assigned {\n          at\n          agent {\n            id\n            name\n          }\n          team {\n            id\n            name\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo reassign a conversation, see `conversationAssign`\n",
+              "description": "Unassigns a Conversation from either an Agent, a Team, or both.\n\nFor example:\n\n```\nmutation(\n  $agent: Boolean,\n  $changesetId: String,\n  $conversationId: ID!,\n  $team: Boolean,\n) {\n  conversationUnassign(\n    input: {\n      changesetId: $changesetId,\n      agent: $agent,\n      conversationId: $conversationId,\n      team: $team,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        assigned {\n          at\n          agent {\n            id\n            name\n          }\n          team {\n            id\n            name\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo reassign a conversation, see `conversationAssign`\n",
               "args": [
                 {
                   "name": "input",
@@ -1587,7 +1036,7 @@
             },
             {
               "name": "conversationUnfollow",
-              "description": "Unfollows one or more agents from a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $followerIds: [ID!]!\n) {\n  conversationUnfollow(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo follow a conversation, see `conversationFollow`\n",
+              "description": "Unfollows one or more agents from a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $followerIds: [ID!]!\n) {\n  conversationUnfollow(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      followerIds: $followerIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        followers {\n          edges {\n            node {\n              id\n              email\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo follow a conversation, see `conversationFollow`\n",
               "args": [
                 {
                   "name": "input",
@@ -1614,7 +1063,7 @@
             },
             {
               "name": "conversationUnread",
-              "description": "Sets a Conversation state to 'unread'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationUnread(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
+              "description": "Sets a Conversation state to 'unread'\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n) {\n  conversationUnread(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        state\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n",
               "args": [
                 {
                   "name": "input",
@@ -1641,7 +1090,7 @@
             },
             {
               "name": "conversationUnstar",
-              "description": "Un-star a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationUnstar(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        starred\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo star a conversation, see `conversationStar`\n",
+              "description": "Un-star a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!\n) {\n  conversationUnstar(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        starred\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo star a conversation, see `conversationStar`\n",
               "args": [
                 {
                   "name": "input",
@@ -1668,7 +1117,7 @@
             },
             {
               "name": "conversationUntag",
-              "description": "Removes one or more tags from a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $tagIds: [ID!]!\n) {\n  conversationUntag(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversable {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo tag a conversation, see `conversationTag`\n",
+              "description": "Removes one or more tags from a Conversation.\n\nFor example:\n\n```\nmutation(\n  $changesetId: String,\n  $conversationId: ID!,\n  $tagIds: [ID!]!\n) {\n  conversationUntag(\n    input: {\n      changesetId: $changesetId,\n      conversationId: $conversationId,\n      tagIds: $tagIds\n    }\n  ) {\n    changesetId\n    conversation {\n      ... on Conversation {\n        id\n        tags {\n          edges {\n            node {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n    diffs {\n      query\n      delta\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo tag a conversation, see `conversationTag`\n",
               "args": [
                 {
                   "name": "input",
@@ -1688,87 +1137,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "conversationUntagPayload",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "tagCreate",
-              "description": "Create an Inbox Tag.\n\n```\nmutation(\n  $color: String,\n  $name: String!,\n) {\n  tagCreate(\n    input: {\n      color: $color,\n      name: $name,\n    }\n  ) {\n    tag {\n      id\n      color\n      name\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo apply an existing Tag to a Conversation, see conversationTag\n",
-              "args": [
-                {
-                  "name": "input",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "tagCreateInput",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "tagCreatePayload",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "tagDelete",
-              "description": "Permanently deletes an Inbox Tag.\n\n```\nmutation(\n  $tagId: ID!,\n) {\n  tagDelete(\n    input: {\n      tagId: $tagId,\n    }\n  ) {\n    deletedTagId\n    errors {\n      path\n      message\n    }\n  }\n}\n\nNOTE: If you'd like to remove a Tag that is applied to a Conversation,\nsee the `conversationUntag` mutation.\n```\n\n",
-              "args": [
-                {
-                  "name": "input",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "tagDeleteInput",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "tagDeletePayload",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "tagUpdate",
-              "description": "Update an Inbox Tag.\n\n```\nmutation(\n  $color: String,\n  $name: String,\n  $tagId: ID!,\n) {\n  tagUpdate(\n    input: {\n      color: $color,\n      name: $name,\n      tagId: $tagId,\n    }\n  ) {\n    tag {\n      id\n      color\n      name\n    }\n    errors {\n      path\n      message\n    }\n  }\n}\n```\n\nTo change tags applied to a Conversation, see the `conversationTag` or\n`conversationUntag` mutations.\n",
-              "args": [
-                {
-                  "name": "input",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "tagUpdateInput",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "tagUpdatePayload",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1996,156 +1364,6 @@
               "deprecationReason": null
             },
             {
-              "name": "channels",
-              "description": "The related Channels",
-              "args": [
-                {
-                  "name": "after",
-                  "description": "Returns the elements in the list that come after the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "before",
-                  "description": "Returns the elements in the list that come before the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "first",
-                  "description": "Returns the first _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "last",
-                  "description": "Returns the last _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "filter",
-                  "description": "Filter the Channels",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "ChannelFilter",
-                    "ofType": null
-                  },
-                  "defaultValue": "{}"
-                },
-                {
-                  "name": "orderBy",
-                  "description": "Sort order of results",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "ChannelOrder",
-                    "ofType": null
-                  },
-                  "defaultValue": "{field:\"POSITION\",direction:\"ASC\"}"
-                }
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ChannelConnection",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "conversations",
-              "description": "Related conversations",
-              "args": [
-                {
-                  "name": "after",
-                  "description": "Returns the elements in the list that come after the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "before",
-                  "description": "Returns the elements in the list that come before the specified cursor.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "first",
-                  "description": "Returns the first _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "last",
-                  "description": "Returns the last _n_ elements from the list.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "filter",
-                  "description": "Filter the Conversations",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "ConversationFilter",
-                    "ofType": null
-                  },
-                  "defaultValue": "{}"
-                },
-                {
-                  "name": "orderBy",
-                  "description": "Sort order of results",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "ConversationOrder",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ConversationConnection",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "node",
               "description": "Fetches an object given its ID.",
               "args": [
@@ -2196,41 +1414,6 @@
 
           ],
           "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "ENUM",
-          "name": "Rating",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": [
-            {
-              "name": "ANY",
-              "description": "Any rating",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "AWESOME",
-              "description": "Rated as awesome",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "OK",
-              "description": "Rated as OK",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "BAD",
-              "description": "Oh snap",
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
           "possibleTypes": null
         },
         {
@@ -3923,136 +3106,6 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "conversationMergeInput",
-          "description": "Autogenerated input type of conversationMerge",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "changesetId",
-              "description": "A UUID (v4) that logically groups all the actions resulting from this change.\n\nLeave blank to let the server generate one for you.\n",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "conversationId",
-              "description": "The ID of the Conversation to merge (source/child)",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "intoConversationId",
-              "description": "The ID of the Conversation to merge into (destination/parent)",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "clientMutationId",
-              "description": "A unique identifier for the client performing the mutation.",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "conversationMergePayload",
-          "description": "Autogenerated return type of conversationMerge",
-          "fields": [
-            {
-              "name": "changesetId",
-              "description": "The changeset ID for this change.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "clientMutationId",
-              "description": "A unique identifier for the client performing the mutation.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "errors",
-              "description": "Errors related to user input",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "UserError",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
           "name": "conversationOpenInput",
           "description": "Autogenerated input type of conversationOpen",
           "fields": null,
@@ -5071,7 +4124,7 @@
             },
             {
               "name": "conversationId",
-              "description": "The ID of the Conversation to star",
+              "description": "The ID of the Conversation to un-star",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -5276,318 +4329,6 @@
             {
               "name": "errors",
               "description": "Errors related to user input",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "UserError",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "tagCreateInput",
-          "description": "Autogenerated input type of tagCreate",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "color",
-              "description": "The display color",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "name",
-              "description": "The display label",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "clientMutationId",
-              "description": "A unique identifier for the client performing the mutation.",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "tagCreatePayload",
-          "description": "Autogenerated return type of tagCreate",
-          "fields": [
-            {
-              "name": "clientMutationId",
-              "description": "A unique identifier for the client performing the mutation.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "errors",
-              "description": null,
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "UserError",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "tagDeleteInput",
-          "description": "Autogenerated input type of tagDelete",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "tagId",
-              "description": "The ID of the Tag to edit",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "clientMutationId",
-              "description": "A unique identifier for the client performing the mutation.",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "tagDeletePayload",
-          "description": "Autogenerated return type of tagDelete",
-          "fields": [
-            {
-              "name": "clientMutationId",
-              "description": "A unique identifier for the client performing the mutation.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "deletedTagId",
-              "description": "The ID of the deleted object",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "errors",
-              "description": null,
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "UserError",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "tagUpdateInput",
-          "description": "Autogenerated input type of tagUpdate",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "color",
-              "description": "The new display color",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "tagId",
-              "description": "The ID of the Tag to edit",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "name",
-              "description": "The new display label",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "clientMutationId",
-              "description": "A unique identifier for the client performing the mutation.",
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "tagUpdatePayload",
-          "description": "Autogenerated return type of tagUpdate",
-          "fields": [
-            {
-              "name": "clientMutationId",
-              "description": "A unique identifier for the client performing the mutation.",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "errors",
-              "description": null,
               "args": [
 
               ],

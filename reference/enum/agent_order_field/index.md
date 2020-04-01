@@ -8,12 +8,6 @@ grand_parent: Reference
 
 <h3 id="values">Values</h3>
 
-  <h4 id="assignment_count" class="name anchored">ASSIGNMENT_COUNT</h4>
-
-  <div class="description-wrapper">
-   <p>Order by the number of times you assigned them to a conversation</p>
-  </div>
-
   <h4 id="created_at" class="name anchored">CREATED_AT</h4>
 
   <div class="description-wrapper">

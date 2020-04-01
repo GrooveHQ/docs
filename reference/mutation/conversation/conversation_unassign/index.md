@@ -28,7 +28,7 @@ mutation(
   ) {
   changesetId
   conversation {
-    ... on Conversable {
+    ... on Conversation {
       id
       assigned {
         at
@@ -88,7 +88,7 @@ To reassign a conversation, see `conversationAssign`
 </div>
 
 <div class="field-entry ">
-  <span id="conversation" class="field-name anchored">conversation (<code><a href="/docs/reference/interface/conversable">Conversable</a></code>)</span>
+  <span id="conversation" class="field-name anchored">conversation (<code><a href="/docs/reference/interface/conversation">Conversation</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The updated Conversation</p>

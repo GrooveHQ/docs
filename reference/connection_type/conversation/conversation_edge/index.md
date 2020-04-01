@@ -21,7 +21,7 @@ An edge in a connection.
 </div>
 
 <div class="field-entry ">
-  <span id="node" class="field-name anchored">node (<code><a href="/docs/reference/union/conversation">Conversation</a></code>)</span>
+  <span id="node" class="field-name anchored">node (<code><a href="/docs/reference/interface/conversation">Conversation</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The item at the end of the edge.</p>

@@ -13,7 +13,7 @@ To fetch a specific conversation by ID:
 ```
 query Conversation {
   node(id: "cnv_12345678") {
-  ... on Conversable {
+  ... on Conversation {
     assigned {
       at
       agent {
@@ -78,16 +78,14 @@ query Conversations {
     folder: "fol_8901234",
   }
   ) {
-  edges {
-    node {
-      ... on Conversable {
-        id
-        number
-      }
+  nodes {
+    ... on Conversation {
+      id
+      number
     }
-    pageInfo {
-      hasNextPage
-    }
+  }
+  pageInfo {
+    hasNextPage
   }
   }
 }
@@ -98,16 +96,14 @@ To find conversations in "all channels" that apply to a specific folder, omit th
 ```
 query Conversations {
   conversations( filter: { folder: "fol_8901234" }) {
-  edges {
-    node {
-      ... on Conversable {
-        id
-        number
-      }
+  nodes {
+    ... on Conversation {
+      id
+      number
     }
-    pageInfo {
-      hasNextPage
-    }
+  }
+  pageInfo {
+    hasNextPage
   }
   }
 }
@@ -118,31 +114,22 @@ Conversations are returned newest first. To sort showing oldest firstt:
 ```
 query Conversations {
   conversations( orderBy: { field: UPDATED_AT, direction: ASC } ) {
-  edges {
-    node {
-      ... on Conversable {
-        id
-        number
-      }
+  nodes {
+    ... on Conversation {
+      id
+      number
     }
-    pageInfo {
-      hasNextPage
-    }
+  }
+  pageInfo {
+    hasNextPage
   }
   }
 }
 ```
 
-CHANGELOG
-
-2020-01
-  - [NEW] `channel` replaces `conversationType`
-  - [NEW] all counts fields now grouped under `counts` type
-  - [NEW] `assignment` replaces `assignee` and `assigned_group`
-
 ## Implements
 
-- <code><a href="/docs/reference/interface/conversable">Conversable</a></code>
+- <code><a href="/docs/reference/interface/conversation">Conversation</a></code>
 
 - <code><a href="/docs/reference/interface/node">Node</a></code>
 
@@ -387,7 +374,7 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="channel" class="field-name anchored">channel (<code><a href="/docs/reference/union/channel">Channel!</a></code>)</span>
+  <span id="channel" class="field-name anchored">channel (<code><a href="/docs/reference/interface/channel">Channel!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The channel in which this conversation is happening</p>

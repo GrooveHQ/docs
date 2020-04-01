@@ -14,8 +14,6 @@ Standard timestamp fields
 
 - <code><a href="/docs/reference/object/condition">Condition</a></code></li>
 
-- <code><a href="/docs/reference/object/email_channel">EmailChannel</a></code></li>
-
 - <code><a href="/docs/reference/object/folder">Folder</a></code></li>
 
 - <code><a href="/docs/reference/object/tag">Tag</a></code></li>

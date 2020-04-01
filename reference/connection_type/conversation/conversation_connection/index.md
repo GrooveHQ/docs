@@ -21,7 +21,7 @@ The connection type for Conversation.
 </div>
 
 <div class="field-entry ">
-  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/union/conversation">[Conversation]</a></code>)</span>
+  <span id="nodes" class="field-name anchored">nodes (<code><a href="/docs/reference/interface/conversation">[Conversation]</a></code>)</span>
 
   <div class="description-wrapper">
    <p>A list of nodes.</p>

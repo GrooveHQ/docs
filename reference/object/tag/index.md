@@ -36,7 +36,7 @@ To fetch all tags applied to a specific conversation:
 ```
 %(query Conversation {
   node(id: $conversationId) {
-  ... on Conversable {
+  ... on Conversation {
     id
     number
     tags {

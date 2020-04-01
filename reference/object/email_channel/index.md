@@ -70,121 +70,32 @@ To fetch accessible folders (paginated) for each of your mailboxes:
   }
 ```
 
-To fetch conversations in this mailbox
+To fetch conversations in this mailbox, use the QueryRoot
+`conversations` field with a `filter` argument e.g.:
 
 ```
-  query Channels {
-    channels {
-      nodes {
-        ... on EmailChannel {
-          id
-          name
-          conversations {
-            nodes {
-              id
-              name
-            }
-            pageInfo {
-              hasNextPage
-            }
-          }
-        }
-      }
+query Conversations {
+  conversations(filter: { channel_id: "ch_12345678" }) {
+  nodes {
+    ... on Conversation {
+      id
+      number
     }
   }
+  pageInfo {
+    hasNextPage
+  }
+  }
+}
 ```
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/channelable">Channelable</a></code>
+- <code><a href="/docs/reference/interface/channel">Channel</a></code>
 
 - <code><a href="/docs/reference/interface/node">Node</a></code>
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
-
 ## Connections
-
-<div class="field-entry ">
-  <span id="conversations" class="field-name connection-name anchored">conversations (<code><a href="/docs/reference/connection_type/conversation/conversation_connection">ConversationConnection</a></code>)</span>
-
-  <div class="description-wrapper">
-   <p>Related conversations</p>
-     <table class="arguments">
-  <thead>
-  <tr>
-    <th>Argument</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-  </thead>
-  <tbody>
-
-  <tr>
-  <td><code class="anchored">after</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/string">String</a></code>
-  </td>
-  <td>
-    <p>Returns the elements in the list that come after the specified cursor.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">before</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/string">String</a></code>
-  </td>
-  <td>
-    <p>Returns the elements in the list that come before the specified cursor.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">filter</code></td>
-  <td>
-    <code><a href="/docs/reference/input_object/conversation/conversation_filter">ConversationFilter</a></code>
-  </td>
-  <td>
-    <p>Filter the Conversations</p>
-       <p>The default value is <code>{}</code>.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">first</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/int">Int</a></code>
-  </td>
-  <td>
-    <p>Returns the first <em>n</em> elements from the list.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">last</code></td>
-  <td>
-    <code><a href="/docs/reference/scalar/int">Int</a></code>
-  </td>
-  <td>
-    <p>Returns the last <em>n</em> elements from the list.</p>
-   </td>
-  </tr>
-
-  <tr>
-  <td><code class="anchored">orderBy</code></td>
-  <td>
-    <code><a href="/docs/reference/input_object/conversation/conversation_order">ConversationOrder</a></code>
-  </td>
-  <td>
-    <p>Sort order of results</p>
-   </td>
-  </tr>
-
-  </tbody>
-</table>
-
-  </div>
-</div>
 
 <div class="field-entry ">
   <span id="folders" class="field-name connection-name anchored">folders (<code><a href="/docs/reference/connection_type/folder/folder_connection">FolderConnection</a></code>)</span>
@@ -275,6 +186,7 @@ To fetch conversations in this mailbox
   <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
+   <p>When it was created</p>
 
   </div>
 </div>

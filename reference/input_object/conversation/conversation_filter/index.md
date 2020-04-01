@@ -19,7 +19,7 @@ great_grand_parent: Reference
 </div>
 
 <div class="field-entry ">
-  <span id="channel" class="field-name anchored">channel (<code><a href="/docs/reference/scalar/id">ID</a></code>)</span>
+  <span id="channel_id" class="field-name anchored">channelId (<code><a href="/docs/reference/scalar/id">ID</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The specific Channel ID to filter by</p>
@@ -46,7 +46,7 @@ great_grand_parent: Reference
 </div>
 
 <div class="field-entry ">
-  <span id="folder" class="field-name anchored">folder (<code><a href="/docs/reference/scalar/id">ID</a></code>)</span>
+  <span id="folder_id" class="field-name anchored">folderId (<code><a href="/docs/reference/scalar/id">ID</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The specific Folder ID to filter by</p>

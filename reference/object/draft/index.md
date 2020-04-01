@@ -18,19 +18,11 @@ To fetch a specific draft you created:
 ```
 query Draft {
   node(id: $draftId) {
-  edges {
-    node {
-      color
-      count
-      createdAt
-      id
-      name
-      updatedAt
-    }
-  }
-  pageInfo {
-    hasNextPage
-  }
+  body
+  createdAt
+  id
+  quotedText
+  updatedAt
   }
 }
 ```
@@ -40,19 +32,19 @@ To fetch all your drafts in a specific conversation:
 ```
 query Conversations {
   conversations {
-  edges {
-    node {
-      ... on Conversable {
-        id
-        number
-        drafts {
-          edges {
-            node {
-              id
-              body
-            }
-          }
+  nodes {
+    ... on Conversation {
+      id
+      number
+      drafts {
+        nodes {
+          id
+          body
+          quotedText
         }
+      }
+      pageInfo {
+        hasNextPage
       }
     }
   }
@@ -76,7 +68,7 @@ query Conversations {
 </div>
 
 <div class="field-entry ">
-  <span id="conversation" class="field-name anchored">conversation (<code><a href="/docs/reference/union/conversation">Conversation!</a></code>)</span>
+  <span id="conversation" class="field-name anchored">conversation (<code><a href="/docs/reference/interface/conversation">Conversation!</a></code>)</span>
 
   <div class="description-wrapper">
    <p>The conversation this draft is for</p>
