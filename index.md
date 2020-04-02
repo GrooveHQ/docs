@@ -19,13 +19,14 @@ to the REST-based API provided in version 1.
 
 ## Getting Started
 
-Here are some quick links to get you up and running with the GraphQL API v4:
+Here are some quick links to get you up and running with our GraphQL API:
 
  - Authentication
  - Root endpoint
  - Schema introspection
  - Rate limits
  - Migrating from REST
+ - [File Uploads]({{ site.baseurl }}{% link guides/file-uploads.md%}).
 
 ## Why GraphQL
 
