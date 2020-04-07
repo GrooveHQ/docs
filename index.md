@@ -21,7 +21,7 @@ to the REST-based API provided in version 1.
 
 Here are some quick links to get you up and running with the GraphQL API v4:
 
- - Authentication
+ - [Authentication]({{ site.baseurl }}{% link api/authentication.md%})
  - Root endpoint
  - Schema introspection
  - Rate limits
