@@ -1,6 +1,6 @@
 ---
 title: Searching
-parent: API
+parent: Guides
 nav_order: 3
 ---
 

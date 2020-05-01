@@ -1,7 +1,7 @@
 
 ---
 title: Rate Limits
-parent: API
+parent: Guides
 nav_order: 2
 ---
 

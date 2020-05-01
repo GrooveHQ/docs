@@ -1,6 +1,6 @@
 ---
 title: Authentication
-parent: API
+parent: Guides
 nav_order: 1
 ---
 

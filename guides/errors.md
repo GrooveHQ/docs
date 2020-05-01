@@ -1,6 +1,6 @@
 ---
 title: Errors
-parent: API
+parent: Guides
 nav_order: 6
 ---
 
