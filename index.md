@@ -1,6 +1,6 @@
 ---
 layout: home
-title: API
+title: Groove APIv2
 nav_order: 1
 description: 'Groove Developer API Documentation'
 permalink: /

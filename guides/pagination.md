@@ -1,6 +1,6 @@
 ---
 title: Pagination
-parent: API
+parent: Guides
 nav_order: 5
 ---
 

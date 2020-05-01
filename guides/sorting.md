@@ -1,6 +1,6 @@
 ---
 title: Sorting
-parent: API
+parent: Guides
 nav_order: 4
 ---
 
