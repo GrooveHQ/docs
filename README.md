@@ -4,6 +4,26 @@ A static site based on Jekyll
 
 ## Generating GQL documentation sub-site
 
+### Manual Method
+
+Here's a one-line command that:
+
+- clears any generated reference docs from cached dir in API
+- runs the GraphqlJekyll generator (writes to the cached dir)
+- copies the cached reference docs into this repo
+- cleans up
+- regenerates static Voyager files
+```
+cd ../app; \
+sudo rm -rf ./tmp/docs*; \
+ea bundle exec rails runner 'GraphqlJekyll::Runner.run'; \
+cd docs; rm -rf reference/*; \
+cp -R ../app/tmp/docs/* ./reference/; \
+gco -- reference/operation/query/index.md; \
+sudo rm -rf ../app/tmp/docs*; \
+ruby generate_voyager_docs.rb YOUR_DEV_API_TOKEN;
+```
+
 ### Reference Docs
 
 The docs are generated on the app container and mounted into the api-docs
@@ -71,6 +91,12 @@ This will write a file under the app dir.
     git commit;
 
 5.  Profit
+
+
+
+
+
+
 
 ## Deployment
 
