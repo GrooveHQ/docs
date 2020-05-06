@@ -22,7 +22,7 @@ to the REST-based API provided in version 1.
 Here are some quick links to get you up and running with our GraphQL API:
 
  - [Authentication]({{  site.baseurl }}{% link guides/authentication.md%}) - You'll need to authenticate before you can start sending queries or mutations.
- - [Root endpoint]({{  site.baseurl }}{% link guides/authentication.md%}) - You'll need to authenticate before you can start sending queries or mutations.
+ - [Root endpoint]({{  site.baseurl }}{% link docs/reference/operation/query/index.md %}) - The entrypoint to the GraphQL API.
  - [Searching]({{ site.baseurl }}{% link guides/searching.md%}) - How to refine query results
  - [Sorting]({{ site.baseurl }}{% link guides/sorting.md%}) - How to order results where allowed
  - [Paginating]({{ site.baseurl }}{% link guides/pagination.md%}) - How to page through query results
