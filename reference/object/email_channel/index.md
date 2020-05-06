@@ -180,6 +180,150 @@ query Conversations {
   </div>
 </div>
 
+<div class="field-entry ">
+  <span id="permitted_agents" class="field-name connection-name anchored">permittedAgents (<code><a href="/docs/reference/connection_type/agent/agent_connection">AgentConnection!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The agents permitted to access this Channel</p>
+     <table class="arguments">
+  <thead>
+  <tr>
+    <th>Argument</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+  <td><code class="anchored">after</code></td>
+  <td>
+    <code><a href="/docs/reference/scalar/string">String</a></code>
+  </td>
+  <td>
+    <p>Returns the elements in the list that come after the specified cursor.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">before</code></td>
+  <td>
+    <code><a href="/docs/reference/scalar/string">String</a></code>
+  </td>
+  <td>
+    <p>Returns the elements in the list that come before the specified cursor.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">first</code></td>
+  <td>
+    <code><a href="/docs/reference/scalar/int">Int</a></code>
+  </td>
+  <td>
+    <p>Returns the first <em>n</em> elements from the list.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">last</code></td>
+  <td>
+    <code><a href="/docs/reference/scalar/int">Int</a></code>
+  </td>
+  <td>
+    <p>Returns the last <em>n</em> elements from the list.</p>
+   </td>
+  </tr>
+
+  </tbody>
+</table>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="tags" class="field-name connection-name anchored">tags (<code><a href="/docs/reference/connection_type/tag/tag_connection">TagConnection</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>All tags.</p>
+     <table class="arguments">
+  <thead>
+  <tr>
+    <th>Argument</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+  <td><code class="anchored">after</code></td>
+  <td>
+    <code><a href="/docs/reference/scalar/string">String</a></code>
+  </td>
+  <td>
+    <p>Returns the elements in the list that come after the specified cursor.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">before</code></td>
+  <td>
+    <code><a href="/docs/reference/scalar/string">String</a></code>
+  </td>
+  <td>
+    <p>Returns the elements in the list that come before the specified cursor.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">filter</code></td>
+  <td>
+    <code><a href="/docs/reference/input_object/tag/tag_filter">TagFilter</a></code>
+  </td>
+  <td>
+    <p>Filter by one or more Tag fields</p>
+       <p>The default value is <code>{"state"=>"USED"}</code>.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">first</code></td>
+  <td>
+    <code><a href="/docs/reference/scalar/int">Int</a></code>
+  </td>
+  <td>
+    <p>Returns the first <em>n</em> elements from the list.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">last</code></td>
+  <td>
+    <code><a href="/docs/reference/scalar/int">Int</a></code>
+  </td>
+  <td>
+    <p>Returns the last <em>n</em> elements from the list.</p>
+   </td>
+  </tr>
+
+  <tr>
+  <td><code class="anchored">orderBy</code></td>
+  <td>
+    <code><a href="/docs/reference/input_object/tag/tag_order">TagOrder</a></code>
+  </td>
+  <td>
+    <p>Sort order of results</p>
+       <p>The default value is <code>{"field"=>"NAME", "direction"=>"ASC"}</code>.</p>
+   </td>
+  </tr>
+
+  </tbody>
+</table>
+
+  </div>
+</div>
+
 ## Fields
 
 <div class="field-entry ">
@@ -275,6 +419,7 @@ query Conversations {
   <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
+   <p>When it was last updated</p>
 
   </div>
 </div>

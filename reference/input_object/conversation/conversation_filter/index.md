@@ -73,7 +73,7 @@ great_grand_parent: Reference
 </div>
 
 <div class="field-entry ">
-  <span id="rating" class="field-name anchored">rating (<code><a href="/docs/reference/enum/rating">Rating</a></code>)</span>
+  <span id="rating" class="field-name anchored">rating (<code><a href="/docs/reference/enum/rating_enum">RatingEnum</a></code>)</span>
 
   <div class="description-wrapper">
    <p>Search for conversations whose latest rating matches</p>
