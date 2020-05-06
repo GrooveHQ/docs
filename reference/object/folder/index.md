@@ -449,7 +449,7 @@ query Folders {
   <span id="conversation_count" class="field-name anchored">conversationCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The number of conversations that are in this folder (across ALL Channels)</p>
+   <p>The number of conversations that are in this folder (in the current context)</p>
 
   </div>
 </div>

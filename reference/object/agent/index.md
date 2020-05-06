@@ -17,6 +17,7 @@ query Agents {
   agents {
   edges {
     node {
+      avatarUrl
       createdAt
       email
       id
@@ -73,6 +74,19 @@ query Agents {
 }
 ```
 
+To fetch agents ordered by the most times you assigned them to a conversation
+
+```
+query Agents {
+  agents( orderBy: { field: ASSIGNMENT_COUNT, direction: DESC } ) {
+  nodes {
+    id
+    name
+  }
+  }
+}
+```
+
 To fetch a single Agent:
 
 ```
@@ -88,9 +102,9 @@ query Node {
 
 ## Implements
 
-- <code><a href="/docs/reference/interface/node">Node</a></code>
+- <code><a href="/docs/reference/interface/actor">Actor</a></code>
 
-- <code><a href="/docs/reference/interface/timestamped">Timestamped</a></code>
+- <code><a href="/docs/reference/interface/node">Node</a></code>
 
 ## Connections
 
@@ -167,6 +181,24 @@ query Node {
 </div>
 
 ## Fields
+
+<div class="field-entry ">
+  <span id="avatar_url" class="field-name anchored">avatarUrl (<code><a href="/docs/reference/scalar/url">Url!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The URL of the agent's avatar image</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="conversation_count" class="field-name anchored">conversationCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The number of conversations this agent is assigned (in the current context)</p>
+
+  </div>
+</div>
 
 <div class="field-entry ">
   <span id="created_at" class="field-name anchored">createdAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>

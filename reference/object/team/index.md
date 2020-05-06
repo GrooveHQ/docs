@@ -13,24 +13,20 @@ To find all teams on your account, along with their associated Agents:
 ```
 query Teams {
   teams {
-  edges {
-    node {
-      agents {
-        edges {
-          node {
-            id
-          }
-        }
-        pageInfo {
-          hasNextPage
-        }
+  nodes {
+    agents {
+      nodes {
+        id
       }
-      createdAt
-      id
-      description
-      name
-      updatedAt
+      pageInfo {
+        hasNextPage
+      }
     }
+    createdAt
+    id
+    description
+    name
+    updatedAt
   }
   }
 }
@@ -41,11 +37,22 @@ By default team results are sorted by name. To sort by CREATED_AT:
 ```
 query Teams {
   teams( orderBy: { field: CREATED_AT, direction: ASC } ) {
-  edges {
-    node {
-      id
-      name
-    }
+  nodes {
+    id
+    name
+  }
+  }
+}
+```
+
+To order teams by the largest first:
+
+```
+query Teams {
+  teams( orderBy: { field: SIZE, direction: DESC } ) {
+  nodes {
+    id
+    name
   }
   }
 }

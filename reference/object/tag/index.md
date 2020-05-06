@@ -18,7 +18,7 @@ query Tags {
   tags {
   nodes {
     color
-    count
+    conversationCount
     createdAt
     id
     name
@@ -42,7 +42,7 @@ To fetch all tags applied to a specific conversation:
     tags {
       nodes {
         color
-        count
+        conversationCount
         createdAt
         id
         name
@@ -75,10 +75,10 @@ To fetch all tags applied to a specific conversation:
 </div>
 
 <div class="field-entry ">
-  <span id="count" class="field-name anchored">count (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
+  <span id="conversation_count" class="field-name anchored">conversationCount (<code><a href="/docs/reference/scalar/int">Int!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>How many conversations this tag is applied to</p>
+   <p>The number of conversations this tag is applied to (in the current context)</p>
 
   </div>
 </div>

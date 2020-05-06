@@ -41,6 +41,25 @@ query Channels {
 }
 ```
 
+To find which agents have permission to view this channel:
+
+```
+query Channels {
+  channels {
+  nodes {
+    id
+    name
+    permittedAgents {
+      totalCount
+      nodes {
+        id
+      }
+    }
+  }
+  }
+}
+```
+
 ## Implemented by
 
 - <code><a href="/docs/reference/object/email_channel">EmailChannel</a></code></li>
@@ -95,6 +114,7 @@ query Channels {
   <span id="updated_at" class="field-name anchored">updatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
 
   <div class="description-wrapper">
+   <p>When it was last updated</p>
 
   </div>
 </div>

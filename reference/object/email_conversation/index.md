@@ -54,6 +54,7 @@ query Conversation {
     starred
     state
     stateUpdatedAt
+    subject
     systemUpdatedAt
     tags {
       nodes {
@@ -61,7 +62,6 @@ query Conversation {
         name
       }
     }
-    title
     updatedAt
   }
   }
@@ -401,6 +401,15 @@ query Conversations {
 </div>
 
 <div class="field-entry ">
+  <span id="customer" class="field-name anchored">customer (<code><a href="/docs/reference/object/contact">Contact</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The primary Contact associated with this Conversation</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
   <span id="deleted_at" class="field-name anchored">deletedAt (<code><a href="/docs/reference/scalar/date_time">DateTime</a></code>)</span>
 
   <div class="description-wrapper">
@@ -463,19 +472,28 @@ query Conversations {
 </div>
 
 <div class="field-entry ">
-  <span id="system_updated_at" class="field-name anchored">systemUpdatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
+  <span id="subject" class="field-name anchored">subject (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>When the conversation was last updated</p>
+   <p>The subject of the conversation.</p>
 
   </div>
 </div>
 
 <div class="field-entry ">
-  <span id="title" class="field-name anchored">title (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="summary_message" class="field-name anchored">summaryMessage (<code><a href="/docs/reference/object/summary_message_change">SummaryMessageChange</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The subject of the conversation. E.g. an email subject</p>
+   <p>The conversation summary - usually the first MessageChange in this conversation</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="system_updated_at" class="field-name anchored">systemUpdatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>When the conversation was last updated</p>
 
   </div>
 </div>

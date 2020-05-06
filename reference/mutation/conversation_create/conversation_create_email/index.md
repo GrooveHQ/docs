@@ -31,8 +31,8 @@ mutation(
   changesetId
   conversation {
     id
-    title
     state
+    subject
   }
   errors {
     path

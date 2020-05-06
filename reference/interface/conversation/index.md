@@ -7,25 +7,27 @@ grand_parent: Reference
 # Conversation
 
 A Groove Conversation is a thread of messages e.g. emails, chats, notes.
-and associated actions (or events) e.g. 'opened', 'snoozed', 'assigned'
-that have happened."
+and associated actions (or events) e.g. 'opened', 'snoozed', 'assigned' that
+have happened."
 
-To fetch Messages/Ratings/StateChanges etc on a Conversation, first use the
-`groups` connection to fetch all related Changsets. Then, separately query
-the `changesets` connection (with specific IDs) to fetch the full Changesets.
+To fetch Messages/Ratings/StateChanges etc on a Conversation, query the
+`changesets` connection (on the QueryRoot) with this conversation ID. This
+will give you a list of all Messages and Notes, either wrapped in a
+ChangesetGroup or a Changeset. In the case of ChangesetGroups, you may need
+to issue separate queries (with specific IDs) to fetch the details of each
+Changeset, if needed.
 
-See ChangesetGroup for more detail.
-
-CHANGELOG
-
-2020-01
-  - [NEW] `channel` replaces `conversationType`
-  - [NEW] all counts fields now grouped under `counts` type
-  - [NEW] `assignment` replaces `assignee` and `assigned_group`
+See also the `Changesets` type for more detail.
 
 ## Implemented by
 
 - <code><a href="/docs/reference/object/email_conversation">EmailConversation</a></code></li>
+
+- <code><a href="/docs/reference/object/facebook_conversation">FacebookConversation</a></code></li>
+
+- <code><a href="/docs/reference/object/twitter_conversation">TwitterConversation</a></code></li>
+
+- <code><a href="/docs/reference/object/widget_conversation">WidgetConversation</a></code></li>
 
 ## Fields
 
@@ -61,6 +63,15 @@ CHANGELOG
 
   <div class="description-wrapper">
    <p>When it was created</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="customer" class="field-name anchored">customer (<code><a href="/docs/reference/object/contact">Contact</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>The primary Contact associated with this Conversation</p>
 
   </div>
 </div>
@@ -128,19 +139,28 @@ CHANGELOG
 </div>
 
 <div class="field-entry ">
-  <span id="system_updated_at" class="field-name anchored">systemUpdatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
+  <span id="subject" class="field-name anchored">subject (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>When the conversation was last updated</p>
+   <p>The subject of the conversation.</p>
 
   </div>
 </div>
 
 <div class="field-entry ">
-  <span id="title" class="field-name anchored">title (<code><a href="/docs/reference/scalar/string">String!</a></code>)</span>
+  <span id="summary_message" class="field-name anchored">summaryMessage (<code><a href="/docs/reference/object/summary_message_change">SummaryMessageChange</a></code>)</span>
 
   <div class="description-wrapper">
-   <p>The subject of the conversation. E.g. an email subject</p>
+   <p>The conversation summary - usually the first MessageChange in this conversation</p>
+
+  </div>
+</div>
+
+<div class="field-entry ">
+  <span id="system_updated_at" class="field-name anchored">systemUpdatedAt (<code><a href="/docs/reference/scalar/date_time">DateTime!</a></code>)</span>
+
+  <div class="description-wrapper">
+   <p>When the conversation was last updated</p>
 
   </div>
 </div>
